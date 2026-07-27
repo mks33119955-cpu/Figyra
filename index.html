@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>МИНУСРАЗМЕР — Аппаратная коррекция + Диетология</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0B0D10;
+            color: #E8EAED;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- НЕОНОВЫЙ АКЦЕНТ --- */
+        :root {
+            --neon: #A3FF00;
+            --neon-glow: 0 0 20px rgba(163, 255, 0, 0.3);
+            --dark: #0B0D10;
+            --card-bg: #151A1F;
+        }
+
+        /* ---- ШАПКА / ЛОГОТИП ---- */
+        .header {
+            padding: 25px 0;
+            border-bottom: 1px solid #2A3138;
+        }
+
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo-icon {
+            font-size: 40px;
+            font-weight: 900;
+            letter-spacing: 4px;
+            color: #fff;
+            background: #1A2128;
+            padding: 10px 20px;
+            border-radius: 12px;
+            border-left: 6px solid var(--neon);
+            box-shadow: var(--neon-glow);
+        }
+
+        .logo-icon span {
+            color: var(--neon);
+        }
+
+        .logo-sub {
+            font-size: 14px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #8A94A5;
+            border-left: 1px solid #2A3138;
+            padding-left: 20px;
+        }
+
+        /* ---- ГЕРОЙ (ПЕРВЫЙ ЭКРАН) ---- */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 0 80px;
+            gap: 40px;
+        }
+
+        .hero-content {
+            flex: 1 1 500px;
+        }
+
+        .hero-tag {
+            color: var(--neon);
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            background: rgba(163, 255, 0, 0.08);
+            padding: 6px 16px;
+            border-radius: 40px;
+            display: inline-block;
+            margin-bottom: 20px;
+            border: 1px solid rgba(163, 255, 0, 0.2);
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, var(--neon), #CCFF66);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #B0BCCD;
+            max-width: 500px;
+            margin-bottom: 35px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 35px;
+        }
+
+        .hero-stats div {
+            font-size: 14px;
+            color: #8A94A5;
+        }
+
+        .hero-stats strong {
+            display: block;
+            font-size: 28px;
+            color: #fff;
+            font-weight: 800;
+        }
+
+        .btn-primary {
+            background: var(--neon);
+            color: #0B0D10;
+            padding: 18px 50px;
+            font-weight: 800;
+            font-size: 18px;
+            border: none;
+            border-radius: 60px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 0 40px rgba(163, 255, 0, 0.3);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 70px rgba(163, 255, 0, 0.6);
+            background: #BFFF40;
+        }
+
+        .hero-image {
+            flex: 1 1 400px;
+            background: #151A1F;
+            border-radius: 30px;
+            padding: 40px;
+            text-align: center;
+            border: 1px solid #2A3138;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image::before {
+            content: "⚡";
+            font-size: 120px;
+            opacity: 0.1;
+            position: absolute;
+            right: -20px;
+            bottom: -20px;
+            transform: rotate(15deg);
+        }
+
+        .hero-image h3 {
+            color: var(--neon);
+            font-weight: 700;
+            font-size: 24px;
+        }
+
+        .hero-image p {
+            color: #8A94A5;
+        }
+
+        /* ---- СЕКЦИЯ "КАК ЭТО РАБОТАЕТ" ---- */
+        .section-title {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .section-title span {
+            color: var(--neon);
+        }
+
+        .sub-title {
+            color: #8A94A5;
+            font-size: 18px;
+            margin-bottom: 50px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 35px 30px;
+            border-radius: 24px;
+            border: 1px solid #242C34;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--neon);
+            transform: translateY(-8px);
+            box-shadow: var(--neon-glow);
+        }
+
+        .card-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #9AA6B8;
+            font-size: 16px;
+        }
+
+        .card .badge {
+            margin-top: 20px;
+            display: inline-block;
+            background: rgba(163, 255, 0, 0.1);
+            padding: 4px 14px;
+            border-radius: 30px;
+            font-size: 12px;
+            color: var(--neon);
+            font-weight: 600;
+        }
+
+        /* ---- БЛОК С ФОРМУЛОЙ ---- */
+        .formula-block {
+            background: #11171D;
+            margin: 60px 0;
+            padding: 50px;
+            border-radius: 40px;
+            border: 1px solid #2A3138;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .formula-block .text {
+            flex: 2;
+        }
+
+        .formula-block .text h2 {
+            font-size: 32px;
+        }
+
+        .formula-block .text .big-formula {
+            font-family: 'Courier New', monospace;
+            font-size: 28px;
+            color: var(--neon);
+            background: #0B0D10;
+            padding: 15px 25px;
+            border-radius: 16px;
+            display: inline-block;
+            margin: 15px 0;
+            border: 1px dashed var(--neon);
+        }
+
+        .formula-block .price-tag {
+            flex: 1;
+            background: #0B0D10;
+            padding: 30px;
+            border-radius: 30px;
+            text-align: center;
+            border: 1px solid var(--neon);
+        }
+
+        .price-tag .old {
+            font-size: 18px;
+            text-decoration: line-through;
+            color: #6B7A8D;
+        }
+
+        .price-tag .new {
+            font-size: 48px;
+            font-weight: 900;
+            color: #fff;
+        }
+
+        .price-tag .new small {
+            font-size: 18px;
+            color: var(--neon);
+        }
+
+        /* ---- ФУТЕР ---- */
+        .footer {
+            border-top: 1px solid #1E262E;
+            padding: 40px 0;
+            margin-top: 60px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            color: #5D6C7E;
+            font-size: 14px;
+        }
+
+        /* Адаптив */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 36px; }
+            .hero-stats { gap: 20px; }
+            .formula-block { padding: 25px; }
+            .section-title { font-size: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ШАПКА -->
+<div class="header">
+    <div class="container">
+        <div class="logo-wrapper">
+            <div class="logo-icon">МИНУС<span>РАЗМЕР</span></div>
+            <div class="logo-sub">Аппаратная коррекция + Диетология</div>
+        </div>
+    </div>
+</div>
+
+<!-- ГЕРОЙ -->
+<section class="container hero">
+    <div class="hero-content">
+        <div class="hero-tag">⚡ Инновационная физика тела</div>
+        <h1>
+            Сжигай жир <br>
+            <span class="highlight">по формуле</span>
+        </h1>
+        <p>Аппаратный массаж + персональная нутрициология. Без диет и изнурений. Ваше тело — это машина, мы просто настроим её.</p>
+        
+        <div class="hero-stats">
+            <div><strong>-15 см</strong> в объеме за 10 сеансов</div>
+            <div><strong>94%</strong> эффективность</div>
+        </div>
+
+        <a href="#price" class="btn-primary">Записаться на диагностику</a>
+    </div>
+
+    <div class="hero-image">
+        <h3>⚙️ Аппарат нового поколения</h3>
+        <p>LPG / Myolift / Ультразвук</p>
+        <div style="margin: 20px 0; font-size: 14px; color: var(--neon);">+ Индивидуальный нутриент-план</div>
+        <div style="background: #0B0D10; padding: 15px; border-radius: 20px; border: 1px solid #2A3138;">
+            <span style="font-weight: 700;">«МИНУСРАЗМЕР»</span> — это не массаж, это перезагрузка.
+        </div>
+    </div>
+</section>
+
+<!-- БЛОК ПРЕИМУЩЕСТВ -->
+<div class="container">
+    <h2 class="section-title">Технология <span>коррекции</span></h2>
+    <p class="sub-title">Мы сочетаем железо и биологию. Каждый сеанс просчитан.</p>
+
+    <div class="grid-2">
+        <div class="card">
+            <span class="card-icon">🔬</span>
+            <h3>Аппаратный лимфодренаж</h3>
+            <p>Разбивает фиброзные отложения, убирает "апельсиновую корку" и моделирует контуры.</p>
+            <span class="badge">Без боли</span>
+        </div>
+        <div class="card">
+            <span class="card-icon">🧬</span>
+            <h3>Формульная диетология</h3>
+            <p>Не просто "не есть", а есть правильные молекулы в нужное время. Мы даем формулу, а не меню.</p>
+            <span class="badge">Индивидуально</span>
+        </div>
+        <div class="card">
+            <span class="card-icon">🧠</span>
+            <h3>Биоимпедансный анализ</h3>
+            <p>Первичная диагностика: мы видим воду, мышцы и жир по сегментам. Цифры, а не догадки.</p>
+            <span class="badge">Точно</span>
+        </div>
+        <div class="card">
+            <span class="card-icon">📊</span>
+            <h3>Контроль результата</h3>
+            <p>Замеры до/после. Мы отвечаем за сантиметры, а не за обещания.</p>
+            <span class="badge">Гарантия</span>
+        </div>
+    </div>
+</div>
+
+<!-- ФОРМУЛА И ЦЕНА -->
+<div class="container" id="price">
+    <div class="formula-block">
+        <div class="text">
+            <h2>Ваша формула <span style="color: var(--neon);">успеха</span></h2>
+            <div class="big-formula">
+                (Аппаратный массаж × 10) + (Нутрициология × 14) = −3 РАЗМЕРА
+            </div>
+            <p style="color: #9AA6B8;">Мы не обещаем чудеса. Мы обещаем физику. Подберем протокол под ваш тип телосложения.</p>
+        </div>
+        <div class="price-tag">
+            <div class="old">обычная цена 15 000 ₽</div>
+            <div class="new">9 900 <small>₽</small></div>
+            <div style="color: var(--neon); font-weight: 600; margin: 15px 0;">Стартовый пакет</div>
+            <a href="#" class="btn-primary" style="padding: 12px 30px; font-size: 14px;">Хочу результат</a>
+        </div>
+    </div>
+</div>
+
+<!-- ПРИЗЫВ -->
+<div class="container" style="text-align: center; padding: 40px 0;">
+    <h2 style="font-size: 34px; font-weight: 800;">Начни <span style="color: var(--neon);">уменьшаться</span> сегодня</h2>
+    <p style="color: #8A94A5; margin-bottom: 30px;">Осталось 4 места на эту неделю. Мы ждем тебя в кабинете.</p>
+    <a href="#" class="btn-primary">Забронировать диагностику 0 ₽</a>
+</div>
+
+<!-- ФУТЕР -->
+<div class="container footer">
+    <div>© 2026 МИНУСРАЗМЕР. Все права защищены.</div>
+    <div>Санкт-Петербург, ул. Технологическая 1 | +7 (999) 123-45-67</div>
+    <div style="color: var(--neon);">Работаем по предварительной записи</div>
+</div>
+
+</body>
+</html>
