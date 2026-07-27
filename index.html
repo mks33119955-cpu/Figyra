@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>МИНУСРАЗМЕР — Аппаратная коррекция + Диетология</title>
+    <title>МИНУСРАЗМЕР Новосибирск — Аппаратная коррекция + Диетология</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800;900&display=swap" rel="stylesheet">
     <style>
         * {
@@ -26,7 +26,6 @@
             padding: 0 20px;
         }
 
-        /* --- НЕОНОВЫЙ АКЦЕНТ --- */
         :root {
             --neon: #A3FF00;
             --neon-glow: 0 0 20px rgba(163, 255, 0, 0.3);
@@ -34,7 +33,7 @@
             --card-bg: #151A1F;
         }
 
-        /* ---- ШАПКА / ЛОГОТИП ---- */
+        /* ШАПКА */
         .header {
             padding: 25px 0;
             border-bottom: 1px solid #2A3138;
@@ -44,10 +43,11 @@
             display: flex;
             align-items: center;
             gap: 20px;
+            flex-wrap: wrap;
         }
 
         .logo-icon {
-            font-size: 40px;
+            font-size: 38px;
             font-weight: 900;
             letter-spacing: 4px;
             color: #fff;
@@ -72,7 +72,24 @@
             padding-left: 20px;
         }
 
-        /* ---- ГЕРОЙ (ПЕРВЫЙ ЭКРАН) ---- */
+        .header-phone {
+            margin-left: auto;
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--neon);
+            text-decoration: none;
+            border: 1px solid var(--neon);
+            padding: 8px 24px;
+            border-radius: 40px;
+            transition: 0.3s;
+        }
+        .header-phone:hover {
+            background: var(--neon);
+            color: #0B0D10;
+            box-shadow: var(--neon-glow);
+        }
+
+        /* ГЕРОЙ */
         .hero {
             display: flex;
             flex-wrap: wrap;
@@ -101,7 +118,7 @@
         }
 
         .hero h1 {
-            font-size: 58px;
+            font-size: 54px;
             font-weight: 900;
             line-height: 1.1;
             margin-bottom: 20px;
@@ -162,6 +179,15 @@
             background: #BFFF40;
         }
 
+        .btn-wa {
+            background: #25D366;
+            box-shadow: 0 0 40px rgba(37, 211, 102, 0.3);
+        }
+        .btn-wa:hover {
+            background: #34e07d;
+            box-shadow: 0 0 60px rgba(37, 211, 102, 0.5);
+        }
+
         .hero-image {
             flex: 1 1 400px;
             background: #151A1F;
@@ -194,7 +220,7 @@
             color: #8A94A5;
         }
 
-        /* ---- СЕКЦИЯ "КАК ЭТО РАБОТАЕТ" ---- */
+        /* СЕКЦИИ */
         .section-title {
             font-size: 42px;
             font-weight: 800;
@@ -213,7 +239,7 @@
 
         .grid-2 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
 
@@ -258,7 +284,7 @@
             font-weight: 600;
         }
 
-        /* ---- БЛОК С ФОРМУЛОЙ ---- */
+        /* ФОРМУЛА */
         .formula-block {
             background: #11171D;
             margin: 60px 0;
@@ -298,6 +324,7 @@
             border-radius: 30px;
             text-align: center;
             border: 1px solid var(--neon);
+            min-width: 250px;
         }
 
         .price-tag .old {
@@ -317,7 +344,50 @@
             color: var(--neon);
         }
 
-        /* ---- ФУТЕР ---- */
+        /* КАРТА */
+        .map-block {
+            background: #11171D;
+            border-radius: 30px;
+            padding: 30px;
+            border: 1px solid #2A3138;
+            margin: 40px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .map-block .info {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .map-block .info h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .map-block .info .address {
+            color: var(--neon);
+            font-size: 18px;
+            font-weight: 600;
+            margin: 10px 0;
+        }
+
+        .map-block .info .metro {
+            color: #8A94A5;
+        }
+
+        .map-block iframe {
+            flex: 2;
+            min-width: 280px;
+            height: 280px;
+            border: 0;
+            border-radius: 20px;
+            filter: grayscale(0.3) invert(0.9) hue-rotate(180deg);
+        }
+
+        /* ФУТЕР */
         .footer {
             border-top: 1px solid #1E262E;
             padding: 40px 0;
@@ -327,14 +397,23 @@
             flex-wrap: wrap;
             color: #5D6C7E;
             font-size: 14px;
+            gap: 15px;
         }
 
-        /* Адаптив */
+        .footer a {
+            color: var(--neon);
+            text-decoration: none;
+        }
+
+        /* АДАПТИВ */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 36px; }
-            .hero-stats { gap: 20px; }
+            .hero h1 { font-size: 34px; }
+            .hero-stats { gap: 20px; flex-wrap: wrap; }
             .formula-block { padding: 25px; }
             .section-title { font-size: 30px; }
+            .header-phone { font-size: 16px; padding: 6px 16px; margin-left: 0; width: 100%; text-align: center; }
+            .logo-wrapper { flex-direction: column; align-items: flex-start; }
+            .logo-sub { border-left: none; padding-left: 0; }
         }
     </style>
 </head>
@@ -346,6 +425,7 @@
         <div class="logo-wrapper">
             <div class="logo-icon">МИНУС<span>РАЗМЕР</span></div>
             <div class="logo-sub">Аппаратная коррекция + Диетология</div>
+            <a href="tel:+79999999999" class="header-phone">📞 +7 (999) 999-99-99</a>
         </div>
     </div>
 </div>
@@ -365,7 +445,8 @@
             <div><strong>94%</strong> эффективность</div>
         </div>
 
-        <a href="#price" class="btn-primary">Записаться на диагностику</a>
+        <a href="https://wa.me/79999999999?text=Привет!%20Я%20хочу%20на%20диагностику%20в%20МИНУСРАЗМЕР%20(Новосибирск)" class="btn-primary btn-wa" style="margin-right: 12px;">📱 Запись в WhatsApp</a>
+        <a href="#price" class="btn-primary" style="margin-top: 12px;">⬇ Узнать цену</a>
     </div>
 
     <div class="hero-image">
@@ -378,7 +459,7 @@
     </div>
 </section>
 
-<!-- БЛОК ПРЕИМУЩЕСТВ -->
+<!-- ПРЕИМУЩЕСТВА -->
 <div class="container">
     <h2 class="section-title">Технология <span>коррекции</span></h2>
     <p class="sub-title">Мы сочетаем железо и биологию. Каждый сеанс просчитан.</p>
@@ -411,7 +492,7 @@
     </div>
 </div>
 
-<!-- ФОРМУЛА И ЦЕНА -->
+<!-- ФОРМУЛА + ЦЕНА -->
 <div class="container" id="price">
     <div class="formula-block">
         <div class="text">
@@ -425,22 +506,41 @@
             <div class="old">обычная цена 15 000 ₽</div>
             <div class="new">9 900 <small>₽</small></div>
             <div style="color: var(--neon); font-weight: 600; margin: 15px 0;">Стартовый пакет</div>
-            <a href="#" class="btn-primary" style="padding: 12px 30px; font-size: 14px;">Хочу результат</a>
+            <a href="https://wa.me/79999999999?text=Хочу%20пакет%20%22Трансформация%22%20в%20МИНУСРАЗМЕР" class="btn-primary" style="padding: 12px 30px; font-size: 14px; background: #25D366; box-shadow: 0 0 30px rgba(37,211,102,0.3);">Забронировать</a>
         </div>
+    </div>
+</div>
+
+<!-- КАРТА И АДРЕС (Новосибирск) -->
+<div class="container">
+    <div class="map-block">
+        <div class="info">
+            <h3>📍 Мы в Новосибирске</h3>
+            <div class="address">ул. Бориса Богаткова, 248а, 6 этаж, помещение 605</div>
+            <div class="metro">🚇 Ближайшая станция метро: «Золотая Нива» (пешком 7 минут)</div>
+            <p style="margin: 15px 0; color: #8A94A5;">
+                <strong>Режим работы:</strong> Пн–Вс: 10:00 – 21:00
+            </p>
+            <a href="https://yandex.ru/maps/?rtext=~55.026116,82.920382&rtt=auto" target="_blank" class="btn-primary" style="padding: 12px 30px; font-size: 14px; background: #2A3138; box-shadow: none; border: 1px solid var(--neon); color: #fff;">
+                🚗 Построить маршрут
+            </a>
+        </div>
+        <!-- Встроенная Яндекс.Карта (Новосибирск, Бориса Богаткова 248а) -->
+        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A1a2b3c4d5e6f7g8h9i0j&source=constructor&ll=82.920382,55.026116&z=17&pt=82.920382,55.026116,pm2rdl" allowfullscreen loading="lazy"></iframe>
     </div>
 </div>
 
 <!-- ПРИЗЫВ -->
 <div class="container" style="text-align: center; padding: 40px 0;">
     <h2 style="font-size: 34px; font-weight: 800;">Начни <span style="color: var(--neon);">уменьшаться</span> сегодня</h2>
-    <p style="color: #8A94A5; margin-bottom: 30px;">Осталось 4 места на эту неделю. Мы ждем тебя в кабинете.</p>
-    <a href="#" class="btn-primary">Забронировать диагностику 0 ₽</a>
+    <p style="color: #8A94A5; margin-bottom: 30px;">Осталось 4 места на эту неделю. Мы ждём вас в центре Новосибирска.</p>
+    <a href="https://wa.me/79999999999?text=Привет!%20Записываюсь%20на%20диагностику%20в%20МИНУСРАЗМЕР" class="btn-primary">📱 Записаться на диагностику 0 ₽</a>
 </div>
 
 <!-- ФУТЕР -->
 <div class="container footer">
     <div>© 2026 МИНУСРАЗМЕР. Все права защищены.</div>
-    <div>Санкт-Петербург, ул. Технологическая 1 | +7 (999) 123-45-67</div>
+    <div>Новосибирск, ул. Бориса Богаткова 248а, 6 этаж, пом. 605 | <a href="tel:+79999999999">+7 (999) 999-99-99</a></div>
     <div style="color: var(--neon);">Работаем по предварительной записи</div>
 </div>
 
