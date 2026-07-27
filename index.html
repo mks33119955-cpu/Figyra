@@ -33,7 +33,6 @@
             --card-bg: #151A1F;
         }
 
-        /* ШАПКА */
         .header {
             padding: 25px 0;
             border-bottom: 1px solid #2A3138;
@@ -89,7 +88,6 @@
             box-shadow: var(--neon-glow);
         }
 
-        /* ГЕРОЙ */
         .hero {
             display: flex;
             flex-wrap: wrap;
@@ -142,6 +140,7 @@
             display: flex;
             gap: 40px;
             margin-bottom: 35px;
+            flex-wrap: wrap;
         }
 
         .hero-stats div {
@@ -220,7 +219,6 @@
             color: #8A94A5;
         }
 
-        /* СЕКЦИИ */
         .section-title {
             font-size: 42px;
             font-weight: 800;
@@ -284,7 +282,6 @@
             font-weight: 600;
         }
 
-        /* ФОРМУЛА */
         .formula-block {
             background: #11171D;
             margin: 60px 0;
@@ -344,7 +341,6 @@
             color: var(--neon);
         }
 
-        /* КАРТА */
         .map-block {
             background: #11171D;
             border-radius: 30px;
@@ -387,7 +383,6 @@
             filter: grayscale(0.3) invert(0.9) hue-rotate(180deg);
         }
 
-        /* ФУТЕР */
         .footer {
             border-top: 1px solid #1E262E;
             padding: 40px 0;
@@ -405,7 +400,6 @@
             text-decoration: none;
         }
 
-        /* АДАПТИВ */
         @media (max-width: 768px) {
             .hero h1 { font-size: 34px; }
             .hero-stats { gap: 20px; flex-wrap: wrap; }
@@ -419,7 +413,7 @@
 </head>
 <body>
 
-<!-- ШАПКА -->
+<!-- ====== ШАПКА ====== -->
 <div class="header">
     <div class="container">
         <div class="logo-wrapper">
@@ -430,7 +424,7 @@
     </div>
 </div>
 
-<!-- ГЕРОЙ -->
+<!-- ====== ГЕРОЙ ====== -->
 <section class="container hero">
     <div class="hero-content">
         <div class="hero-tag">⚡ Инновационная физика тела</div>
@@ -445,7 +439,7 @@
             <div><strong>94%</strong> эффективность</div>
         </div>
 
-        <a href="https://wa.me/79999999999?text=Привет!%20Я%20хочу%20на%20диагностику%20в%20МИНУСРАЗМЕР%20(Новосибирск)" class="btn-primary btn-wa" style="margin-right: 12px;">📱 Запись в WhatsApp</a>
+        <a href="https://wa.me/79999999999?text=Привет!%20Хочу%20записаться%20на%20консультацию%20в%20МИНУСРАЗМЕР%20(Новосибирск)" class="btn-primary btn-wa" style="margin-right: 12px;">📱 Запись на консультацию</a>
         <a href="#price" class="btn-primary" style="margin-top: 12px;">⬇ Узнать цену</a>
     </div>
 
@@ -459,7 +453,7 @@
     </div>
 </section>
 
-<!-- ПРЕИМУЩЕСТВА -->
+<!-- ====== ПРЕИМУЩЕСТВА ====== -->
 <div class="container">
     <h2 class="section-title">Технология <span>коррекции</span></h2>
     <p class="sub-title">Мы сочетаем железо и биологию. Каждый сеанс просчитан.</p>
@@ -478,21 +472,21 @@
             <span class="badge">Индивидуально</span>
         </div>
         <div class="card">
-            <span class="card-icon">🧠</span>
-            <h3>Биоимпедансный анализ</h3>
-            <p>Первичная диагностика: мы видим воду, мышцы и жир по сегментам. Цифры, а не догадки.</p>
-            <span class="badge">Точно</span>
-        </div>
-        <div class="card">
             <span class="card-icon">📊</span>
             <h3>Контроль результата</h3>
             <p>Замеры до/после. Мы отвечаем за сантиметры, а не за обещания.</p>
             <span class="badge">Гарантия</span>
         </div>
+        <div class="card">
+            <span class="card-icon">🧠</span>
+            <h3>Персональная консультация</h3>
+            <p>Разбираем ваш образ жизни, питание и ставим цели. Строим индивидуальный план коррекции.</p>
+            <span class="badge">Экспертно</span>
+        </div>
     </div>
 </div>
 
-<!-- ФОРМУЛА + ЦЕНА -->
+<!-- ====== ФОРМУЛА + ЦЕНА ====== -->
 <div class="container" id="price">
     <div class="formula-block">
         <div class="text">
@@ -511,7 +505,7 @@
     </div>
 </div>
 
-<!-- КАРТА И АДРЕС (Новосибирск, правильные координаты) -->
+<!-- ====== КАРТА И АДРЕС ====== -->
 <div class="container">
     <div class="map-block">
         <div class="info">
@@ -525,19 +519,18 @@
                 🚗 Построить маршрут
             </a>
         </div>
-        <!-- Яндекс.Карта с правильными координатами 55.037134, 82.978497 -->
         <iframe src="https://yandex.ru/map-widget/v1/?ll=82.978497%2C55.037134&z=17&pt=82.978497%2C55.037134%2Cpm2rdl" allowfullscreen loading="lazy"></iframe>
     </div>
 </div>
 
-<!-- ПРИЗЫВ -->
+<!-- ====== ПРИЗЫВ ====== -->
 <div class="container" style="text-align: center; padding: 40px 0;">
     <h2 style="font-size: 34px; font-weight: 800;">Начни <span style="color: var(--neon);">уменьшаться</span> сегодня</h2>
     <p style="color: #8A94A5; margin-bottom: 30px;">Осталось 4 места на эту неделю. Мы ждём вас в центре Новосибирска.</p>
-    <a href="https://wa.me/79999999999?text=Привет!%20Записываюсь%20на%20диагностику%20в%20МИНУСРАЗМЕР" class="btn-primary">📱 Записаться на диагностику 0 ₽</a>
+    <a href="https://wa.me/79999999999?text=Привет!%20Записываюсь%20на%20консультацию%20в%20МИНУСРАЗМЕР" class="btn-primary">📱 Записаться на консультацию</a>
 </div>
 
-<!-- ФУТЕР -->
+<!-- ====== ФУТЕР ====== -->
 <div class="container footer">
     <div>© 2026 МИНУСРАЗМЕР. Все права защищены.</div>
     <div>Новосибирск, ул. Бориса Богаткова 248а, 6 этаж, пом. 605 | <a href="tel:+79999999999">+7 (999) 999-99-99</a></div>
