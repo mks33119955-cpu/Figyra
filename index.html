@@ -49,7 +49,7 @@
             background: var(--bg-light);
             color: var(--text-dark);
             line-height: 1.6;
-            overflow-x: hidden; /* Гарантирует отсутствие горизонтального скролла */
+            overflow-x: hidden;
             background-image: 
                 radial-gradient(circle at 10% 20%, rgba(0, 102, 255, 0.03) 0%, transparent 40%),
                 radial-gradient(circle at 90% 80%, rgba(0, 212, 255, 0.03) 0%, transparent 40%);
@@ -103,19 +103,19 @@
             gap: 16px;
         }
 
-        /* ===== ИСПРАВЛЕНИЕ ДЛЯ КАРТИНКИ ЛОГОТИПА ===== */
+        /* ===== ИСПРАВЛЕНИЕ РАЗМЕРА ЛОГОТИПА (СДЕЛАЛ КРУПНЕЕ) ===== */
         .logo-img {
-            height: 36px;
+            height: 56px; /* Увеличил с 36px до 56px для нормального, заметного размера */
             width: auto;
-            max-width: 200px;
+            max-width: 100%; /* Снял жёсткое ограничение, чтобы логотип масштабировался пропорционально */
             object-fit: contain;
             display: block;
         }
 
         .logo-sub {
-            font-size: 13px;
-            font-weight: 500;
-            color: var(--text-gray);
+            font-size: 14px; /* Чуть увеличил шрифт подписи, чтобы гармонировать с крупным лого */
+            font-weight: 600;
+            color: var(--text-dark);
             border-left: 2px solid #E2E8F0;
             padding-left: 16px;
             line-height: 1.4;
@@ -789,7 +789,6 @@
             font-weight: 500;
         }
 
-        /* ИСПРАВЛЕНИЕ: карта теперь гарантированно не вылезает за пределы */
         .map-block iframe {
             flex: 1.5;
             min-width: 300px;
@@ -891,7 +890,7 @@
             text-decoration: underline;
         }
 
-        /* ===== АДАПТИВ (ИСПРАВЛЕНИЯ НИЗА) ===== */
+        /* ===== АДАПТИВ ===== */
         @media (max-width: 768px) {
             .hero { padding: 40px 0 60px; }
             .hero-stats { gap: 24px; }
@@ -910,7 +909,7 @@
             
             .map-block { 
                 padding: 24px; 
-                flex-direction: column; /* Карта и текст теперь строго друг под другом */
+                flex-direction: column;
             }
             .map-block iframe {
                 min-width: 100%;
@@ -923,7 +922,6 @@
             .btn-group { flex-direction: column; }
             .dikidi-btn { width: 100%; }
 
-            /* ИСПРАВЛЕНИЕ ФУТЕРА: на мобильном всё по центру и в столбик */
             .footer .container {
                 flex-direction: column;
                 text-align: center;
@@ -934,7 +932,8 @@
         @media (max-width: 480px) {
             .hero h1 { font-size: 28px; }
             .dikidi-btn { padding: 14px 24px; font-size: 14px; }
-            .logo-img { height: 28px; }
+            /* Логотип на телефоне тоже сделал заметным, но чуть меньше, чем на ПК */
+            .logo-img { height: 44px; } 
         }
     </style>
 </head>
@@ -944,7 +943,7 @@
     <header class="header">
         <div class="container">
             <div class="logo">
-                <!-- ТВОЙ ЛОГОТИП: корректное отображение гарантировано CSS -->
+                <!-- ЛОГОТИП: теперь высотой 56px (на ПК) и 44px (на телефоне) -->
                 <img src="logo.png" alt="МИНУСРАЗМЕР" class="logo-img" />
                 <div class="logo-sub">Аппаратная коррекция +<br>Диетология</div>
             </div>
