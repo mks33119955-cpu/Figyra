@@ -10,9 +10,6 @@
     <script type="text/javascript" src="https://dikidi.net/assets/js/widget_record/widget2.min.js?v=1773811740"></script>
 
     <style>
-        /* ============================================================
-           ВЕСЬ ТВОЙ СТИЛЬ (без изменений)
-           ============================================================ */
         * {
             margin: 0;
             padding: 0;
@@ -49,9 +46,7 @@
             --radius: 20px;
         }
 
-        /* ============================================================
-           ДОПОЛНИТЕЛЬНЫЙ СТИЛЬ ДЛЯ КНОПКИ DIKIDI
-           ============================================================ */
+        /* ===== СТИЛЬ ДЛЯ КНОПКИ DIKIDI ===== */
         .dikidi-btn {
             display: inline-block;
             background: var(--gradient);
@@ -98,9 +93,7 @@
             color: var(--primary);
         }
 
-        /* ============================================================
-           ОСТАЛЬНЫЕ СТИЛИ (ТВОИ)
-           ============================================================ */
+        /* ===== ШАПКА ===== */
         .header {
             background: var(--white);
             padding: 18px 0;
@@ -124,18 +117,11 @@
             gap: 14px;
         }
 
-        .logo-icon {
-            font-size: 32px;
-            font-weight: 900;
-            letter-spacing: 2px;
-            color: var(--primary-dark);
-            background: var(--bg-light);
-            padding: 8px 18px;
-            border-radius: 12px;
-        }
-
-        .logo-icon span {
-            color: var(--primary);
+        /* ===== ЛОГОТИП КАРТИНКА (вместо текста) ===== */
+        .logo-img {
+            height: 48px;
+            width: auto;
+            display: block;
         }
 
         .logo-sub {
@@ -164,6 +150,7 @@
             box-shadow: 0 4px 20px rgba(10, 102, 194, 0.30);
         }
 
+        /* ===== ГЕРОЙ ===== */
         .hero {
             padding: 60px 0 70px;
             background: var(--bg-light);
@@ -288,6 +275,7 @@
             margin-top: 16px;
         }
 
+        /* ===== СЕКЦИИ ===== */
         section {
             padding: 70px 0;
         }
@@ -642,6 +630,7 @@
             }
             .logo {
                 justify-content: center;
+                flex-wrap: wrap;
             }
             .logo-sub {
                 border-left: none;
@@ -675,23 +664,26 @@
                 padding: 14px 28px;
                 font-size: 14px;
             }
+            .logo-img {
+                height: 36px;
+            }
         }
     </style>
 </head>
 <body>
 
     <!-- ============================================================
-    ШАПКА
+    ШАПКА С ЛОГОТИПОМ (КАРТИНКА)
     ============================================================ -->
     <header class="header">
         <div class="container">
             <div class="logo">
-                <div class="logo-icon">МИНУС<span>РАЗМЕР</span></div>
+                <!-- ===== ТВОЙ ЛОГОТИП (ЗАМЕНИ ПУТЬ НА СВОЙ ФАЙЛ) ===== -->
+                <img src="logo.png" alt="МИНУСРАЗМЕР" class="logo-img" />
                 <div class="logo-sub">Аппаратная коррекция + Диетология</div>
             </div>
             <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
                 <a href="tel:+79999999999" class="header-phone">📞 +7 (999) 999-99-99</a>
-                <!-- ===== КНОПКА ЗАПИСИ В ШАПКЕ (DIKIDI) ===== -->
                 <a href="https://dikidi.net/#widget=214330" class="dikidi-btn" style="padding: 10px 24px; font-size: 14px;">
                     📅 Записаться
                 </a>
@@ -717,11 +709,9 @@
                     <div><strong>127+</strong> довольных клиентов</div>
                 </div>
                 <div class="btn-group">
-                    <!-- ===== КНОПКА ЗАПИСИ ЧЕРЕЗ DIKIDI ===== -->
                     <a href="https://dikidi.net/#widget=214330" class="dikidi-btn dikidi-btn-wa">
                         📱 Записаться на консультацию
                     </a>
-                    <!-- ===== КНОПКА В ТАРИФЫ ===== -->
                     <a href="#tariffs" class="dikidi-btn" style="margin-top: 0;">
                         ⬇ Выбрать курс
                     </a>
@@ -821,7 +811,6 @@
                         <li>Базовые рекомендации по питанию</li>
                         <li>Замеры до/после</li>
                     </ul>
-                    <!-- ===== КНОПКА В ТАРИФАХ ===== -->
                     <a href="https://dikidi.net/#widget=214330" class="dikidi-btn" style="padding: 12px 36px; font-size: 14px;">
                         Выбрать
                     </a>
@@ -872,7 +861,7 @@
                     <p style="margin: 14px 0; color: var(--text-gray);">
                         <strong>Режим работы:</strong> Пн–Вс: 10:00 – 21:00
                     </p>
-                    <a href="https://yandex.ru/maps/?rtext=~55.037134,82.978497&rtt=auto" target="_blank" style="padding: 10px 28px; font-size: 14px;" class="dikidi-btn" style="background: transparent; color: var(--primary); border: 2px solid var(--primary); box-shadow: none;">
+                    <a href="https://yandex.ru/maps/?rtext=~55.037134,82.978497&rtt=auto" target="_blank" class="dikidi-btn" style="padding: 10px 28px; font-size: 14px; background: transparent; color: var(--primary); border: 2px solid var(--primary); box-shadow: none;">
                         🚗 Построить маршрут
                     </a>
                 </div>
@@ -917,7 +906,6 @@
             <div class="cta-block">
                 <h2>Начните <span style="color: #fff;">преображение</span> уже сегодня</h2>
                 <p>Запишитесь на бесплатную консультацию. Осталось всего 4 места на эту неделю.</p>
-                <!-- ===== КНОПКА В CTA (DIKIDI) ===== -->
                 <a href="https://dikidi.net/#widget=214330" class="dikidi-btn dikidi-btn-white">
                     📱 Записаться на консультацию
                 </a>
