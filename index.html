@@ -6,6 +6,7 @@
     <title>МИНУСРАЗМЕР Новосибирск — Аппаратная коррекция + Диетология</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
 
+    <!-- ===== ВИДЖЕТ DIKIDI ===== -->
     <script type="text/javascript" src="https://dikidi.net/assets/js/widget_record/widget2.min.js?v=1773811740"></script>
 
     <style>
@@ -55,29 +56,31 @@
             display: inline-block;
             background: var(--gradient);
             color: #fff;
-            padding: 14px 36px;
+            padding: 10px 28px;        /* ← компактно */
             font-weight: 700;
-            font-size: 15px;
+            font-size: 13px;
             border: none;
             border-radius: 60px;
             cursor: pointer;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 30px rgba(10, 102, 194, 0.30);
+            letter-spacing: 0.8px;
+            box-shadow: 0 4px 20px rgba(10, 102, 194, 0.25);
             transition: all 0.3s ease;
             text-decoration: none;
             text-align: center;
         }
 
         .dikidi-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 50px rgba(10, 102, 194, 0.45);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 40px rgba(10, 102, 194, 0.40);
             background: linear-gradient(135deg, #1A86E8, #00D4FF);
         }
 
         .dikidi-btn-wa {
             background: #25D366;
-            box-shadow: 0 4px 30px rgba(37, 211, 102, 0.30);
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.25);
+            padding: 16px 44px;
+            font-size: 16px;
         }
 
         .dikidi-btn-wa:hover {
@@ -98,12 +101,12 @@
         }
 
         /* ============================================================
-           ШАПКА — КОМПАКТНАЯ
+           ШАПКА — ОЧЕНЬ УЗКАЯ
            ============================================================ */
         .header {
             background: var(--white);
-            padding: 8px 0;               /* ← было 18px, стало 8px */
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            padding: 4px 0;               /* ← было 8px, стало 4px — очень компактно */
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -114,7 +117,7 @@
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
-            gap: 12px;                   /* ← было 16px, стало 12px */
+            gap: 8px;                    /* ← минимальный отступ */
         }
 
         .logo {
@@ -125,34 +128,37 @@
             max-width: 100%;
         }
 
-        /* ===== ЛОГОТИП — УВЕЛИЧЕН ВДВОЕ ОТ ПРЕДЫДУЩЕГО ===== */
+        /* ===== ЛОГОТИП — БОЛЬШОЙ, НО ПОМЕЩАЕТСЯ В ВЫСОТУ ===== */
         .logo-img {
-            width: 260px;                 /* ← было 180px, стало 260px (вдвое от изначального 40px = 260px) */
-            height: auto;
+            height: 48px;                 /* ← фиксированная высота, чтобы не распирало шапку */
+            width: auto;
             max-width: 100%;
+            max-height: 56px;
             display: block;
             flex-shrink: 0;
+            object-fit: contain;          /* ← сохраняет пропорции внутри */
         }
 
         .logo-sub {
-            font-size: 12px;              /* ← было 13px, стало чуть меньше */
+            font-size: 11px;
             font-weight: 400;
             color: var(--text-gray);
             border-left: 2px solid #D0DDE8;
-            padding-left: 12px;
+            padding-left: 10px;
             white-space: nowrap;
         }
 
         .header-phone {
             font-weight: 700;
-            font-size: 16px;              /* ← было 18px, стало 16px */
+            font-size: 15px;
             color: var(--primary);
             text-decoration: none;
             background: var(--bg-light);
-            padding: 8px 18px;            /* ← было 10px 24px, стало компактнее */
+            padding: 6px 14px;
             border-radius: 40px;
             transition: 0.3s;
-            border: 1px solid rgba(10, 102, 194, 0.15);
+            border: 1px solid rgba(10, 102, 194, 0.12);
+            white-space: nowrap;
         }
 
         .header-phone:hover {
@@ -289,7 +295,7 @@
         }
 
         /* ============================================================
-           СЕКЦИИ
+           ОСТАЛЬНЫЕ СЕКЦИИ (без изменений)
            ============================================================ */
         section {
             padding: 70px 0;
@@ -633,7 +639,7 @@
            ============================================================ */
         @media (max-width: 992px) {
             .logo-img {
-                width: 220px;
+                height: 42px;
             }
         }
 
@@ -649,7 +655,7 @@
             }
             .header .container {
                 flex-direction: column;
-                align-items: stretch;
+                align-items: center;
                 text-align: center;
             }
             .logo {
@@ -680,10 +686,10 @@
                 text-align: center;
             }
             .logo-img {
-                width: 200px;
+                height: 38px;
             }
             .header {
-                padding: 6px 0;
+                padding: 4px 0;
             }
         }
 
@@ -692,21 +698,25 @@
                 font-size: 28px;
             }
             .dikidi-btn {
-                padding: 12px 24px;
-                font-size: 13px;
+                padding: 8px 16px;
+                font-size: 11px;
+            }
+            .dikidi-btn-wa {
+                padding: 14px 28px;
+                font-size: 14px;
             }
             .logo-img {
-                width: 160px;
-            }
-            .header {
-                padding: 4px 0;
+                height: 32px;
             }
             .header-phone {
-                font-size: 14px;
-                padding: 6px 14px;
+                font-size: 13px;
+                padding: 4px 12px;
             }
             .logo-sub {
-                font-size: 10px;
+                font-size: 9px;
+            }
+            .header {
+                padding: 2px 0;
             }
         }
     </style>
@@ -714,7 +724,7 @@
 <body>
 
     <!-- ============================================================
-    ШАПКА
+    ШАПКА — УЗКАЯ
     ============================================================ -->
     <header class="header">
         <div class="container">
@@ -722,9 +732,9 @@
                 <img src="logo.png" alt="МИНУСРАЗМЕР" class="logo-img" />
                 <div class="logo-sub">Аппаратная коррекция + Диетология</div>
             </div>
-            <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                 <a href="tel:+79999999999" class="header-phone">📞 +7 (999) 999-99-99</a>
-                <a href="https://dikidi.net/#widget=214330" class="dikidi-btn" style="padding: 8px 20px; font-size: 13px;">
+                <a href="https://dikidi.net/#widget=214330" class="dikidi-btn">
                     📅 Записаться
                 </a>
             </div>
@@ -752,7 +762,7 @@
                     <a href="https://dikidi.net/#widget=214330" class="dikidi-btn dikidi-btn-wa">
                         📱 Записаться на консультацию
                     </a>
-                    <a href="#tariffs" class="dikidi-btn" style="margin-top: 0;">
+                    <a href="#tariffs" class="dikidi-btn" style="margin-top: 0; background: transparent; color: var(--primary); border: 2px solid var(--primary); box-shadow: none;">
                         ⬇ Выбрать курс
                     </a>
                 </div>
