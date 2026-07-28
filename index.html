@@ -103,14 +103,6 @@
             gap: 16px;
         }
 
-        /* ===== ИКОНКА ТАЛИИ ===== */
-        .waist-icon {
-            height: 48px;
-            width: 48px;
-            display: block;
-            filter: drop-shadow(0 2px 8px rgba(0, 102, 255, 0.2));
-        }
-
         /* ===== ИСПРАВЛЕНИЕ ДЛЯ КАРТИНКИ ЛОГОТИПА ===== */
         .logo-img {
             height: 36px;
@@ -943,7 +935,6 @@
             .hero h1 { font-size: 28px; }
             .dikidi-btn { padding: 14px 24px; font-size: 14px; }
             .logo-img { height: 28px; }
-            .waist-icon { height: 40px; width: 40px; }
         }
     </style>
 </head>
@@ -953,21 +944,6 @@
     <header class="header">
         <div class="container">
             <div class="logo">
-                <!-- ИКОНКА ТАЛИИ (SVG) -->
-                <svg class="waist-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Силуэт талии -->
-                    <path d="M32 12C32 12 26 18 26 28C26 31 27.5 34 32 37C36.5 34 38 31 38 28C38 18 32 12 32 12Z" fill="#0066FF" opacity="0.25"/>
-                    <path d="M32 37C32 37 26 40 22 48C18 56 18 56 18 56L46 56C46 56 46 56 42 48C38 40 32 37 32 37Z" fill="#0066FF" opacity="0.25"/>
-                    <!-- Контуры -->
-                    <path d="M32 12C32 12 38 18 38 28C38 31 36.5 34 32 37" stroke="#0066FF" stroke-width="2.5" stroke-linecap="round"/>
-                    <path d="M32 12C32 12 26 18 26 28C26 31 27.5 34 32 37" stroke="#0066FF" stroke-width="2.5" stroke-linecap="round"/>
-                    <path d="M32 37C32 37 26 40 22 48C18 56 18 56 18 56" stroke="#0066FF" stroke-width="2.5" stroke-linecap="round"/>
-                    <path d="M32 37C32 37 38 40 42 48C46 56 46 56 46 56" stroke="#0066FF" stroke-width="2.5" stroke-linecap="round"/>
-                    <!-- Стрелки по бокам (уменьшение) -->
-                    <path d="M14 30L10 26M10 26L14 22" stroke="#00D4FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M50 22L54 26M54 26L50 30" stroke="#00D4FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                
                 <!-- ТВОЙ ЛОГОТИП: корректное отображение гарантировано CSS -->
                 <img src="logo.png" alt="МИНУСРАЗМЕР" class="logo-img" />
                 <div class="logo-sub">Аппаратная коррекция +<br>Диетология</div>
