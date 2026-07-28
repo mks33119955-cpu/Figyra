@@ -106,7 +106,7 @@
            ============================================================ */
         .header {
             background: var(--white);
-            padding: 2px 0;               /* ← минимальный отступ */
+            padding: 2px 0;
             box-shadow: 0 1px 12px rgba(0, 0, 0, 0.04);
             position: sticky;
             top: 0;
@@ -118,7 +118,7 @@
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
-            gap: 6px;                    /* ← минимальный зазор */
+            gap: 6px;
         }
 
         .logo {
@@ -129,19 +129,19 @@
             max-width: 100%;
         }
 
-        /* ===== ЛОГОТИП — УМЕНЬШЕН ВДВОЕ ===== */
+        /* ===== ЛОГОТИП: 24px × 1.5 = 36px ===== */
         .logo-img {
-            height: 24px;                 /* ← было 48px, стало 24px (вдвое меньше) */
+            height: 36px;                 /* ← 24px × 1.5 = 36px */
             width: auto;
             max-width: 100%;
-            max-height: 32px;
+            max-height: 44px;
             display: block;
             flex-shrink: 0;
             object-fit: contain;
         }
 
         .logo-sub {
-            font-size: 10px;              /* ← мелкий, чтобы не занимал место */
+            font-size: 10px;
             font-weight: 400;
             color: var(--text-gray);
             border-left: 2px solid #D0DDE8;
@@ -296,7 +296,7 @@
         }
 
         /* ============================================================
-           ОСТАЛЬНЫЕ СЕКЦИИ
+           СЕКЦИИ
            ============================================================ */
         section {
             padding: 70px 0;
@@ -640,7 +640,7 @@
            ============================================================ */
         @media (max-width: 992px) {
             .logo-img {
-                height: 22px;
+                height: 32px;
             }
         }
 
@@ -687,7 +687,7 @@
                 text-align: center;
             }
             .logo-img {
-                height: 20px;
+                height: 30px;
             }
             .header {
                 padding: 2px 0;
@@ -707,7 +707,7 @@
                 font-size: 14px;
             }
             .logo-img {
-                height: 18px;
+                height: 26px;
             }
             .header-phone {
                 font-size: 11px;
