@@ -122,15 +122,17 @@
             display: flex;
             align-items: center;
             gap: 14px;
+            flex: 0 1 auto;
+            max-width: 100%;
         }
 
-        /* ===== ЛОГОТИП — АДАПТИВНЫЙ ===== */
+        /* ===== ЛОГОТИП — УВЕЛИЧЕННЫЙ В 3 РАЗА ===== */
         .logo-img {
-            height: 40px;
-            width: auto;
-            max-width: 100%;
-            max-height: 60px;
+            width: 180px;        /* был 40px → стал 180px (в 4.5 раза) */
+            height: auto;        /* сохраняем пропорции */
+            max-width: 100%;     /* не вылезает за край */
             display: block;
+            flex-shrink: 0;
         }
 
         .logo-sub {
@@ -139,6 +141,7 @@
             color: var(--text-gray);
             border-left: 2px solid #D0DDE8;
             padding-left: 16px;
+            white-space: nowrap;
         }
 
         .header-phone {
@@ -629,6 +632,12 @@
         /* ============================================================
            АДАПТИВ
            ============================================================ */
+        @media (max-width: 992px) {
+            .logo-img {
+                width: 160px;
+            }
+        }
+
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 34px;
@@ -651,6 +660,7 @@
             .logo-sub {
                 border-left: none;
                 padding-left: 0;
+                white-space: normal;
             }
             .cta-block {
                 padding: 30px 20px;
@@ -671,7 +681,7 @@
                 text-align: center;
             }
             .logo-img {
-                height: 34px;
+                width: 140px;
             }
         }
 
@@ -684,8 +694,7 @@
                 font-size: 14px;
             }
             .logo-img {
-                height: 30px;
-                max-height: 40px;
+                width: 120px;
             }
         }
     </style>
@@ -698,7 +707,7 @@
     <header class="header">
         <div class="container">
             <div class="logo">
-                <!-- ===== АДАПТИВНЫЙ ЛОГОТИП ===== -->
+                <!-- ===== УВЕЛИЧЕННЫЙ ЛОГОТИП ===== -->
                 <img src="logo.png" alt="МИНУСРАЗМЕР" class="logo-img" />
                 <div class="logo-sub">Аппаратная коррекция + Диетология</div>
             </div>
