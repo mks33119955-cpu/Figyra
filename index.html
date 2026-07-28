@@ -6,7 +6,6 @@
     <title>МИНУСРАЗМЕР Новосибирск — Аппаратная коррекция + Диетология</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
 
-    <!-- ===== ВИДЖЕТ DIKIDI (СКРИПТ) ===== -->
     <script type="text/javascript" src="https://dikidi.net/assets/js/widget_record/widget2.min.js?v=1773811740"></script>
 
     <style>
@@ -56,9 +55,9 @@
             display: inline-block;
             background: var(--gradient);
             color: #fff;
-            padding: 16px 44px;
+            padding: 14px 36px;
             font-weight: 700;
-            font-size: 16px;
+            font-size: 15px;
             border: none;
             border-radius: 60px;
             cursor: pointer;
@@ -99,11 +98,11 @@
         }
 
         /* ============================================================
-           ШАПКА
+           ШАПКА — КОМПАКТНАЯ
            ============================================================ */
         .header {
             background: var(--white);
-            padding: 18px 0;
+            padding: 8px 0;               /* ← было 18px, стало 8px */
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
             position: sticky;
             top: 0;
@@ -115,42 +114,42 @@
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
-            gap: 16px;
+            gap: 12px;                   /* ← было 16px, стало 12px */
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 10px;
             flex: 0 1 auto;
             max-width: 100%;
         }
 
-        /* ===== ЛОГОТИП — УВЕЛИЧЕННЫЙ В 3 РАЗА ===== */
+        /* ===== ЛОГОТИП — УВЕЛИЧЕН ВДВОЕ ОТ ПРЕДЫДУЩЕГО ===== */
         .logo-img {
-            width: 180px;        /* был 40px → стал 180px (в 4.5 раза) */
-            height: auto;        /* сохраняем пропорции */
-            max-width: 100%;     /* не вылезает за край */
+            width: 260px;                 /* ← было 180px, стало 260px (вдвое от изначального 40px = 260px) */
+            height: auto;
+            max-width: 100%;
             display: block;
             flex-shrink: 0;
         }
 
         .logo-sub {
-            font-size: 13px;
+            font-size: 12px;              /* ← было 13px, стало чуть меньше */
             font-weight: 400;
             color: var(--text-gray);
             border-left: 2px solid #D0DDE8;
-            padding-left: 16px;
+            padding-left: 12px;
             white-space: nowrap;
         }
 
         .header-phone {
             font-weight: 700;
-            font-size: 18px;
+            font-size: 16px;              /* ← было 18px, стало 16px */
             color: var(--primary);
             text-decoration: none;
             background: var(--bg-light);
-            padding: 10px 24px;
+            padding: 8px 18px;            /* ← было 10px 24px, стало компактнее */
             border-radius: 40px;
             transition: 0.3s;
             border: 1px solid rgba(10, 102, 194, 0.15);
@@ -634,7 +633,7 @@
            ============================================================ */
         @media (max-width: 992px) {
             .logo-img {
-                width: 160px;
+                width: 220px;
             }
         }
 
@@ -681,7 +680,10 @@
                 text-align: center;
             }
             .logo-img {
-                width: 140px;
+                width: 200px;
+            }
+            .header {
+                padding: 6px 0;
             }
         }
 
@@ -690,11 +692,21 @@
                 font-size: 28px;
             }
             .dikidi-btn {
-                padding: 14px 28px;
-                font-size: 14px;
+                padding: 12px 24px;
+                font-size: 13px;
             }
             .logo-img {
-                width: 120px;
+                width: 160px;
+            }
+            .header {
+                padding: 4px 0;
+            }
+            .header-phone {
+                font-size: 14px;
+                padding: 6px 14px;
+            }
+            .logo-sub {
+                font-size: 10px;
             }
         }
     </style>
@@ -707,13 +719,12 @@
     <header class="header">
         <div class="container">
             <div class="logo">
-                <!-- ===== УВЕЛИЧЕННЫЙ ЛОГОТИП ===== -->
                 <img src="logo.png" alt="МИНУСРАЗМЕР" class="logo-img" />
                 <div class="logo-sub">Аппаратная коррекция + Диетология</div>
             </div>
-            <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
                 <a href="tel:+79999999999" class="header-phone">📞 +7 (999) 999-99-99</a>
-                <a href="https://dikidi.net/#widget=214330" class="dikidi-btn" style="padding: 10px 24px; font-size: 14px;">
+                <a href="https://dikidi.net/#widget=214330" class="dikidi-btn" style="padding: 8px 20px; font-size: 13px;">
                     📅 Записаться
                 </a>
             </div>
