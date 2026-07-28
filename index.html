@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>МИНУСРАЗМЕР Новосибирск — Аппаратная коррекция + Диетология</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- ===== ВИДЖЕТ DIKIDI (СКРИПТ) ===== -->
+    <script type="text/javascript" src="https://dikidi.net/assets/js/widget_record/widget2.min.js?v=1773811740"></script>
+
     <style>
+        /* ============================================================
+           ВЕСЬ ТВОЙ СТИЛЬ (без изменений)
+           ============================================================ */
         * {
             margin: 0;
             padding: 0;
@@ -26,7 +33,6 @@
             padding: 0 24px;
         }
 
-        /* ===== ЦВЕТА ===== */
         :root {
             --primary: #0A66C2;
             --primary-light: #1A86E8;
@@ -43,11 +49,62 @@
             --radius: 20px;
         }
 
-        /* ===== ШАПКА ===== */
+        /* ============================================================
+           ДОПОЛНИТЕЛЬНЫЙ СТИЛЬ ДЛЯ КНОПКИ DIKIDI
+           ============================================================ */
+        .dikidi-btn {
+            display: inline-block;
+            background: var(--gradient);
+            color: #fff;
+            padding: 16px 44px;
+            font-weight: 700;
+            font-size: 16px;
+            border: none;
+            border-radius: 60px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 30px rgba(10, 102, 194, 0.30);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .dikidi-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 50px rgba(10, 102, 194, 0.45);
+            background: linear-gradient(135deg, #1A86E8, #00D4FF);
+        }
+
+        .dikidi-btn-wa {
+            background: #25D366;
+            box-shadow: 0 4px 30px rgba(37, 211, 102, 0.30);
+        }
+
+        .dikidi-btn-wa:hover {
+            background: #20b85a;
+            box-shadow: 0 8px 40px rgba(37, 211, 102, 0.40);
+        }
+
+        .dikidi-btn-white {
+            background: #fff;
+            color: var(--primary);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .dikidi-btn-white:hover {
+            background: #f8faff;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            color: var(--primary);
+        }
+
+        /* ============================================================
+           ОСТАЛЬНЫЕ СТИЛИ (ТВОИ)
+           ============================================================ */
         .header {
             background: var(--white);
             padding: 18px 0;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -104,10 +161,9 @@
         .header-phone:hover {
             background: var(--primary);
             color: #fff;
-            box-shadow: 0 4px 20px rgba(10, 102, 194, 0.3);
+            box-shadow: 0 4px 20px rgba(10, 102, 194, 0.30);
         }
 
-        /* ===== ГЕРОЙ ===== */
         .hero {
             padding: 60px 0 70px;
             background: var(--bg-light);
@@ -179,37 +235,10 @@
             font-weight: 800;
         }
 
-        .btn-primary {
-            background: var(--gradient);
-            color: #fff;
-            padding: 16px 48px;
-            font-weight: 700;
-            font-size: 16px;
-            border: none;
-            border-radius: 60px;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 30px rgba(10, 102, 194, 0.3);
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 50px rgba(10, 102, 194, 0.4);
-        }
-
-        .btn-wa {
-            background: #25D366;
-            box-shadow: 0 4px 30px rgba(37, 211, 102, 0.3);
-            margin-right: 12px;
-        }
-
-        .btn-wa:hover {
-            background: #20b85a;
-            box-shadow: 0 8px 40px rgba(37, 211, 102, 0.4);
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
         .hero-image {
@@ -259,7 +288,6 @@
             margin-top: 16px;
         }
 
-        /* ===== СЕКЦИИ ===== */
         section {
             padding: 70px 0;
         }
@@ -339,7 +367,6 @@
             margin-top: 16px;
         }
 
-        /* ===== БЛОК "КАК МЫ РАБОТАЕМ" ===== */
         .steps {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -385,7 +412,6 @@
             color: var(--text-gray);
         }
 
-        /* ===== ТАРИФЫ ===== */
         .tariffs {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -470,25 +496,6 @@
             font-size: 18px;
         }
 
-        .btn-outline {
-            background: transparent;
-            color: var(--primary);
-            padding: 12px 36px;
-            border: 2px solid var(--primary);
-            border-radius: 60px;
-            font-weight: 700;
-            font-size: 15px;
-            text-decoration: none;
-            display: inline-block;
-            transition: 0.3s;
-        }
-
-        .btn-outline:hover {
-            background: var(--primary);
-            color: #fff;
-        }
-
-        /* ===== FAQ ===== */
         .faq-list {
             display: flex;
             flex-direction: column;
@@ -539,7 +546,6 @@
             line-height: 1.7;
         }
 
-        /* ===== КАРТА ===== */
         .map-block {
             background: var(--white);
             border-radius: var(--radius);
@@ -581,7 +587,6 @@
             border-radius: 14px;
         }
 
-        /* ===== ПРИЗЫВ ===== */
         .cta-block {
             background: var(--gradient);
             border-radius: var(--radius);
@@ -602,26 +607,6 @@
             margin-bottom: 28px;
         }
 
-        .cta-block .btn-white {
-            background: #fff;
-            color: var(--primary);
-            padding: 16px 48px;
-            font-weight: 700;
-            font-size: 16px;
-            border: none;
-            border-radius: 60px;
-            text-decoration: none;
-            display: inline-block;
-            transition: 0.3s;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
-
-        .cta-block .btn-white:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
-        }
-
-        /* ===== ФУТЕР ===== */
         .footer {
             background: var(--white);
             border-top: 1px solid rgba(10, 102, 194, 0.06);
@@ -640,7 +625,6 @@
             text-decoration: none;
         }
 
-        /* ===== АДАПТИВ ===== */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 34px;
@@ -674,228 +658,281 @@
                 padding: 2px 14px;
                 top: -10px;
             }
+            .btn-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .btn-group .dikidi-btn {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+            .dikidi-btn {
+                padding: 14px 28px;
+                font-size: 14px;
+            }
         }
     </style>
 </head>
 <body>
 
-<!-- ===== ШАПКА ===== -->
-<header class="header">
-    <div class="container">
-        <div class="logo">
-            <div class="logo-icon">МИНУС<span>РАЗМЕР</span></div>
-            <div class="logo-sub">Аппаратная коррекция + Диетология</div>
-        </div>
-        <a href="tel:+79999999999" class="header-phone">📞 +7 (999) 999-99-99</a>
-    </div>
-</header>
-
-<!-- ===== ГЕРОЙ ===== -->
-<section class="hero">
-    <div class="container">
-        <div class="hero-content">
-            <div class="hero-tag">⚡ Инновационная физика тела</div>
-            <h1>
-                Верни себе тело<br>
-                <span class="highlight">без диет и изнурений</span>
-            </h1>
-            <p>Аппаратная коррекция фигуры + персональный план питания. Ваше тело — это машина, мы просто настроим её.</p>
-            <div class="hero-stats">
-                <div><strong>−15 см</strong> в объёме за 10 сеансов</div>
-                <div><strong>94%</strong> эффективность</div>
-                <div><strong>127+</strong> довольных клиентов</div>
+    <!-- ============================================================
+    ШАПКА
+    ============================================================ -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">МИНУС<span>РАЗМЕР</span></div>
+                <div class="logo-sub">Аппаратная коррекция + Диетология</div>
             </div>
-            <div>
-                <a href="#cta" class="btn-primary btn-wa">📱 Записаться на консультацию</a>
-                <a href="#tariffs" class="btn-primary" style="margin-top:12px;">⬇ Выбрать курс</a>
-            </div>
-        </div>
-        <div class="hero-image">
-            <span class="icon-big">⚙️</span>
-            <h3>Аппараты нового поколения</h3>
-            <p>LPG / Ультразвук / Миостимуляция</p>
-            <div class="badge-blue">+ Индивидуальный план питания</div>
-            <div class="bottom-text">
-                «МИНУСРАЗМЕР» — это не массаж, это перезагрузка тела.
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===== ПРЕИМУЩЕСТВА ===== -->
-<section>
-    <div class="container">
-        <h2 class="section-title">Технология <span>коррекции</span></h2>
-        <p class="section-sub">Мы сочетаем передовые аппараты и персонализированный подход. Каждый сеанс просчитан до сантиметра.</p>
-        <div class="grid-2">
-            <div class="card">
-                <span class="card-icon">🔬</span>
-                <h3>Аппаратное моделирование фигуры</h3>
-                <p>Разбивает фиброзные отложения, убирает «апельсиновую корку» и моделирует контуры тела.</p>
-                <span class="badge">Без боли</span>
-            </div>
-            <div class="card">
-                <span class="card-icon">🥗</span>
-                <h3>Индивидуальный план питания</h3>
-                <p>Не просто «не есть», а есть правильные продукты в нужное время. Мы даём формулу, а не меню.</p>
-                <span class="badge">Персонально</span>
-            </div>
-            <div class="card">
-                <span class="card-icon">📏</span>
-                <h3>Гарантия −5 см за 10 сеансов</h3>
-                <p>Если результат не будет достигнут, мы продолжаем работать бесплатно. Это закреплено в договоре.</p>
-                <span class="badge">Честно</span>
-            </div>
-            <div class="card">
-                <span class="card-icon">📊</span>
-                <h3>15-минутная консультация</h3>
-                <p>Разбираем ваш образ жизни, питание и ставим цели. Строим индивидуальный план коррекции.</p>
-                <span class="badge">Экспертно</span>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===== КАК МЫ РАБОТАЕМ ===== -->
-<section style="background: var(--bg-light);">
-    <div class="container">
-        <h2 class="section-title">Как мы <span>работаем</span></h2>
-        <p class="section-sub">4 простых шага к вашему новому телу</p>
-        <div class="steps">
-            <div class="step-item">
-                <span class="step-icon">🤝</span>
-                <h4>Вы приходите на консультацию</h4>
-                <p>Обсуждаем ваши цели и проблемные зоны</p>
-            </div>
-            <div class="step-item">
-                <span class="step-icon">⚙️</span>
-                <h4>Проходите аппаратную коррекцию</h4>
-                <p>10–15 сеансов по индивидуальному протоколу</p>
-            </div>
-            <div class="step-item">
-                <span class="step-icon">🥗</span>
-                <h4>Получаете план питания</h4>
-                <p>Ежедневные рекомендации от нутрициолога</p>
-            </div>
-            <div class="step-item">
-                <span class="step-icon">🎯</span>
-                <h4>Видите результат</h4>
-                <p>Замеры до/после и фиксация достижений</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===== ТАРИФЫ ===== -->
-<section id="tariffs">
-    <div class="container">
-        <h2 class="section-title">Выберите <span>свой курс</span></h2>
-        <p class="section-sub">Подберите программу, которая подходит именно вам</p>
-        <div class="tariffs">
-            <div class="tariff-card">
-                <div class="tariff-name">🚀 Экспресс</div>
-                <div class="tariff-price">8 900 ₽</div>
-                <ul>
-                    <li>5 сеансов аппаратной коррекции</li>
-                    <li>Базовые рекомендации по питанию</li>
-                    <li>Замеры до/после</li>
-                </ul>
-                <a href="#cta" class="btn-outline">Выбрать</a>
-            </div>
-            <div class="tariff-card best">
-                <div class="tariff-name">🔥 Трансформация</div>
-                <div class="tariff-price">16 900 ₽</div>
-                <ul>
-                    <li>10 сеансов аппаратной коррекции</li>
-                    <li>Полный план питания на месяц</li>
-                    <li>Контроль результатов каждые 3 сеанса</li>
-                    <li>Гарантия −5 см</li>
-                </ul>
-                <a href="#cta" class="btn-primary" style="padding: 12px 40px;">Выбрать</a>
-            </div>
-            <div class="tariff-card">
-                <div class="tariff-name">👑 VIP-Перезагрузка</div>
-                <div class="tariff-price">25 900 ₽</div>
-                <ul>
-                    <li>15 сеансов аппаратной коррекции</li>
-                    <li>Полный план питания на месяц</li>
-                    <li>Нутрициолог на связи 24/7</li>
-                    <li>Персональный протокол под ваш тип</li>
-                    <li>Гарантия −7 см</li>
-                </ul>
-                <a href="#cta" class="btn-outline">Выбрать</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===== КАРТА ===== -->
-<section style="background: var(--bg-light);">
-    <div class="container">
-        <h2 class="section-title">Мы <span>в Новосибирске</span></h2>
-        <p class="section-sub">Добирайтесь с комфортом — мы рядом с метро</p>
-        <div class="map-block">
-            <div class="info">
-                <h3>📍 Наш адрес</h3>
-                <div class="address">ул. Бориса Богаткова, 248а, 6 этаж, помещение 605</div>
-                <div class="metro">🚇 Метро «Золотая Нива» — 167 метров пешком</div>
-                <p style="margin: 14px 0; color: var(--text-gray);">
-                    <strong>Режим работы:</strong> Пн–Вс: 10:00 – 21:00
-                </p>
-                <a href="https://yandex.ru/maps/?rtext=~55.037134,82.978497&rtt=auto" target="_blank" class="btn-outline" style="padding: 10px 28px; font-size: 14px;">
-                    🚗 Построить маршрут
+            <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+                <a href="tel:+79999999999" class="header-phone">📞 +7 (999) 999-99-99</a>
+                <!-- ===== КНОПКА ЗАПИСИ В ШАПКЕ (DIKIDI) ===== -->
+                <a href="https://dikidi.net/#widget=214330" class="dikidi-btn" style="padding: 10px 24px; font-size: 14px;">
+                    📅 Записаться
                 </a>
             </div>
-            <iframe src="https://yandex.ru/map-widget/v1/?ll=82.978497%2C55.037134&z=17&pt=82.978497%2C55.037134%2Cpm2rdl" allowfullscreen loading="lazy"></iframe>
         </div>
-    </div>
-</section>
+    </header>
 
-<!-- ===== FAQ ===== -->
-<section>
-    <div class="container">
-        <h2 class="section-title">Часто <span>спрашивают</span></h2>
-        <p class="section-sub">Ответы на главные вопросы перед записью</p>
-        <div class="faq-list">
-            <details class="faq-item">
-                <summary>Это больно?</summary>
-                <div class="answer">Нет, процедура абсолютно комфортна. Вы чувствуете лишь приятное тепло и лёгкую вибрацию. Многие клиенты даже засыпают во время сеанса.</div>
-            </details>
-            <details class="faq-item">
-                <summary>Сколько нужно сеансов для результата?</summary>
-                <div class="answer">Первые изменения видны уже после 3-5 сеансов. Для устойчивого результата рекомендуем курс из 10–15 процедур. Индивидуальный протокол мы составляем на первой консультации.</div>
-            </details>
-            <details class="faq-item">
-                <summary>Можно ли совмещать с другими процедурами?</summary>
-                <div class="answer">Да, аппаратная коррекция отлично сочетается с любыми оздоровительными процедурами. Главное — соблюдать рекомендации нашего специалиста.</div>
-            </details>
-            <details class="faq-item">
-                <summary>Есть ли противопоказания?</summary>
-                <div class="answer">Как и у любой процедуры, есть небольшие ограничения: беременность, онкология, острые воспаления. Подробнее расскажем на консультации.</div>
-            </details>
+    <!-- ============================================================
+    ГЕРОЙ
+    ============================================================ -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-tag">⚡ Инновационная физика тела</div>
+                <h1>
+                    Верни себе тело<br />
+                    <span class="highlight">без диет и изнурений</span>
+                </h1>
+                <p>Аппаратная коррекция фигуры + персональный план питания. Ваше тело — это машина, мы просто настроим её.</p>
+                <div class="hero-stats">
+                    <div><strong>−15 см</strong> в объёме за 10 сеансов</div>
+                    <div><strong>94%</strong> эффективность</div>
+                    <div><strong>127+</strong> довольных клиентов</div>
+                </div>
+                <div class="btn-group">
+                    <!-- ===== КНОПКА ЗАПИСИ ЧЕРЕЗ DIKIDI ===== -->
+                    <a href="https://dikidi.net/#widget=214330" class="dikidi-btn dikidi-btn-wa">
+                        📱 Записаться на консультацию
+                    </a>
+                    <!-- ===== КНОПКА В ТАРИФЫ ===== -->
+                    <a href="#tariffs" class="dikidi-btn" style="margin-top: 0;">
+                        ⬇ Выбрать курс
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <span class="icon-big">⚙️</span>
+                <h3>Аппараты нового поколения</h3>
+                <p>LPG / Ультразвук / Миостимуляция</p>
+                <div class="badge-blue">+ Индивидуальный план питания</div>
+                <div class="bottom-text">«МИНУСРАЗМЕР» — это не массаж, это перезагрузка тела.</div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ===== ПРИЗЫВ (CTA) ===== -->
-<section id="cta">
-    <div class="container">
-        <div class="cta-block">
-            <h2>Начните <span style="color: #fff;">преображение</span> уже сегодня</h2>
-            <p>Запишитесь на бесплатную консультацию. Осталось всего 4 места на эту неделю.</p>
-            <a href="https://wa.me/79999999999?text=Привет!%20Записываюсь%20на%20консультацию%20в%20МИНУСРАЗМЕР%20(Новосибирск)" class="btn-white">
-                📱 Записаться на консультацию
-            </a>
+    <!-- ============================================================
+    ПРЕИМУЩЕСТВА
+    ============================================================ -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Технология <span>коррекции</span></h2>
+            <p class="section-sub">Мы сочетаем передовые аппараты и персонализированный подход. Каждый сеанс просчитан до сантиметра.</p>
+            <div class="grid-2">
+                <div class="card">
+                    <span class="card-icon">🔬</span>
+                    <h3>Аппаратное моделирование фигуры</h3>
+                    <p>Разбивает фиброзные отложения, убирает «апельсиновую корку» и моделирует контуры тела.</p>
+                    <span class="badge">Без боли</span>
+                </div>
+                <div class="card">
+                    <span class="card-icon">🥗</span>
+                    <h3>Индивидуальный план питания</h3>
+                    <p>Не просто «не есть», а есть правильные продукты в нужное время. Мы даём формулу, а не меню.</p>
+                    <span class="badge">Персонально</span>
+                </div>
+                <div class="card">
+                    <span class="card-icon">📏</span>
+                    <h3>Гарантия −5 см за 10 сеансов</h3>
+                    <p>Если результат не будет достигнут, мы продолжаем работать бесплатно. Это закреплено в договоре.</p>
+                    <span class="badge">Честно</span>
+                </div>
+                <div class="card">
+                    <span class="card-icon">📊</span>
+                    <h3>15-минутная консультация</h3>
+                    <p>Разбираем ваш образ жизни, питание и ставим цели. Строим индивидуальный план коррекции.</p>
+                    <span class="badge">Экспертно</span>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ===== ФУТЕР ===== -->
-<footer class="footer container">
-    <div>© 2026 МИНУСРАЗМЕР. Все права защищены.</div>
-    <div>Новосибирск, ул. Бориса Богаткова 248а, 6 этаж, пом. 605 | <a href="tel:+79999999999">+7 (999) 999-99-99</a></div>
-    <div style="color: var(--primary); font-weight: 600;">Работаем по предварительной записи</div>
-</footer>
+    <!-- ============================================================
+    КАК МЫ РАБОТАЕМ
+    ============================================================ -->
+    <section style="background: var(--bg-light);">
+        <div class="container">
+            <h2 class="section-title">Как мы <span>работаем</span></h2>
+            <p class="section-sub">4 простых шага к вашему новому телу</p>
+            <div class="steps">
+                <div class="step-item">
+                    <span class="step-icon">🤝</span>
+                    <h4>Вы приходите на консультацию</h4>
+                    <p>Обсуждаем ваши цели и проблемные зоны</p>
+                </div>
+                <div class="step-item">
+                    <span class="step-icon">⚙️</span>
+                    <h4>Проходите аппаратную коррекцию</h4>
+                    <p>10–15 сеансов по индивидуальному протоколу</p>
+                </div>
+                <div class="step-item">
+                    <span class="step-icon">🥗</span>
+                    <h4>Получаете план питания</h4>
+                    <p>Ежедневные рекомендации от нутрициолога</p>
+                </div>
+                <div class="step-item">
+                    <span class="step-icon">🎯</span>
+                    <h4>Видите результат</h4>
+                    <p>Замеры до/после и фиксация достижений</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    ТАРИФЫ
+    ============================================================ -->
+    <section id="tariffs">
+        <div class="container">
+            <h2 class="section-title">Выберите <span>свой курс</span></h2>
+            <p class="section-sub">Подберите программу, которая подходит именно вам</p>
+            <div class="tariffs">
+                <div class="tariff-card">
+                    <div class="tariff-name">🚀 Экспресс</div>
+                    <div class="tariff-price">8 900 ₽</div>
+                    <ul>
+                        <li>5 сеансов аппаратной коррекции</li>
+                        <li>Базовые рекомендации по питанию</li>
+                        <li>Замеры до/после</li>
+                    </ul>
+                    <!-- ===== КНОПКА В ТАРИФАХ ===== -->
+                    <a href="https://dikidi.net/#widget=214330" class="dikidi-btn" style="padding: 12px 36px; font-size: 14px;">
+                        Выбрать
+                    </a>
+                </div>
+                <div class="tariff-card best">
+                    <div class="tariff-name">🔥 Трансформация</div>
+                    <div class="tariff-price">16 900 ₽</div>
+                    <ul>
+                        <li>10 сеансов аппаратной коррекции</li>
+                        <li>Полный план питания на месяц</li>
+                        <li>Контроль результатов каждые 3 сеанса</li>
+                        <li>Гарантия −5 см</li>
+                    </ul>
+                    <a href="https://dikidi.net/#widget=214330" class="dikidi-btn" style="padding: 12px 40px; background: var(--gradient);">
+                        Выбрать
+                    </a>
+                </div>
+                <div class="tariff-card">
+                    <div class="tariff-name">👑 VIP-Перезагрузка</div>
+                    <div class="tariff-price">25 900 ₽</div>
+                    <ul>
+                        <li>15 сеансов аппаратной коррекции</li>
+                        <li>Полный план питания на месяц</li>
+                        <li>Нутрициолог на связи 24/7</li>
+                        <li>Персональный протокол под ваш тип</li>
+                        <li>Гарантия −7 см</li>
+                    </ul>
+                    <a href="https://dikidi.net/#widget=214330" class="dikidi-btn" style="padding: 12px 36px; font-size: 14px;">
+                        Выбрать
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    КАРТА
+    ============================================================ -->
+    <section style="background: var(--bg-light);">
+        <div class="container">
+            <h2 class="section-title">Мы <span>в Новосибирске</span></h2>
+            <p class="section-sub">Добирайтесь с комфортом — мы рядом с метро</p>
+            <div class="map-block">
+                <div class="info">
+                    <h3>📍 Наш адрес</h3>
+                    <div class="address">ул. Бориса Богаткова, 248а, 6 этаж, помещение 605</div>
+                    <div class="metro">🚇 Метро «Золотая Нива» — 167 метров пешком</div>
+                    <p style="margin: 14px 0; color: var(--text-gray);">
+                        <strong>Режим работы:</strong> Пн–Вс: 10:00 – 21:00
+                    </p>
+                    <a href="https://yandex.ru/maps/?rtext=~55.037134,82.978497&rtt=auto" target="_blank" style="padding: 10px 28px; font-size: 14px;" class="dikidi-btn" style="background: transparent; color: var(--primary); border: 2px solid var(--primary); box-shadow: none;">
+                        🚗 Построить маршрут
+                    </a>
+                </div>
+                <iframe src="https://yandex.ru/map-widget/v1/?ll=82.978497%2C55.037134&z=17&pt=82.978497%2C55.037134%2Cpm2rdl" allowfullscreen loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    FAQ
+    ============================================================ -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Часто <span>спрашивают</span></h2>
+            <p class="section-sub">Ответы на главные вопросы перед записью</p>
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>Это больно?</summary>
+                    <div class="answer">Нет, процедура абсолютно комфортна. Вы чувствуете лишь приятное тепло и лёгкую вибрацию. Многие клиенты даже засыпают во время сеанса.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>Сколько нужно сеансов для результата?</summary>
+                    <div class="answer">Первые изменения видны уже после 3-5 сеансов. Для устойчивого результата рекомендуем курс из 10–15 процедур. Индивидуальный протокол мы составляем на первой консультации.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>Можно ли совмещать с другими процедурами?</summary>
+                    <div class="answer">Да, аппаратная коррекция отлично сочетается с любыми оздоровительными процедурами. Главное — соблюдать рекомендации нашего специалиста.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>Есть ли противопоказания?</summary>
+                    <div class="answer">Как и у любой процедуры, есть небольшие ограничения: беременность, онкология, острые воспаления. Подробнее расскажем на консультации.</div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    ПРИЗЫВ (CTA)
+    ============================================================ -->
+    <section id="cta">
+        <div class="container">
+            <div class="cta-block">
+                <h2>Начните <span style="color: #fff;">преображение</span> уже сегодня</h2>
+                <p>Запишитесь на бесплатную консультацию. Осталось всего 4 места на эту неделю.</p>
+                <!-- ===== КНОПКА В CTA (DIKIDI) ===== -->
+                <a href="https://dikidi.net/#widget=214330" class="dikidi-btn dikidi-btn-white">
+                    📱 Записаться на консультацию
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    ФУТЕР
+    ============================================================ -->
+    <footer class="footer container">
+        <div>© 2026 МИНУСРАЗМЕР. Все права защищены.</div>
+        <div>Новосибирск, ул. Бориса Богаткова 248а, 6 этаж, пом. 605 | <a href="tel:+79999999999">+7 (999) 999-99-99</a></div>
+        <div style="color: var(--primary); font-weight: 600;">Работаем по предварительной записи</div>
+    </footer>
 
 </body>
 </html>
