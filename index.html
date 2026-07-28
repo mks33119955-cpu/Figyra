@@ -1,30 +1,60 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>МИНУСРАЗМЕР Новосибирск — Аппаратная коррекция + Диетология</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
-
-    <!-- ===== ВИДЖЕТ DIKIDI ===== -->
-    <script type="text/javascript" src="https://dikidi.net/assets/js/widget_record/widget2.min.js?v=1773811740"></script>
+    
+    <!-- Современные шрифты: Manrope для заголовков, Inter для текста -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Современные векторные иконки Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
-        /* ============================================================
-           БАЗА
-           ============================================================ */
+        /* ===== БАЗОВЫЕ НАСТРОЙКИ ===== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        :root {
+            --primary: #0066FF;
+            --primary-light: #3385FF;
+            --primary-dark: #0047B3;
+            --accent: #00D4FF;
+            --gradient: linear-gradient(135deg, #0066FF 0%, #00D4FF 100%);
+            --gradient-glow: linear-gradient(135deg, rgba(0, 102, 255, 0.15), rgba(0, 212, 255, 0.15));
+            --bg-light: #F4F7FC;
+            --text-dark: #0F172A;
+            --text-gray: #64748B;
+            --white: rgba(255, 255, 255, 0.9);
+            --glass: rgba(255, 255, 255, 0.7);
+            --shadow: 0 10px 40px -10px rgba(0, 102, 255, 0.1);
+            --shadow-hover: 0 20px 60px -15px rgba(0, 102, 255, 0.25);
+            --radius: 24px;
+            --radius-sm: 16px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
-            background: #F8FAFE;
-            color: #1A2A3A;
+            background: var(--bg-light);
+            color: var(--text-dark);
             line-height: 1.6;
             overflow-x: hidden;
+            /* Тонкий фоновый паттерн для глубины */
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 102, 255, 0.03) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(0, 212, 255, 0.03) 0%, transparent 40%);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Manrope', sans-serif;
         }
 
         .container {
@@ -33,84 +63,28 @@
             padding: 0 24px;
         }
 
-        :root {
-            --primary: #0A66C2;
-            --primary-light: #1A86E8;
-            --primary-dark: #0A4A8A;
-            --secondary: #4A9FE0;
-            --accent: #00B4D8;
-            --gradient: linear-gradient(135deg, #0A66C2, #00B4D8);
-            --bg-light: #F0F6FF;
-            --text-dark: #1A2A3A;
-            --text-gray: #5A6A7A;
-            --white: #FFFFFF;
-            --shadow: 0 8px 40px rgba(10, 102, 194, 0.12);
-            --shadow-hover: 0 12px 60px rgba(10, 102, 194, 0.20);
-            --radius: 20px;
+        /* ===== АНИМАЦИИ ПОЯВЛЕНИЯ ===== */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        /* ============================================================
-           КНОПКИ DIKIDI (компактные)
-           ============================================================ */
-        .dikidi-btn {
-            display: inline-block;
-            background: var(--gradient);
-            color: #fff;
-            padding: 8px 20px;
-            font-weight: 700;
-            font-size: 12px;
-            border: none;
-            border-radius: 60px;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 0.6px;
-            box-shadow: 0 4px 16px rgba(10, 102, 194, 0.20);
-            transition: all 0.3s ease;
-            text-decoration: none;
-            text-align: center;
-            white-space: nowrap;
-        }
-
-        .dikidi-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(10, 102, 194, 0.35);
-            background: linear-gradient(135deg, #1A86E8, #00D4FF);
-        }
-
-        .dikidi-btn-wa {
-            background: #25D366;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.25);
-            padding: 16px 44px;
-            font-size: 16px;
-        }
-
-        .dikidi-btn-wa:hover {
-            background: #20b85a;
-            box-shadow: 0 8px 40px rgba(37, 211, 102, 0.40);
-        }
-
-        .dikidi-btn-white {
-            background: #fff;
-            color: var(--primary);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-        }
-
-        .dikidi-btn-white:hover {
-            background: #f8faff;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-            color: var(--primary);
-        }
-
-        /* ============================================================
-           ШАПКА — МАКСИМАЛЬНО УЗКАЯ
-           ============================================================ */
+        /* ===== ШАПКА (Glassmorphism) ===== */
         .header {
-            background: var(--white);
-            padding: 4px 0;
-            box-shadow: 0 1px 12px rgba(0, 0, 0, 0.04);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
             position: sticky;
             top: 0;
             z-index: 100;
+            transition: all 0.3s ease;
         }
 
         .header .container {
@@ -118,70 +92,75 @@
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 16px;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
-            flex: 0 1 auto;
-            max-width: 100%;
+            gap: 16px;
         }
 
-        /* ===== ЛОГОТИП: 54px (увеличен в 1.5 от 36px) ===== */
-        .logo-img {
-            height: 54px;
-            width: auto;
-            max-width: 100%;
-            max-height: 64px;
-            display: block;
-            flex-shrink: 0;
-            object-fit: contain;
+        .logo-icon {
+            font-family: 'Manrope', sans-serif;
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            color: var(--primary-dark);
+            background: var(--white);
+            padding: 10px 20px;
+            border-radius: 14px;
+            box-shadow: 0 4px 12px rgba(0, 102, 255, 0.08);
+            border: 1px solid rgba(0, 102, 255, 0.1);
+        }
+
+        .logo-icon span {
+            color: var(--primary);
         }
 
         .logo-sub {
-            font-size: 11px;
-            font-weight: 400;
+            font-size: 13px;
+            font-weight: 500;
             color: var(--text-gray);
-            border-left: 2px solid #D0DDE8;
-            padding-left: 10px;
-            white-space: nowrap;
+            border-left: 2px solid #E2E8F0;
+            padding-left: 16px;
+            line-height: 1.4;
         }
 
         .header-phone {
+            display: flex;
+            align-items: center;
+            gap: 8px;
             font-weight: 700;
-            font-size: 14px;
+            font-size: 16px;
             color: var(--primary);
             text-decoration: none;
-            background: var(--bg-light);
-            padding: 5px 14px;
-            border-radius: 40px;
-            transition: 0.3s;
-            border: 1px solid rgba(10, 102, 194, 0.10);
-            white-space: nowrap;
+            background: rgba(0, 102, 255, 0.06);
+            padding: 10px 24px;
+            border-radius: 100px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 102, 255, 0.1);
         }
 
         .header-phone:hover {
             background: var(--primary);
             color: #fff;
-            box-shadow: 0 4px 16px rgba(10, 102, 194, 0.25);
+            box-shadow: 0 8px 24px rgba(0, 102, 255, 0.3);
+            transform: translateY(-1px);
         }
 
-        /* ============================================================
-           ГЕРОЙ
-           ============================================================ */
+        /* ===== ГЕРОЙ ===== */
         .hero {
-            padding: 60px 0 70px;
-            background: var(--bg-light);
-            border-bottom: 1px solid rgba(10, 102, 194, 0.06);
+            padding: 80px 0 100px;
+            position: relative;
+            overflow: hidden;
         }
 
         .hero .container {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-            gap: 50px;
+            gap: 60px;
         }
 
         .hero-content {
@@ -189,24 +168,28 @@
         }
 
         .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             color: var(--primary);
             font-weight: 700;
             font-size: 13px;
-            letter-spacing: 4px;
+            letter-spacing: 1px;
             text-transform: uppercase;
-            background: rgba(10, 102, 194, 0.08);
-            padding: 6px 18px;
-            border-radius: 40px;
-            display: inline-block;
-            margin-bottom: 20px;
+            background: rgba(0, 102, 255, 0.08);
+            padding: 8px 18px;
+            border-radius: 100px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(0, 102, 255, 0.15);
         }
 
         .hero h1 {
-            font-size: 52px;
+            font-size: clamp(36px, 5vw, 56px);
             font-weight: 900;
             line-height: 1.1;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             color: var(--text-dark);
+            letter-spacing: -1px;
         }
 
         .hero h1 .highlight {
@@ -217,96 +200,198 @@
         }
 
         .hero p {
-            font-size: 19px;
+            font-size: 18px;
             color: var(--text-gray);
             max-width: 480px;
-            margin-bottom: 30px;
+            margin-bottom: 36px;
+            line-height: 1.7;
         }
 
         .hero-stats {
             display: flex;
-            gap: 40px;
-            margin-bottom: 35px;
+            gap: 48px;
+            margin-bottom: 40px;
             flex-wrap: wrap;
         }
 
         .hero-stats div {
             font-size: 14px;
             color: var(--text-gray);
+            font-weight: 500;
         }
 
         .hero-stats strong {
             display: block;
-            font-size: 28px;
+            font-size: 32px;
             color: var(--text-dark);
             font-weight: 800;
+            font-family: 'Manrope', sans-serif;
+            margin-bottom: 4px;
         }
 
         .btn-group {
             display: flex;
+            gap: 16px;
             flex-wrap: wrap;
-            gap: 12px;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: #fff;
+            padding: 18px 40px;
+            font-weight: 700;
+            font-size: 16px;
+            border: none;
+            border-radius: 100px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 8px 30px rgba(0, 102, 255, 0.3);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(0, 102, 255, 0.4);
+        }
+
+        .btn-wa {
+            background: #25D366;
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-wa:hover {
+            background: #20b85a;
+            box-shadow: 0 12px 40px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--text-dark);
+            padding: 18px 40px;
+            font-weight: 700;
+            font-size: 16px;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 100px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: #fff;
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
         }
 
         .hero-image {
             flex: 1 1 400px;
-            background: var(--white);
+            background: var(--glass);
+            backdrop-filter: blur(20px);
             border-radius: var(--radius);
-            padding: 40px 30px;
+            padding: 40px;
             text-align: center;
-            box-shadow: var(--shadow);
-            border: 1px solid rgba(10, 102, 194, 0.06);
+            box-shadow: var(--shadow-hover);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            position: relative;
+            animation: float 6s ease-in-out infinite;
         }
 
-        .hero-image .icon-big {
-            font-size: 80px;
-            display: block;
-            margin-bottom: 16px;
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .hero-image-visual {
+            width: 100%;
+            height: 220px;
+            background: var(--gradient-glow);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Декоративный элемент вместо эмодзи */
+        .hero-image-visual::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(0,212,255,0.2) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
         }
 
         .hero-image h3 {
-            color: var(--primary-dark);
-            font-weight: 700;
+            color: var(--text-dark);
+            font-weight: 800;
             font-size: 22px;
+            margin-bottom: 8px;
         }
 
         .hero-image p {
             color: var(--text-gray);
             font-size: 15px;
+            margin-bottom: 16px;
         }
 
         .hero-image .badge-blue {
-            display: inline-block;
-            background: var(--bg-light);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(0, 102, 255, 0.08);
             color: var(--primary);
-            padding: 6px 20px;
-            border-radius: 40px;
-            font-weight: 600;
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-weight: 700;
             font-size: 14px;
-            margin: 12px 0;
+            margin-bottom: 16px;
+            border: 1px solid rgba(0, 102, 255, 0.15);
         }
 
         .hero-image .bottom-text {
-            background: var(--bg-light);
-            padding: 14px 20px;
-            border-radius: 14px;
+            background: var(--white);
+            padding: 16px 24px;
+            border-radius: var(--radius-sm);
             font-weight: 600;
             color: var(--text-dark);
-            margin-top: 16px;
+            font-size: 15px;
+            border: 1px solid rgba(0,0,0,0.04);
         }
 
-        /* ============================================================
-           СЕКЦИИ
-           ============================================================ */
+        /* ===== СЕКЦИИ ===== */
         section {
-            padding: 70px 0;
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
         }
 
         .section-title {
-            font-size: 38px;
-            font-weight: 800;
-            margin-bottom: 12px;
+            font-size: clamp(32px, 4vw, 44px);
+            font-weight: 900;
+            margin-bottom: 16px;
             color: var(--text-dark);
+            letter-spacing: -0.5px;
         }
 
         .section-title span {
@@ -319,211 +404,315 @@
         .section-sub {
             color: var(--text-gray);
             font-size: 18px;
-            margin-bottom: 48px;
             max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
         }
 
         .grid-2 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 28px;
-        }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 28px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
         }
 
         .card {
             background: var(--white);
-            padding: 32px 28px;
+            padding: 36px 32px;
             border-radius: var(--radius);
             box-shadow: var(--shadow);
-            border: 1px solid rgba(10, 102, 194, 0.06);
-            transition: 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient);
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-8px);
             box-shadow: var(--shadow-hover);
+            border-color: rgba(0, 102, 255, 0.2);
         }
 
-        .card-icon {
-            font-size: 40px;
-            margin-bottom: 14px;
-            display: block;
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card-icon-wrapper {
+            width: 56px;
+            height: 56px;
+            background: var(--gradient-glow);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            color: var(--primary);
         }
 
         .card h3 {
             font-size: 20px;
-            margin-bottom: 8px;
+            font-weight: 800;
+            margin-bottom: 12px;
             color: var(--text-dark);
         }
 
         .card p {
             color: var(--text-gray);
             font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 20px;
         }
 
         .card .badge {
-            display: inline-block;
-            background: var(--bg-light);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(0, 102, 255, 0.06);
             color: var(--primary);
-            padding: 4px 14px;
-            border-radius: 30px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-top: 16px;
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        /* ===== ШАГИ ===== */
+        .steps-section {
+            background: var(--white);
+            border-top: 1px solid rgba(0,0,0,0.04);
+            border-bottom: 1px solid rgba(0,0,0,0.04);
         }
 
         .steps {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 32px;
             counter-reset: step;
         }
 
         .step-item {
-            background: var(--white);
-            padding: 30px 24px;
+            padding: 32px 24px;
             border-radius: var(--radius);
-            box-shadow: var(--shadow);
             text-align: center;
             position: relative;
-            border: 1px solid rgba(10, 102, 194, 0.06);
             counter-increment: step;
+            transition: transform 0.3s ease;
         }
 
-        .step-item::before {
-            content: counter(step);
-            font-size: 40px;
+        .step-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .step-number {
+            font-family: 'Manrope', sans-serif;
+            font-size: 64px;
             font-weight: 900;
-            color: var(--primary);
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             opacity: 0.15;
-            display: block;
-            margin-bottom: 8px;
+            line-height: 1;
+            margin-bottom: -20px;
+            position: relative;
+            z-index: 0;
         }
 
-        .step-item .step-icon {
-            font-size: 36px;
-            display: block;
-            margin-bottom: 8px;
+        .step-icon-wrapper {
+            width: 64px;
+            height: 64px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary);
+            box-shadow: 0 8px 24px rgba(0, 102, 255, 0.15);
+            position: relative;
+            z-index: 1;
+            border: 2px solid rgba(0, 102, 255, 0.1);
         }
 
         .step-item h4 {
             font-size: 18px;
+            font-weight: 800;
             color: var(--text-dark);
-            margin-bottom: 4px;
+            margin-bottom: 8px;
         }
 
         .step-item p {
-            font-size: 14px;
+            font-size: 15px;
             color: var(--text-gray);
+            line-height: 1.6;
         }
 
+        /* ===== ТАРИФЫ ===== */
         .tariffs {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 28px;
-            margin-top: 10px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            align-items: start;
         }
 
         .tariff-card {
             background: var(--white);
-            padding: 34px 28px;
+            padding: 40px 32px;
             border-radius: var(--radius);
             box-shadow: var(--shadow);
-            border: 1px solid rgba(10, 102, 194, 0.06);
+            border: 1px solid rgba(0,0,0,0.04);
             text-align: center;
-            transition: 0.3s;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
         }
 
         .tariff-card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-8px);
             box-shadow: var(--shadow-hover);
         }
 
         .tariff-card.best {
             border: 2px solid var(--primary);
-            position: relative;
+            background: linear-gradient(180deg, rgba(0, 102, 255, 0.03) 0%, rgba(255, 255, 255, 1) 100%);
+            transform: scale(1.02);
+        }
+
+        .tariff-card.best:hover {
+            transform: scale(1.02) translateY(-8px);
         }
 
         .tariff-card.best::before {
-            content: "🔥 Самый популярный";
+            content: "Самый популярный";
             position: absolute;
-            top: -12px;
+            top: -14px;
             left: 50%;
             transform: translateX(-50%);
             background: var(--gradient);
             color: #fff;
-            padding: 4px 20px;
-            border-radius: 40px;
-            font-size: 12px;
-            font-weight: 700;
+            padding: 6px 24px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 800;
             letter-spacing: 0.5px;
+            box-shadow: 0 8px 20px rgba(0, 102, 255, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .tariff-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 16px;
+            color: var(--primary);
         }
 
         .tariff-card .tariff-name {
-            font-size: 20px;
-            font-weight: 700;
+            font-size: 22px;
+            font-weight: 800;
             color: var(--text-dark);
+            margin-bottom: 8px;
         }
 
         .tariff-card .tariff-price {
-            font-size: 36px;
+            font-size: 40px;
             font-weight: 900;
             color: var(--primary);
-            margin: 12px 0;
+            margin: 16px 0;
+            font-family: 'Manrope', sans-serif;
         }
 
         .tariff-card .tariff-price small {
             font-size: 16px;
-            font-weight: 400;
+            font-weight: 500;
             color: var(--text-gray);
         }
 
         .tariff-card ul {
             list-style: none;
             text-align: left;
-            margin: 16px 0 24px;
+            margin: 24px 0 32px;
             padding: 0;
         }
 
         .tariff-card ul li {
-            padding: 6px 0;
+            padding: 10px 0;
             font-size: 15px;
-            color: var(--text-gray);
+            color: var(--text-dark);
             display: flex;
-            align-items: center;
-            gap: 10px;
+            align-items: flex-start;
+            gap: 12px;
+            border-bottom: 1px solid rgba(0,0,0,0.04);
         }
 
-        .tariff-card ul li::before {
-            content: "✓";
+        .tariff-card ul li:last-child {
+            border-bottom: none;
+        }
+
+        .tariff-card ul li .check-icon {
             color: var(--primary);
-            font-weight: 900;
-            font-size: 18px;
+            flex-shrink: 0;
+            margin-top: 2px;
         }
 
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            padding: 14px 36px;
+            border: 2px solid rgba(0, 102, 255, 0.2);
+            border-radius: 100px;
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+            box-shadow: 0 8px 24px rgba(0, 102, 255, 0.3);
+        }
+
+        /* ===== FAQ (Современный аккордеон) ===== */
         .faq-list {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 16px;
             max-width: 800px;
             margin: 0 auto;
         }
 
         .faq-item {
             background: var(--white);
-            border-radius: 14px;
+            border-radius: var(--radius-sm);
             box-shadow: var(--shadow);
-            border: 1px solid rgba(10, 102, 194, 0.06);
+            border: 1px solid rgba(0,0,0,0.04);
             overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(0, 102, 255, 0.2);
         }
 
         .faq-item summary {
-            padding: 20px 28px;
+            padding: 24px 28px;
             font-weight: 700;
             font-size: 17px;
             color: var(--text-dark);
@@ -532,447 +721,596 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            font-family: 'Manrope', sans-serif;
         }
 
         .faq-item summary::-webkit-details-marker {
             display: none;
         }
 
-        .faq-item summary::after {
-            content: "+";
-            font-size: 26px;
+        .faq-icon {
+            width: 32px;
+            height: 32px;
+            background: rgba(0, 102, 255, 0.08);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: var(--primary);
-            font-weight: 300;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
         }
 
-        .faq-item[open] summary::after {
-            content: "−";
+        .faq-item[open] .faq-icon {
+            transform: rotate(45deg);
+            background: var(--primary);
+            color: #fff;
+        }
+
+        /* Плавная анимация для details */
+        .faq-item .answer-wrapper {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .faq-item[open] .answer-wrapper {
+            grid-template-rows: 1fr;
         }
 
         .faq-item .answer {
+            overflow: hidden;
+        }
+
+        .faq-item .answer-inner {
             padding: 0 28px 24px;
             color: var(--text-gray);
             font-size: 16px;
             line-height: 1.7;
         }
 
-        .map-block {
+        /* ===== КАРТА ===== */
+        .map-section {
             background: var(--white);
+            border-top: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .map-block {
+            background: var(--bg-light);
             border-radius: var(--radius);
-            padding: 30px;
-            box-shadow: var(--shadow);
+            padding: 40px;
             display: flex;
             flex-wrap: wrap;
-            gap: 30px;
+            gap: 40px;
             align-items: center;
-            border: 1px solid rgba(10, 102, 194, 0.06);
+            border: 1px solid rgba(0,0,0,0.04);
         }
 
         .map-block .info {
             flex: 1;
-            min-width: 200px;
+            min-width: 280px;
         }
 
         .map-block .info h3 {
-            font-size: 26px;
+            font-size: 28px;
             color: var(--text-dark);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
         .map-block .info .address {
-            color: var(--primary);
+            color: var(--text-dark);
             font-size: 18px;
-            font-weight: 600;
-            margin: 8px 0;
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .map-block .info .metro {
+            color: var(--primary);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 24px;
+            background: rgba(0, 102, 255, 0.06);
+            padding: 12px 16px;
+            border-radius: var(--radius-sm);
+            width: fit-content;
+        }
+
+        .map-block .info .work-hours {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             color: var(--text-gray);
+            margin-bottom: 28px;
+            font-weight: 500;
         }
 
         .map-block iframe {
-            flex: 2;
-            min-width: 280px;
-            height: 260px;
+            flex: 1.5;
+            min-width: 300px;
+            height: 320px;
             border: 0;
-            border-radius: 14px;
+            border-radius: var(--radius-sm);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
 
+        /* ===== ПРИЗЫВ (CTA) ===== */
         .cta-block {
             background: var(--gradient);
             border-radius: var(--radius);
-            padding: 50px 40px;
+            padding: 64px 40px;
             text-align: center;
             color: #fff;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 102, 255, 0.3);
+        }
+
+        /* Декоративные круги на фоне CTA */
+        .cta-block::before, .cta-block::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .cta-block::before {
+            width: 300px;
+            height: 300px;
+            top: -100px;
+            left: -100px;
+        }
+        .cta-block::after {
+            width: 200px;
+            height: 200px;
+            bottom: -50px;
+            right: -50px;
         }
 
         .cta-block h2 {
-            font-size: 34px;
-            font-weight: 800;
-            margin-bottom: 8px;
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 900;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
         }
 
         .cta-block p {
             font-size: 18px;
             opacity: 0.9;
-            margin-bottom: 28px;
+            margin-bottom: 36px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 1;
         }
 
+        .cta-block .btn-white {
+            background: #fff;
+            color: var(--primary);
+            padding: 18px 48px;
+            font-weight: 800;
+            font-size: 17px;
+            border: none;
+            border-radius: 100px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-block .btn-white:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        /* ===== ФУТЕР ===== */
         .footer {
             background: var(--white);
-            border-top: 1px solid rgba(10, 102, 194, 0.06);
-            padding: 32px 0;
-            margin-top: 20px;
+            border-top: 1px solid rgba(0,0,0,0.06);
+            padding: 40px 0;
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
             color: var(--text-gray);
             font-size: 14px;
-            gap: 12px;
+            gap: 20px;
+            align-items: center;
         }
 
         .footer a {
             color: var(--primary);
             text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
         }
 
-        /* ============================================================
-           АДАПТИВ
-           ============================================================ */
-        @media (max-width: 992px) {
-            .logo-img {
-                height: 48px;
-            }
+        .footer a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
         }
 
+        .footer-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(0, 102, 255, 0.08);
+            color: var(--primary);
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        /* ===== АДАПТИВ ===== */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 34px;
-            }
-            .hero-stats {
-                gap: 20px;
-            }
-            .section-title {
-                font-size: 30px;
-            }
-            .header .container {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-            .logo {
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-            .logo-sub {
-                border-left: none;
-                padding-left: 0;
-                white-space: normal;
-            }
-            .cta-block {
-                padding: 30px 20px;
-            }
-            .cta-block h2 {
-                font-size: 26px;
-            }
-            .tariff-card.best::before {
-                font-size: 10px;
-                padding: 2px 14px;
-                top: -10px;
-            }
-            .btn-group {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            .btn-group .dikidi-btn {
-                text-align: center;
-            }
-            .logo-img {
-                height: 42px;
-            }
-            .header {
-                padding: 4px 0;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 28px;
-            }
-            .dikidi-btn {
-                padding: 6px 14px;
-                font-size: 10px;
-            }
-            .dikidi-btn-wa {
-                padding: 14px 28px;
-                font-size: 14px;
-            }
-            .logo-img {
-                height: 36px;
-            }
-            .header-phone {
-                font-size: 12px;
-                padding: 4px 10px;
-            }
-            .logo-sub {
-                font-size: 9px;
-                padding-left: 6px;
-            }
-            .header {
-                padding: 3px 0;
-            }
+            .hero { padding: 40px 0 60px; }
+            .hero-stats { gap: 24px; }
+            .section-title { font-size: 28px; }
+            .header .container { flex-direction: column; align-items: stretch; text-align: center; }
+            .logo { justify-content: center; }
+            .logo-sub { border-left: none; padding-left: 0; margin-top: 8px; }
+            .header-phone { justify-content: center; }
+            .cta-block { padding: 40px 24px; }
+            .map-block { padding: 24px; }
+            .tariff-card.best { transform: none; }
+            .tariff-card.best:hover { transform: translateY(-8px); }
+            .btn-group { flex-direction: column; }
+            .btn-primary, .btn-secondary { width: 100%; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ============================================================
-    ШАПКА — УЗКАЯ, ЛОГОТИП КРУПНЫЙ
-    ============================================================ -->
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <img src="logo.png" alt="МИНУСРАЗМЕР" class="logo-img" />
-                <div class="logo-sub">Аппаратная коррекция + Диетология</div>
+<!-- ===== ШАПКА ===== -->
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <div class="logo-icon">МИНУС<span>РАЗМЕР</span></div>
+            <div class="logo-sub">Аппаратная коррекция +<br>Диетология</div>
+        </div>
+        <a href="tel:+79999999999" class="header-phone">
+            <i data-lucide="phone" style="width: 18px; height: 18px;"></i>
+            +7 (999) 999-99-99
+        </a>
+    </div>
+</header>
+
+<!-- ===== ГЕРОЙ ===== -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content fade-in-up">
+            <div class="hero-tag">
+                <i data-lucide="zap" style="width: 16px; height: 16px; fill: currentColor;"></i>
+                Инновационная физика тела
             </div>
-            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-                <a href="tel:+79999999999" class="header-phone">📞 +7 (999) 999-99-99</a>
-                <a href="https://dikidi.net/#widget=214330" class="dikidi-btn">
-                    📅 Записаться
+            <h1>
+                Верни себе тело<br>
+                <span class="highlight">без диет и изнурений</span>
+            </h1>
+            <p>Аппаратная коррекция фигуры + персональный план питания. Ваше тело — это машина, мы просто настроим её.</p>
+            <div class="hero-stats">
+                <div><strong>−15 см</strong> в объёме за 10 сеансов</div>
+                <div><strong>94%</strong> эффективность</div>
+                <div><strong>127+</strong> довольных клиентов</div>
+            </div>
+            <div class="btn-group">
+                <a href="https://wa.me/79999999999?text=Привет!%20Записываюсь%20на%20консультацию%20в%20МИНУСРАЗМЕР%20(Новосибирск)" class="btn-primary btn-wa">
+                    <i data-lucide="message-circle" style="width: 20px; height: 20px;"></i>
+                    Записаться на консультацию
+                </a>
+                <a href="#tariffs" class="btn-secondary">
+                    <i data-lucide="arrow-down" style="width: 20px; height: 20px;"></i>
+                    Выбрать курс
                 </a>
             </div>
         </div>
-    </header>
-
-    <!-- ============================================================
-    ГЕРОЙ
-    ============================================================ -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-tag">⚡ Инновационная физика тела</div>
-                <h1>
-                    Верни себе тело<br />
-                    <span class="highlight">без диет и изнурений</span>
-                </h1>
-                <p>Аппаратная коррекция фигуры + персональный план питания. Ваше тело — это машина, мы просто настроим её.</p>
-                <div class="hero-stats">
-                    <div><strong>−15 см</strong> в объёме за 10 сеансов</div>
-                    <div><strong>94%</strong> эффективность</div>
-                    <div><strong>127+</strong> довольных клиентов</div>
-                </div>
-                <div class="btn-group">
-                    <a href="https://dikidi.net/#widget=214330" class="dikidi-btn dikidi-btn-wa">
-                        📱 Записаться на консультацию
-                    </a>
-                    <a href="#tariffs" class="dikidi-btn" style="margin-top: 0; background: transparent; color: var(--primary); border: 2px solid var(--primary); box-shadow: none;">
-                        ⬇ Выбрать курс
-                    </a>
-                </div>
+        <div class="hero-image fade-in-up">
+            <div class="hero-image-visual">
+                <i data-lucide="sparkles" style="width: 64px; height: 64px; color: var(--primary); position: relative; z-index: 1;"></i>
             </div>
-            <div class="hero-image">
-                <span class="icon-big">⚙️</span>
-                <h3>Аппараты нового поколения</h3>
-                <p>LPG / Ультразвук / Миостимуляция</p>
-                <div class="badge-blue">+ Индивидуальный план питания</div>
-                <div class="bottom-text">«МИНУСРАЗМЕР» — это не массаж, это перезагрузка тела.</div>
+            <h3>Аппараты нового поколения</h3>
+            <p>LPG / Ультразвук / Миостимуляция</p>
+            <div class="badge-blue">
+                <i data-lucide="plus-circle" style="width: 16px; height: 16px;"></i>
+                Индивидуальный план питания
+            </div>
+            <div class="bottom-text">
+                «МИНУСРАЗМЕР» — это не массаж, это перезагрузка тела.
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ============================================================
-    ПРЕИМУЩЕСТВА
-    ============================================================ -->
-    <section>
-        <div class="container">
+<!-- ===== ПРЕИМУЩЕСТВА ===== -->
+<section>
+    <div class="container">
+        <div class="section-header fade-in-up">
             <h2 class="section-title">Технология <span>коррекции</span></h2>
             <p class="section-sub">Мы сочетаем передовые аппараты и персонализированный подход. Каждый сеанс просчитан до сантиметра.</p>
-            <div class="grid-2">
-                <div class="card">
-                    <span class="card-icon">🔬</span>
-                    <h3>Аппаратное моделирование фигуры</h3>
-                    <p>Разбивает фиброзные отложения, убирает «апельсиновую корку» и моделирует контуры тела.</p>
-                    <span class="badge">Без боли</span>
+        </div>
+        <div class="grid-2">
+            <div class="card fade-in-up">
+                <div class="card-icon-wrapper">
+                    <i data-lucide="scan" style="width: 28px; height: 28px;"></i>
                 </div>
-                <div class="card">
-                    <span class="card-icon">🥗</span>
-                    <h3>Индивидуальный план питания</h3>
-                    <p>Не просто «не есть», а есть правильные продукты в нужное время. Мы даём формулу, а не меню.</p>
-                    <span class="badge">Персонально</span>
+                <h3>Аппаратное моделирование фигуры</h3>
+                <p>Разбивает фиброзные отложения, убирает «апельсиновую корку» и моделирует контуры тела.</p>
+                <span class="badge"><i data-lucide="check" style="width: 14px; height: 14px;"></i> Без боли</span>
+            </div>
+            <div class="card fade-in-up">
+                <div class="card-icon-wrapper">
+                    <i data-lucide="apple" style="width: 28px; height: 28px;"></i>
                 </div>
-                <div class="card">
-                    <span class="card-icon">📏</span>
-                    <h3>Гарантия −5 см за 10 сеансов</h3>
-                    <p>Если результат не будет достигнут, мы продолжаем работать бесплатно. Это закреплено в договоре.</p>
-                    <span class="badge">Честно</span>
+                <h3>Индивидуальный план питания</h3>
+                <p>Не просто «не есть», а есть правильные продукты в нужное время. Мы даём формулу, а не меню.</p>
+                <span class="badge"><i data-lucide="user" style="width: 14px; height: 14px;"></i> Персонально</span>
+            </div>
+            <div class="card fade-in-up">
+                <div class="card-icon-wrapper">
+                    <i data-lucide="ruler" style="width: 28px; height: 28px;"></i>
                 </div>
-                <div class="card">
-                    <span class="card-icon">📊</span>
-                    <h3>15-минутная консультация</h3>
-                    <p>Разбираем ваш образ жизни, питание и ставим цели. Строим индивидуальный план коррекции.</p>
-                    <span class="badge">Экспертно</span>
+                <h3>Гарантия −5 см за 10 сеансов</h3>
+                <p>Если результат не будет достигнут, мы продолжаем работать бесплатно. Это закреплено в договоре.</p>
+                <span class="badge"><i data-lucide="shield-check" style="width: 14px; height: 14px;"></i> Честно</span>
+            </div>
+            <div class="card fade-in-up">
+                <div class="card-icon-wrapper">
+                    <i data-lucide="bar-chart-3" style="width: 28px; height: 28px;"></i>
                 </div>
+                <h3>15-минутная консультация</h3>
+                <p>Разбираем ваш образ жизни, питание и ставим цели. Строим индивидуальный план коррекции.</p>
+                <span class="badge"><i data-lucide="award" style="width: 14px; height: 14px;"></i> Экспертно</span>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ============================================================
-    КАК МЫ РАБОТАЕМ
-    ============================================================ -->
-    <section style="background: var(--bg-light);">
-        <div class="container">
+<!-- ===== КАК МЫ РАБОТАЕМ ===== -->
+<section class="steps-section">
+    <div class="container">
+        <div class="section-header fade-in-up">
             <h2 class="section-title">Как мы <span>работаем</span></h2>
             <p class="section-sub">4 простых шага к вашему новому телу</p>
-            <div class="steps">
-                <div class="step-item">
-                    <span class="step-icon">🤝</span>
-                    <h4>Вы приходите на консультацию</h4>
-                    <p>Обсуждаем ваши цели и проблемные зоны</p>
+        </div>
+        <div class="steps">
+            <div class="step-item fade-in-up">
+                <div class="step-number">01</div>
+                <div class="step-icon-wrapper">
+                    <i data-lucide="handshake" style="width: 28px; height: 28px;"></i>
                 </div>
-                <div class="step-item">
-                    <span class="step-icon">⚙️</span>
-                    <h4>Проходите аппаратную коррекцию</h4>
-                    <p>10–15 сеансов по индивидуальному протоколу</p>
+                <h4>Вы приходите на консультацию</h4>
+                <p>Обсуждаем ваши цели и проблемные зоны</p>
+            </div>
+            <div class="step-item fade-in-up">
+                <div class="step-number">02</div>
+                <div class="step-icon-wrapper">
+                    <i data-lucide="settings" style="width: 28px; height: 28px;"></i>
                 </div>
-                <div class="step-item">
-                    <span class="step-icon">🥗</span>
-                    <h4>Получаете план питания</h4>
-                    <p>Ежедневные рекомендации от нутрициолога</p>
+                <h4>Проходите аппаратную коррекцию</h4>
+                <p>10–15 сеансов по индивидуальному протоколу</p>
+            </div>
+            <div class="step-item fade-in-up">
+                <div class="step-number">03</div>
+                <div class="step-icon-wrapper">
+                    <i data-lucide="salad" style="width: 28px; height: 28px;"></i>
                 </div>
-                <div class="step-item">
-                    <span class="step-icon">🎯</span>
-                    <h4>Видите результат</h4>
-                    <p>Замеры до/после и фиксация достижений</p>
+                <h4>Получаете план питания</h4>
+                <p>Ежедневные рекомендации от нутрициолога</p>
+            </div>
+            <div class="step-item fade-in-up">
+                <div class="step-number">04</div>
+                <div class="step-icon-wrapper">
+                    <i data-lucide="target" style="width: 28px; height: 28px;"></i>
                 </div>
+                <h4>Видите результат</h4>
+                <p>Замеры до/после и фиксация достижений</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ============================================================
-    ТАРИФЫ
-    ============================================================ -->
-    <section id="tariffs">
-        <div class="container">
+<!-- ===== ТАРИФЫ ===== -->
+<section id="tariffs">
+    <div class="container">
+        <div class="section-header fade-in-up">
             <h2 class="section-title">Выберите <span>свой курс</span></h2>
             <p class="section-sub">Подберите программу, которая подходит именно вам</p>
-            <div class="tariffs">
-                <div class="tariff-card">
-                    <div class="tariff-name">🚀 Экспресс</div>
-                    <div class="tariff-price">8 900 ₽</div>
-                    <ul>
-                        <li>5 сеансов аппаратной коррекции</li>
-                        <li>Базовые рекомендации по питанию</li>
-                        <li>Замеры до/после</li>
-                    </ul>
-                    <a href="https://dikidi.net/#widget=214330" class="dikidi-btn" style="padding: 12px 36px; font-size: 14px;">
-                        Выбрать
-                    </a>
-                </div>
-                <div class="tariff-card best">
-                    <div class="tariff-name">🔥 Трансформация</div>
-                    <div class="tariff-price">16 900 ₽</div>
-                    <ul>
-                        <li>10 сеансов аппаратной коррекции</li>
-                        <li>Полный план питания на месяц</li>
-                        <li>Контроль результатов каждые 3 сеанса</li>
-                        <li>Гарантия −5 см</li>
-                    </ul>
-                    <a href="https://dikidi.net/#widget=214330" class="dikidi-btn" style="padding: 12px 40px; background: var(--gradient);">
-                        Выбрать
-                    </a>
-                </div>
-                <div class="tariff-card">
-                    <div class="tariff-name">👑 VIP-Перезагрузка</div>
-                    <div class="tariff-price">25 900 ₽</div>
-                    <ul>
-                        <li>15 сеансов аппаратной коррекции</li>
-                        <li>Полный план питания на месяц</li>
-                        <li>Нутрициолог на связи 24/7</li>
-                        <li>Персональный протокол под ваш тип</li>
-                        <li>Гарантия −7 см</li>
-                    </ul>
-                    <a href="https://dikidi.net/#widget=214330" class="dikidi-btn" style="padding: 12px 36px; font-size: 14px;">
-                        Выбрать
-                    </a>
-                </div>
+        </div>
+        <div class="tariffs">
+            <div class="tariff-card fade-in-up">
+                <div class="tariff-icon"><i data-lucide="rocket" style="width: 100%; height: 100%;"></i></div>
+                <div class="tariff-name">Экспресс</div>
+                <div class="tariff-price">8 900 ₽</div>
+                <ul>
+                    <li><i data-lucide="check" class="check-icon" style="width: 18px; height: 18px;"></i> 5 сеансов аппаратной коррекции</li>
+                    <li><i data-lucide="check" class="check-icon" style="width: 18px; height: 18px;"></i> Базовые рекомендации по питанию</li>
+                    <li><i data-lucide="check" class="check-icon" style="width: 18px; height: 18px;"></i> Замеры до/после</li>
+                </ul>
+                <a href="#cta" class="btn-outline">Выбрать</a>
+            </div>
+            <div class="tariff-card best fade-in-up">
+                <div class="tariff-icon"><i data-lucide="flame" style="width: 100%; height: 100%;"></i></div>
+                <div class="tariff-name">Трансформация</div>
+                <div class="tariff-price">16 900 ₽</div>
+                <ul>
+                    <li><i data-lucide="check" class="check-icon" style="width: 18px; height: 18px;"></i> 10 сеансов аппаратной коррекции</li>
+                    <li><i data-lucide="check" class="check-icon" style="width: 18px; height: 18px;"></i> Полный план питания на месяц</li>
+                    <li><i data-lucide="check" class="check-icon" style="width: 18px; height: 18px;"></i> Контроль результатов каждые 3 сеанса</li>
+                    <li><i data-lucide="check" class="check-icon" style="width: 18px; height: 18px;"></i> Гарантия −5 см</li>
+                </ul>
+                <a href="#cta" class="btn-primary" style="width: 100%; padding: 14px 40px;">Выбрать</a>
+            </div>
+            <div class="tariff-card fade-in-up">
+                <div class="tariff-icon"><i data-lucide="crown" style="width: 100%; height: 100%;"></i></div>
+                <div class="tariff-name">VIP-Перезагрузка</div>
+                <div class="tariff-price">25 900 ₽</div>
+                <ul>
+                    <li><i data-lucide="check" class="check-icon" style="width: 18px; height: 18px;"></i> 15 сеансов аппаратной коррекции</li>
+                    <li><i data-lucide="check" class="check-icon" style="width: 18px; height: 18px;"></i> Полный план питания на месяц</li>
+                    <li><i data-lucide="check" class="check-icon" style="width: 18px; height: 18px;"></i> Нутрициолог на связи 24/7</li>
+                    <li><i data-lucide="check" class="check-icon" style="width: 18px; height: 18px;"></i> Персональный протокол под ваш тип</li>
+                    <li><i data-lucide="check" class="check-icon" style="width: 18px; height: 18px;"></i> Гарантия −7 см</li>
+                </ul>
+                <a href="#cta" class="btn-outline">Выбрать</a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ============================================================
-    КАРТА
-    ============================================================ -->
-    <section style="background: var(--bg-light);">
-        <div class="container">
+<!-- ===== КАРТА ===== -->
+<section class="map-section">
+    <div class="container">
+        <div class="section-header fade-in-up">
             <h2 class="section-title">Мы <span>в Новосибирске</span></h2>
             <p class="section-sub">Добирайтесь с комфортом — мы рядом с метро</p>
-            <div class="map-block">
-                <div class="info">
-                    <h3>📍 Наш адрес</h3>
-                    <div class="address">ул. Бориса Богаткова, 248а, 6 этаж, помещение 605</div>
-                    <div class="metro">🚇 Метро «Золотая Нива» — 167 метров пешком</div>
-                    <p style="margin: 14px 0; color: var(--text-gray);">
-                        <strong>Режим работы:</strong> Пн–Вс: 10:00 – 21:00
-                    </p>
-                    <a href="https://yandex.ru/maps/?rtext=~55.037134,82.978497&rtt=auto" target="_blank" class="dikidi-btn" style="padding: 10px 28px; font-size: 14px; background: transparent; color: var(--primary); border: 2px solid var(--primary); box-shadow: none;">
-                        🚗 Построить маршрут
-                    </a>
+        </div>
+        <div class="map-block fade-in-up">
+            <div class="info">
+                <h3><i data-lucide="map-pin" style="width: 28px; height: 28px; color: var(--primary);"></i> Наш адрес</h3>
+                <div class="address">ул. Бориса Богаткова, 248а, 6 этаж, помещение 605</div>
+                <div class="metro">
+                    <i data-lucide="train-front" style="width: 20px; height: 20px;"></i>
+                    Метро «Золотая Нива» — 167 метров пешком
                 </div>
-                <iframe src="https://yandex.ru/map-widget/v1/?ll=82.978497%2C55.037134&z=17&pt=82.978497%2C55.037134%2Cpm2rdl" allowfullscreen loading="lazy"></iframe>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================================
-    FAQ
-    ============================================================ -->
-    <section>
-        <div class="container">
-            <h2 class="section-title">Часто <span>спрашивают</span></h2>
-            <p class="section-sub">Ответы на главные вопросы перед записью</p>
-            <div class="faq-list">
-                <details class="faq-item">
-                    <summary>Это больно?</summary>
-                    <div class="answer">Нет, процедура абсолютно комфортна. Вы чувствуете лишь приятное тепло и лёгкую вибрацию. Многие клиенты даже засыпают во время сеанса.</div>
-                </details>
-                <details class="faq-item">
-                    <summary>Сколько нужно сеансов для результата?</summary>
-                    <div class="answer">Первые изменения видны уже после 3-5 сеансов. Для устойчивого результата рекомендуем курс из 10–15 процедур. Индивидуальный протокол мы составляем на первой консультации.</div>
-                </details>
-                <details class="faq-item">
-                    <summary>Можно ли совмещать с другими процедурами?</summary>
-                    <div class="answer">Да, аппаратная коррекция отлично сочетается с любыми оздоровительными процедурами. Главное — соблюдать рекомендации нашего специалиста.</div>
-                </details>
-                <details class="faq-item">
-                    <summary>Есть ли противопоказания?</summary>
-                    <div class="answer">Как и у любой процедуры, есть небольшие ограничения: беременность, онкология, острые воспаления. Подробнее расскажем на консультации.</div>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================================
-    ПРИЗЫВ (CTA)
-    ============================================================ -->
-    <section id="cta">
-        <div class="container">
-            <div class="cta-block">
-                <h2>Начните <span style="color: #fff;">преображение</span> уже сегодня</h2>
-                <p>Запишитесь на бесплатную консультацию. Осталось всего 4 места на эту неделю.</p>
-                <a href="https://dikidi.net/#widget=214330" class="dikidi-btn dikidi-btn-white">
-                    📱 Записаться на консультацию
+                <div class="work-hours">
+                    <i data-lucide="clock" style="width: 20px; height: 20px;"></i>
+                    <strong>Режим работы:</strong> Пн–Вс: 10:00 – 21:00
+                </div>
+                <a href="https://yandex.ru/maps/?rtext=~55.037134,82.978497&rtt=auto" target="_blank" class="btn-primary" style="padding: 14px 28px; font-size: 15px; width: fit-content;">
+                    <i data-lucide="car" style="width: 18px; height: 18px;"></i>
+                    Построить маршрут
                 </a>
             </div>
+            <iframe src="https://yandex.ru/map-widget/v1/?ll=82.978497%2C55.037134&z=17&pt=82.978497%2C55.037134%2Cpm2rdl" allowfullscreen loading="lazy"></iframe>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ============================================================
-    ФУТЕР
-    ============================================================ -->
-    <footer class="footer container">
-        <div>© 2026 МИНУСРАЗМЕР. Все права защищены.</div>
-        <div>Новосибирск, ул. Бориса Богаткова 248а, 6 этаж, пом. 605 | <a href="tel:+79999999999">+7 (999) 999-99-99</a></div>
-        <div style="color: var(--primary); font-weight: 600;">Работаем по предварительной записи</div>
-    </footer>
+<!-- ===== FAQ ===== -->
+<section>
+    <div class="container">
+        <div class="section-header fade-in-up">
+            <h2 class="section-title">Часто <span>спрашивают</span></h2>
+            <p class="section-sub">Ответы на главные вопросы перед записью</p>
+        </div>
+        <div class="faq-list">
+            <details class="faq-item fade-in-up">
+                <summary>
+                    Это больно?
+                    <div class="faq-icon"><i data-lucide="plus" style="width: 20px; height: 20px;"></i></div>
+                </summary>
+                <div class="answer-wrapper">
+                    <div class="answer">
+                        <div class="answer-inner">
+                            Нет, процедура абсолютно комфортна. Вы чувствуете лишь приятное тепло и лёгкую вибрацию. Многие клиенты даже засыпают во время сеанса.
+                        </div>
+                    </div>
+                </div>
+            </details>
+            <details class="faq-item fade-in-up">
+                <summary>
+                    Сколько нужно сеансов для результата?
+                    <div class="faq-icon"><i data-lucide="plus" style="width: 20px; height: 20px;"></i></div>
+                </summary>
+                <div class="answer-wrapper">
+                    <div class="answer">
+                        <div class="answer-inner">
+                            Первые изменения видны уже после 3-5 сеансов. Для устойчивого результата рекомендуем курс из 10–15 процедур. Индивидуальный протокол мы составляем на первой консультации.
+                        </div>
+                    </div>
+                </div>
+            </details>
+            <details class="faq-item fade-in-up">
+                <summary>
+                    Можно ли совмещать с другими процедурами?
+                    <div class="faq-icon"><i data-lucide="plus" style="width: 20px; height: 20px;"></i></div>
+                </summary>
+                <div class="answer-wrapper">
+                    <div class="answer">
+                        <div class="answer-inner">
+                            Да, аппаратная коррекция отлично сочетается с любыми оздоровительными процедурами. Главное — соблюдать рекомендации нашего специалиста.
+                        </div>
+                    </div>
+                </div>
+            </details>
+            <details class="faq-item fade-in-up">
+                <summary>
+                    Есть ли противопоказания?
+                    <div class="faq-icon"><i data-lucide="plus" style="width: 20px; height: 20px;"></i></div>
+                </summary>
+                <div class="answer-wrapper">
+                    <div class="answer">
+                        <div class="answer-inner">
+                            Как и у любой процедуры, есть небольшие ограничения: беременность, онкология, острые воспаления. Подробнее расскажем на консультации.
+                        </div>
+                    </div>
+                </div>
+            </details>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ПРИЗЫВ (CTA) ===== -->
+<section id="cta">
+    <div class="container">
+        <div class="cta-block fade-in-up">
+            <h2>Начните преображение уже сегодня</h2>
+            <p>Запишитесь на бесплатную консультацию. Осталось всего 4 места на эту неделю.</p>
+            <a href="https://wa.me/79999999999?text=Привет!%20Записываюсь%20на%20консультацию%20в%20МИНУСРАЗМЕР%20(Новосибирск)" class="btn-white">
+                <i data-lucide="smartphone" style="width: 20px; height: 20px;"></i>
+                Записаться на консультацию
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ФУТЕР ===== -->
+<footer class="footer container">
+    <div>© 2026 МИНУСРАЗМЕР. Все права защищены.</div>
+    <div>Новосибирск, ул. Бориса Богаткова 248а, 6 этаж, пом. 605 | <a href="tel:+79999999999">+7 (999) 999-99-99</a></div>
+    <div class="footer-badge">
+        <i data-lucide="calendar-check" style="width: 14px; height: 14px;"></i>
+        Работаем по предварительной записи
+    </div>
+</footer>
+
+<script>
+    // Инициализация иконок Lucide
+    lucide.createIcons();
+
+    // Анимация появления при скролле (Intersection Observer)
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // Анимируем только один раз
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in-up').forEach(el => {
+        observer.observe(el);
+    });
+</script>
 
 </body>
 </html>
