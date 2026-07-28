@@ -50,7 +50,7 @@
         }
 
         /* ============================================================
-           КНОПКИ DIKIDI
+           КНОПКИ DIKIDI (компактные)
            ============================================================ */
         .dikidi-btn {
             display: inline-block;
@@ -106,7 +106,7 @@
            ============================================================ */
         .header {
             background: var(--white);
-            padding: 2px 0;
+            padding: 4px 0;
             box-shadow: 0 1px 12px rgba(0, 0, 0, 0.04);
             position: sticky;
             top: 0;
@@ -118,44 +118,44 @@
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
-            gap: 6px;
+            gap: 8px;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             flex: 0 1 auto;
             max-width: 100%;
         }
 
-        /* ===== ЛОГОТИП: 24px × 1.5 = 36px ===== */
+        /* ===== ЛОГОТИП: 54px (увеличен в 1.5 от 36px) ===== */
         .logo-img {
-            height: 36px;                 /* ← 24px × 1.5 = 36px */
+            height: 54px;
             width: auto;
             max-width: 100%;
-            max-height: 44px;
+            max-height: 64px;
             display: block;
             flex-shrink: 0;
             object-fit: contain;
         }
 
         .logo-sub {
-            font-size: 10px;
+            font-size: 11px;
             font-weight: 400;
             color: var(--text-gray);
             border-left: 2px solid #D0DDE8;
-            padding-left: 8px;
+            padding-left: 10px;
             white-space: nowrap;
         }
 
         .header-phone {
             font-weight: 700;
-            font-size: 13px;
+            font-size: 14px;
             color: var(--primary);
             text-decoration: none;
             background: var(--bg-light);
-            padding: 4px 12px;
+            padding: 5px 14px;
             border-radius: 40px;
             transition: 0.3s;
             border: 1px solid rgba(10, 102, 194, 0.10);
@@ -640,7 +640,7 @@
            ============================================================ */
         @media (max-width: 992px) {
             .logo-img {
-                height: 32px;
+                height: 48px;
             }
         }
 
@@ -687,10 +687,10 @@
                 text-align: center;
             }
             .logo-img {
-                height: 30px;
+                height: 42px;
             }
             .header {
-                padding: 2px 0;
+                padding: 4px 0;
             }
         }
 
@@ -707,18 +707,18 @@
                 font-size: 14px;
             }
             .logo-img {
-                height: 26px;
+                height: 36px;
             }
             .header-phone {
-                font-size: 11px;
-                padding: 3px 10px;
+                font-size: 12px;
+                padding: 4px 10px;
             }
             .logo-sub {
-                font-size: 8px;
+                font-size: 9px;
                 padding-left: 6px;
             }
             .header {
-                padding: 1px 0;
+                padding: 3px 0;
             }
         }
     </style>
@@ -726,7 +726,7 @@
 <body>
 
     <!-- ============================================================
-    ШАПКА — МАКСИМАЛЬНО УЗКАЯ
+    ШАПКА — УЗКАЯ, ЛОГОТИП КРУПНЫЙ
     ============================================================ -->
     <header class="header">
         <div class="container">
@@ -734,7 +734,7 @@
                 <img src="logo.png" alt="МИНУСРАЗМЕР" class="logo-img" />
                 <div class="logo-sub">Аппаратная коррекция + Диетология</div>
             </div>
-            <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                 <a href="tel:+79999999999" class="header-phone">📞 +7 (999) 999-99-99</a>
                 <a href="https://dikidi.net/#widget=214330" class="dikidi-btn">
                     📅 Записаться
