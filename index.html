@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>МИНУСРАЗМЕР Новосибирск — Аппаратная коррекция + Диетология</title>
     
+    <!-- Современные шрифты: Manrope для заголовков, Inter для текста -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@600;700;800;900&display=swap" rel="stylesheet" />
     
+    <!-- Современные векторные иконки Lucide -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- ===== ВИДЖЕТ DIKIDI ===== -->
     <script type="text/javascript" src="https://dikidi.net/assets/js/widget_record/widget2.min.js?v=1773811740"></script>
 
     <style>
+        /* ===== БАЗОВЫЕ НАСТРОЙКИ ===== */
         * {
             margin: 0;
             padding: 0;
@@ -37,7 +40,9 @@
             --radius-sm: 16px;
         }
 
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             font-family: 'Inter', sans-serif;
@@ -50,7 +55,9 @@
                 radial-gradient(circle at 90% 80%, rgba(0, 212, 255, 0.03) 0%, transparent 40%);
         }
 
-        h1, h2, h3, h4 { font-family: 'Manrope', sans-serif; }
+        h1, h2, h3, h4 {
+            font-family: 'Manrope', sans-serif;
+        }
 
         .container {
             max-width: 1200px;
@@ -59,6 +66,7 @@
             width: 100%;
         }
 
+        /* ===== АНИМАЦИИ ПОЯВЛЕНИЯ ===== */
         .fade-in-up {
             opacity: 0;
             transform: translateY(30px);
@@ -69,7 +77,7 @@
             transform: translateY(0);
         }
 
-        /* ===== ШАПКА ===== */
+        /* ===== ШАПКА (Glassmorphism) ===== */
         .header {
             background: var(--glass);
             backdrop-filter: blur(16px) saturate(180%);
@@ -95,51 +103,17 @@
             gap: 16px;
         }
 
-        /* ===== ЛОГОТИП С УМНЫМ FALLBACK ===== */
-        .logo-wrapper {
-            position: relative;
-            height: 56px;
-            display: flex;
-            align-items: center;
-        }
-
+        /* ===== ИСПРАВЛЕНИЕ РАЗМЕРА ЛОГОТИПА (СДЕЛАЛ КРУПНЕЕ) ===== */
         .logo-img {
-            height: 56px;
+            height: 56px; /* Увеличил с 36px до 56px для нормального, заметного размера */
             width: auto;
-            max-width: 100%;
+            max-width: 100%; /* Снял жёсткое ограничение, чтобы логотип масштабировался пропорционально */
             object-fit: contain;
             display: block;
         }
 
-        /* Текстовый логотип — показывается если картинка не загрузилась */
-        .logo-text-fallback {
-            font-family: 'Manrope', sans-serif;
-            font-size: 26px;
-            font-weight: 900;
-            letter-spacing: -0.5px;
-            color: var(--primary-dark);
-            background: var(--white);
-            padding: 10px 20px;
-            border-radius: 14px;
-            box-shadow: 0 4px 12px rgba(0, 102, 255, 0.08);
-            border: 1px solid rgba(0, 102, 255, 0.1);
-            display: none; /* Скрыт по умолчанию, показывается через JS если картинка не загрузилась */
-        }
-
-        .logo-text-fallback span {
-            color: var(--primary);
-        }
-
-        .logo-text-fallback.visible {
-            display: block;
-        }
-
-        .logo-img.hidden {
-            display: none;
-        }
-
         .logo-sub {
-            font-size: 14px;
+            font-size: 14px; /* Чуть увеличил шрифт подписи, чтобы гармонировать с крупным лого */
             font-weight: 600;
             color: var(--text-dark);
             border-left: 2px solid #E2E8F0;
@@ -169,7 +143,7 @@
             transform: translateY(-1px);
         }
 
-        /* ===== КНОПКИ ===== */
+        /* ===== КНОПКИ DIKIDI ===== */
         .dikidi-btn {
             display: inline-flex;
             align-items: center;
@@ -242,7 +216,9 @@
             gap: 60px;
         }
 
-        .hero-content { flex: 1 1 500px; }
+        .hero-content {
+            flex: 1 1 500px;
+        }
 
         .hero-tag {
             display: inline-flex;
@@ -381,7 +357,10 @@
             border: 1px solid rgba(0,0,0,0.04);
         }
 
-        section { padding: 100px 0; }
+        /* ===== СЕКЦИИ ===== */
+        section {
+            padding: 100px 0;
+        }
 
         .section-header {
             text-align: center;
@@ -446,7 +425,9 @@
             border-color: rgba(0, 102, 255, 0.2);
         }
 
-        .card:hover::before { opacity: 1; }
+        .card:hover::before {
+            opacity: 1;
+        }
 
         .card-icon-wrapper {
             width: 56px;
@@ -486,6 +467,7 @@
             font-weight: 700;
         }
 
+        /* ===== ШАГИ ===== */
         .steps-section {
             background: var(--white);
             border-top: 1px solid rgba(0,0,0,0.04);
@@ -508,7 +490,9 @@
             transition: transform 0.3s ease;
         }
 
-        .step-item:hover { transform: translateY(-5px); }
+        .step-item:hover {
+            transform: translateY(-5px);
+        }
 
         .step-number {
             font-family: 'Manrope', sans-serif;
@@ -554,6 +538,7 @@
             line-height: 1.6;
         }
 
+        /* ===== ТАРИФЫ ===== */
         .tariffs {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -629,6 +614,12 @@
             font-family: 'Manrope', sans-serif;
         }
 
+        .tariff-card .tariff-price small {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-gray);
+        }
+
         .tariff-card ul {
             list-style: none;
             text-align: left;
@@ -646,7 +637,9 @@
             border-bottom: 1px solid rgba(0,0,0,0.04);
         }
 
-        .tariff-card ul li:last-child { border-bottom: none; }
+        .tariff-card ul li:last-child {
+            border-bottom: none;
+        }
 
         .tariff-card ul li .check-icon {
             color: var(--primary);
@@ -654,6 +647,7 @@
             margin-top: 2px;
         }
 
+        /* ===== FAQ (Современный аккордеон) ===== */
         .faq-list {
             display: flex;
             flex-direction: column;
@@ -671,7 +665,9 @@
             transition: all 0.3s ease;
         }
 
-        .faq-item:hover { border-color: rgba(0, 102, 255, 0.2); }
+        .faq-item:hover {
+            border-color: rgba(0, 102, 255, 0.2);
+        }
 
         .faq-item summary {
             padding: 24px 28px;
@@ -686,7 +682,9 @@
             font-family: 'Manrope', sans-serif;
         }
 
-        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
 
         .faq-icon {
             width: 32px;
@@ -713,9 +711,13 @@
             transition: grid-template-rows 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .faq-item[open] .answer-wrapper { grid-template-rows: 1fr; }
+        .faq-item[open] .answer-wrapper {
+            grid-template-rows: 1fr;
+        }
 
-        .faq-item .answer { overflow: hidden; }
+        .faq-item .answer {
+            overflow: hidden;
+        }
 
         .faq-item .answer-inner {
             padding: 0 28px 24px;
@@ -724,6 +726,7 @@
             line-height: 1.7;
         }
 
+        /* ===== КАРТА ===== */
         .map-section {
             background: var(--white);
             border-top: 1px solid rgba(0,0,0,0.04);
@@ -759,6 +762,9 @@
             font-size: 18px;
             font-weight: 700;
             margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .map-block .info .metro {
@@ -795,6 +801,7 @@
             display: block;
         }
 
+        /* ===== ПРИЗЫВ (CTA) ===== */
         .cta-block {
             background: var(--gradient);
             border-radius: var(--radius);
@@ -844,6 +851,7 @@
             z-index: 1;
         }
 
+        /* ===== ФУТЕР ===== */
         .footer {
             background: var(--white);
             border-top: 1px solid rgba(0,0,0,0.06);
@@ -882,6 +890,7 @@
             text-decoration: underline;
         }
 
+        /* ===== АДАПТИВ ===== */
         @media (max-width: 768px) {
             .hero { padding: 40px 0 60px; }
             .hero-stats { gap: 24px; }
@@ -923,7 +932,8 @@
         @media (max-width: 480px) {
             .hero h1 { font-size: 28px; }
             .dikidi-btn { padding: 14px 24px; font-size: 14px; }
-            .logo-wrapper, .logo-img { height: 44px; }
+            /* Логотип на телефоне тоже сделал заметным, но чуть меньше, чем на ПК */
+            .logo-img { height: 44px; } 
         }
     </style>
 </head>
@@ -933,14 +943,9 @@
     <header class="header">
         <div class="container">
             <div class="logo">
-                <div class="logo-wrapper">
-                    <!-- Картинка логотипа (SVG или PNG) -->
-                    <img src="logo.svg" alt="МИНУСРАЗМЕР" class="logo-img" id="logoImg" onerror="showLogoFallback()" />
-                    <!-- Текстовый fallback — показывается если картинка не загрузилась -->
-                    <div class="logo-text-fallback" id="logoFallback">МИНУС<span>РАЗМЕР</span></div>
-                </div>
-                <!-- ИЗМЕНЕНО: теперь "Формульная диетология" -->
-                <div class="logo-sub">Формульная диетология</div>
+                <!-- ЛОГОТИП: теперь высотой 56px (на ПК) и 44px (на телефоне) -->
+                <img src="logo.png" alt="МИНУСРАЗМЕР" class="logo-img" />
+                <div class="logo-sub">Аппаратная коррекция +<br>Диетология</div>
             </div>
             <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center;">
                 <a href="tel:+79999999999" class="header-phone">
@@ -1106,7 +1111,9 @@
                         <li><i data-lucide="check" class="check-icon" style="width: 18px; height: 18px;"></i> Базовые рекомендации по питанию</li>
                         <li><i data-lucide="check" class="check-icon" style="width: 18px; height: 18px;"></i> Замеры до/после</li>
                     </ul>
-                    <a href="https://dikidi.net/#widget=214330" class="dikidi-btn dikidi-btn-outline" style="width: 100%; padding: 12px 36px; font-size: 14px;">Выбрать</a>
+                    <a href="https://dikidi.net/#widget=214330" class="dikidi-btn dikidi-btn-outline" style="width: 100%; padding: 12px 36px; font-size: 14px;">
+                        Выбрать
+                    </a>
                 </div>
                 <div class="tariff-card best fade-in-up">
                     <div class="tariff-icon"><i data-lucide="flame" style="width: 100%; height: 100%;"></i></div>
@@ -1118,7 +1125,9 @@
                         <li><i data-lucide="check" class="check-icon" style="width: 18px; height: 18px;"></i> Контроль результатов каждые 3 сеанса</li>
                         <li><i data-lucide="check" class="check-icon" style="width: 18px; height: 18px;"></i> Гарантия −5 см</li>
                     </ul>
-                    <a href="https://dikidi.net/#widget=214330" class="dikidi-btn" style="width: 100%; padding: 14px 40px;">Выбрать</a>
+                    <a href="https://dikidi.net/#widget=214330" class="dikidi-btn" style="width: 100%; padding: 14px 40px;">
+                        Выбрать
+                    </a>
                 </div>
                 <div class="tariff-card fade-in-up">
                     <div class="tariff-icon"><i data-lucide="crown" style="width: 100%; height: 100%;"></i></div>
@@ -1131,7 +1140,9 @@
                         <li><i data-lucide="check" class="check-icon" style="width: 18px; height: 18px;"></i> Персональный протокол под ваш тип</li>
                         <li><i data-lucide="check" class="check-icon" style="width: 18px; height: 18px;"></i> Гарантия −7 см</li>
                     </ul>
-                    <a href="https://dikidi.net/#widget=214330" class="dikidi-btn dikidi-btn-outline" style="width: 100%; padding: 12px 36px; font-size: 14px;">Выбрать</a>
+                    <a href="https://dikidi.net/#widget=214330" class="dikidi-btn dikidi-btn-outline" style="width: 100%; padding: 12px 36px; font-size: 14px;">
+                        Выбрать
+                    </a>
                 </div>
             </div>
         </div>
@@ -1230,7 +1241,7 @@
         </div>
     </section>
 
-    <!-- ===== CTA ===== -->
+    <!-- ===== ПРИЗЫВ (CTA) ===== -->
     <section id="cta">
         <div class="container">
             <div class="cta-block fade-in-up">
@@ -1257,37 +1268,28 @@
     </footer>
 
     <script>
-        // ===== УМНЫЙ FALLBACK ДЛЯ ЛОГОТИПА =====
-        // Если картинка не загрузилась — показываем текстовый логотип
-        function showLogoFallback() {
-            const img = document.getElementById('logoImg');
-            const fallback = document.getElementById('logoFallback');
-            if (img) img.classList.add('hidden');
-            if (fallback) fallback.classList.add('visible');
-        }
-
-        // Проверяем, загрузилась ли картинка
-        const logoImg = document.getElementById('logoImg');
-        if (logoImg && !logoImg.complete) {
-            logoImg.addEventListener('error', showLogoFallback);
-        } else if (logoImg && logoImg.naturalWidth === 0) {
-            showLogoFallback();
-        }
-
         // Инициализация иконок Lucide
         lucide.createIcons();
 
-        // Анимация появления при скролле
-        const observer = new IntersectionObserver((entries) => {
+        // Анимация появления при скролле (Intersection Observer)
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.1 });
+        }, observerOptions);
 
-        document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            observer.observe(el);
+        });
     </script>
 
 </body>
