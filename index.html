@@ -3,21 +3,17 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>МИНУСРАЗМЕР Новосибирск — Аппаратная коррекция + Диетология</title>
-
-    <!-- Современные шрифты: Manrope для заголовков, Inter для текста -->
+    <title>МИНУСРАЗМЕР Новосибирск — Аппаратная коррекция + Формульная диетология</title>
+    
+    <!-- ===== ШРИФТЫ И ИКОНКИ ===== -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@600;700;800;900&display=swap" rel="stylesheet" />
-
-    <!-- Современные векторные иконки Lucide -->
-    <script src="https://unpkg.com/lucide@latest">
-    </script>
-
-    <!-- ===== ВИДЖЕТ DIKIDI ===== -->
-    <script type="text/javascript" src="https://dikidi.net/assets/js/widget_record/widget2.min.js?v=1773811740">
-    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script type="text/javascript" src="https://dikidi.net/assets/js/widget_record/widget2.min.js?v=1773811740"></script>
 
     <style>
-        /* ===== БАЗОВЫЕ НАСТРОЙКИ ===== */
+        /* ============================================================
+           БАЗОВЫЕ НАСТРОЙКИ
+           ============================================================ */
         * {
             margin: 0;
             padding: 0;
@@ -42,9 +38,7 @@
             --radius-sm: 16px;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Inter', sans-serif;
@@ -52,17 +46,12 @@
             color: var(--text-dark);
             line-height: 1.6;
             overflow-x: hidden;
-            background-image:
+            background-image: 
                 radial-gradient(circle at 10% 20%, rgba(0, 102, 255, 0.03) 0%, transparent 40%),
                 radial-gradient(circle at 90% 80%, rgba(0, 212, 255, 0.03) 0%, transparent 40%);
         }
 
-        h1,
-        h2,
-        h3,
-        h4 {
-            font-family: 'Manrope', sans-serif;
-        }
+        h1, h2, h3, h4 { font-family: 'Manrope', sans-serif; }
 
         .container {
             max-width: 1200px;
@@ -71,7 +60,7 @@
             width: 100%;
         }
 
-        /* ===== АНИМАЦИИ ПОЯВЛЕНИЯ ===== */
+        /* ===== АНИМАЦИИ ===== */
         .fade-in-up {
             opacity: 0;
             transform: translateY(30px);
@@ -82,7 +71,9 @@
             transform: translateY(0);
         }
 
-        /* ===== ШАПКА (Glassmorphism) ===== */
+        /* ============================================================
+           ШАПКА (GLASSMORPHISM)
+           ============================================================ */
         .header {
             background: var(--glass);
             backdrop-filter: blur(16px) saturate(180%);
@@ -91,7 +82,7 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.5);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
 
         .header .container {
@@ -106,16 +97,29 @@
             display: flex;
             align-items: center;
             gap: 16px;
+            flex-wrap: wrap;
         }
 
+        /* ===== ЛОГОТИП (КАРТИНКА) ===== */
         .logo-img {
-            height: 36px;
+            height: 48px;
             width: auto;
             max-width: 200px;
             object-fit: contain;
             display: block;
         }
 
+        /* ===== ТЕКСТ ЛОГОТИПА (резервный) ===== */
+        .logo-text-fallback {
+            font-family: 'Manrope', sans-serif;
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--primary-dark);
+            display: none;
+        }
+        .logo-text-fallback span { color: var(--primary); }
+
+        /* ===== ПОДПИСЬ В ШАПКЕ ===== */
         .logo-sub {
             font-size: 13px;
             font-weight: 500;
@@ -147,7 +151,9 @@
             transform: translateY(-1px);
         }
 
-        /* ===== КНОПКИ DIKIDI ===== */
+        /* ============================================================
+           КНОПКИ
+           ============================================================ */
         .dikidi-btn {
             display: inline-flex;
             align-items: center;
@@ -206,7 +212,9 @@
             border-color: var(--primary);
         }
 
-        /* ===== ГЕРОЙ ===== */
+        /* ============================================================
+           ГЕРОЙ
+           ============================================================ */
         .hero {
             padding: 80px 0 100px;
             position: relative;
@@ -220,9 +228,7 @@
             gap: 60px;
         }
 
-        .hero-content {
-            flex: 1 1 500px;
-        }
+        .hero-content { flex: 1 1 500px; }
 
         .hero-tag {
             display: inline-flex;
@@ -306,13 +312,8 @@
         }
 
         @keyframes float {
-            0%,
-            100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-15px);
-            }
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
         }
 
         .hero-image-visual {
@@ -363,13 +364,13 @@
             font-weight: 600;
             color: var(--text-dark);
             font-size: 15px;
-            border: 1px solid rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0,0,0,0.04);
         }
 
-        /* ===== СЕКЦИИ ===== */
-        section {
-            padding: 100px 0;
-        }
+        /* ============================================================
+           СЕКЦИИ
+           ============================================================ */
+        section { padding: 100px 0; }
 
         .section-header {
             text-align: center;
@@ -434,9 +435,7 @@
             border-color: rgba(0, 102, 255, 0.2);
         }
 
-        .card:hover::before {
-            opacity: 1;
-        }
+        .card:hover::before { opacity: 1; }
 
         .card-icon-wrapper {
             width: 56px;
@@ -476,11 +475,13 @@
             font-weight: 700;
         }
 
-        /* ===== ШАГИ ===== */
+        /* ============================================================
+           ШАГИ
+           ============================================================ */
         .steps-section {
             background: var(--white);
-            border-top: 1px solid rgba(0, 0, 0, 0.04);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            border-top: 1px solid rgba(0,0,0,0.04);
+            border-bottom: 1px solid rgba(0,0,0,0.04);
         }
 
         .steps {
@@ -499,9 +500,7 @@
             transition: transform 0.3s ease;
         }
 
-        .step-item:hover {
-            transform: translateY(-5px);
-        }
+        .step-item:hover { transform: translateY(-5px); }
 
         .step-number {
             font-family: 'Manrope', sans-serif;
@@ -547,7 +546,9 @@
             line-height: 1.6;
         }
 
-        /* ===== ТАРИФЫ ===== */
+        /* ============================================================
+           ТАРИФЫ
+           ============================================================ */
         .tariffs {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -560,7 +561,7 @@
             padding: 40px 32px;
             border-radius: var(--radius);
             box-shadow: var(--shadow);
-            border: 1px solid rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0,0,0,0.04);
             text-align: center;
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
@@ -623,12 +624,6 @@
             font-family: 'Manrope', sans-serif;
         }
 
-        .tariff-card .tariff-price small {
-            font-size: 16px;
-            font-weight: 500;
-            color: var(--text-gray);
-        }
-
         .tariff-card ul {
             list-style: none;
             text-align: left;
@@ -643,12 +638,10 @@
             display: flex;
             align-items: flex-start;
             gap: 12px;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            border-bottom: 1px solid rgba(0,0,0,0.04);
         }
 
-        .tariff-card ul li:last-child {
-            border-bottom: none;
-        }
+        .tariff-card ul li:last-child { border-bottom: none; }
 
         .tariff-card ul li .check-icon {
             color: var(--primary);
@@ -656,7 +649,9 @@
             margin-top: 2px;
         }
 
-        /* ===== FAQ (Современный аккордеон) ===== */
+        /* ============================================================
+           FAQ
+           ============================================================ */
         .faq-list {
             display: flex;
             flex-direction: column;
@@ -669,14 +664,12 @@
             background: var(--white);
             border-radius: var(--radius-sm);
             box-shadow: var(--shadow);
-            border: 1px solid rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0,0,0,0.04);
             overflow: hidden;
             transition: all 0.3s ease;
         }
 
-        .faq-item:hover {
-            border-color: rgba(0, 102, 255, 0.2);
-        }
+        .faq-item:hover { border-color: rgba(0, 102, 255, 0.2); }
 
         .faq-item summary {
             padding: 24px 28px;
@@ -691,9 +684,7 @@
             font-family: 'Manrope', sans-serif;
         }
 
-        .faq-item summary::-webkit-details-marker {
-            display: none;
-        }
+        .faq-item summary::-webkit-details-marker { display: none; }
 
         .faq-icon {
             width: 32px;
@@ -720,13 +711,9 @@
             transition: grid-template-rows 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .faq-item[open] .answer-wrapper {
-            grid-template-rows: 1fr;
-        }
+        .faq-item[open] .answer-wrapper { grid-template-rows: 1fr; }
 
-        .faq-item .answer {
-            overflow: hidden;
-        }
+        .faq-item .answer { overflow: hidden; }
 
         .faq-item .answer-inner {
             padding: 0 28px 24px;
@@ -735,10 +722,12 @@
             line-height: 1.7;
         }
 
-        /* ===== КАРТА ===== */
+        /* ============================================================
+           КАРТА
+           ============================================================ */
         .map-section {
             background: var(--white);
-            border-top: 1px solid rgba(0, 0, 0, 0.04);
+            border-top: 1px solid rgba(0,0,0,0.04);
         }
 
         .map-block {
@@ -749,7 +738,7 @@
             flex-wrap: wrap;
             gap: 40px;
             align-items: center;
-            border: 1px solid rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0,0,0,0.04);
         }
 
         .map-block .info {
@@ -771,9 +760,6 @@
             font-size: 18px;
             font-weight: 700;
             margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
 
         .map-block .info .metro {
@@ -806,11 +792,13 @@
             height: 320px;
             border: 0;
             border-radius: var(--radius-sm);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             display: block;
         }
 
-        /* ===== ПРИЗЫВ (CTA) ===== */
+        /* ============================================================
+           CTA
+           ============================================================ */
         .cta-block {
             background: var(--gradient);
             border-radius: var(--radius);
@@ -822,8 +810,7 @@
             box-shadow: 0 20px 60px rgba(0, 102, 255, 0.3);
         }
 
-        .cta-block::before,
-        .cta-block::after {
+        .cta-block::before, .cta-block::after {
             content: '';
             position: absolute;
             border-radius: 50%;
@@ -861,10 +848,12 @@
             z-index: 1;
         }
 
-        /* ===== ФУТЕР ===== */
+        /* ============================================================
+           ФУТЕР
+           ============================================================ */
         .footer {
             background: var(--white);
-            border-top: 1px solid rgba(0, 0, 0, 0.06);
+            border-top: 1px solid rgba(0,0,0,0.06);
             padding: 40px 0;
         }
 
@@ -900,61 +889,39 @@
             text-decoration: underline;
         }
 
-        /* ===== АДАПТИВ ===== */
+        /* ============================================================
+           АДАПТИВ
+           ============================================================ */
         @media (max-width: 768px) {
-            .hero {
-                padding: 40px 0 60px;
+            .hero { padding: 40px 0 60px; }
+            .hero-stats { gap: 24px; }
+            .section-title { font-size: 28px; }
+            
+            .header .container { 
+                flex-direction: column; 
+                align-items: stretch; 
+                text-align: center; 
             }
-            .hero-stats {
-                gap: 24px;
-            }
-            .section-title {
-                font-size: 28px;
-            }
-
-            .header .container {
-                flex-direction: column;
-                align-items: stretch;
-                text-align: center;
-            }
-            .logo {
-                justify-content: center;
-            }
-            .logo-sub {
-                border-left: none;
-                padding-left: 0;
-                margin-top: 8px;
-            }
-            .header-phone {
-                justify-content: center;
-            }
-
-            .cta-block {
-                padding: 40px 24px;
-            }
-
-            .map-block {
-                padding: 24px;
+            .logo { justify-content: center; }
+            .logo-sub { border-left: none; padding-left: 0; margin-top: 8px; }
+            .header-phone { justify-content: center; }
+            
+            .cta-block { padding: 40px 24px; }
+            
+            .map-block { 
+                padding: 24px; 
                 flex-direction: column;
             }
             .map-block iframe {
                 min-width: 100%;
                 height: 300px;
             }
-
-            .tariff-card.best {
-                transform: none;
-            }
-            .tariff-card.best:hover {
-                transform: translateY(-8px);
-            }
-
-            .btn-group {
-                flex-direction: column;
-            }
-            .dikidi-btn {
-                width: 100%;
-            }
+            
+            .tariff-card.best { transform: none; }
+            .tariff-card.best:hover { transform: translateY(-8px); }
+            
+            .btn-group { flex-direction: column; }
+            .dikidi-btn { width: 100%; }
 
             .footer .container {
                 flex-direction: column;
@@ -964,27 +931,25 @@
         }
 
         @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 28px;
-            }
-            .dikidi-btn {
-                padding: 14px 24px;
-                font-size: 14px;
-            }
-            .logo-img {
-                height: 28px;
-            }
+            .hero h1 { font-size: 28px; }
+            .dikidi-btn { padding: 14px 24px; font-size: 14px; }
+            .logo-img { height: 36px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ===== ШАПКА ===== -->
+    <!-- ============================================================
+    ШАПКА
+    ============================================================ -->
     <header class="header">
         <div class="container">
             <div class="logo">
+                <!-- ===== ТВОЙ ЛОГОТИП (logo.png) ===== -->
                 <img src="logo.png" alt="МИНУСРАЗМЕР" class="logo-img" />
-                <div class="logo-sub">Аппаратная коррекция +<br>формульная диетология</div>
+                
+                <!-- ===== ПОДПИСЬ ===== -->
+                <div class="logo-sub">Аппаратная коррекция + Формульная диетология</div>
             </div>
             <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center;">
                 <a href="tel:+79237421557" class="header-phone">
@@ -999,7 +964,9 @@
         </div>
     </header>
 
-    <!-- ===== ГЕРОЙ ===== -->
+    <!-- ============================================================
+    ГЕРОЙ
+    ============================================================ -->
     <section class="hero">
         <div class="container">
             <div class="hero-content fade-in-up">
@@ -1045,7 +1012,9 @@
         </div>
     </section>
 
-    <!-- ===== ПРЕИМУЩЕСТВА ===== -->
+    <!-- ============================================================
+    ПРЕИМУЩЕСТВА
+    ============================================================ -->
     <section>
         <div class="container">
             <div class="section-header fade-in-up">
@@ -1089,7 +1058,9 @@
         </div>
     </section>
 
-    <!-- ===== КАК МЫ РАБОТАЕМ ===== -->
+    <!-- ============================================================
+    КАК МЫ РАБОТАЕМ
+    ============================================================ -->
     <section class="steps-section">
         <div class="container">
             <div class="section-header fade-in-up">
@@ -1133,7 +1104,9 @@
         </div>
     </section>
 
-    <!-- ===== ТАРИФЫ ===== -->
+    <!-- ============================================================
+    ТАРИФЫ
+    ============================================================ -->
     <section id="tariffs">
         <div class="container">
             <div class="section-header fade-in-up">
@@ -1150,9 +1123,7 @@
                         <li><i data-lucide="check" class="check-icon" style="width: 18px; height: 18px;"></i> Базовые рекомендации по питанию</li>
                         <li><i data-lucide="check" class="check-icon" style="width: 18px; height: 18px;"></i> Замеры до/после</li>
                     </ul>
-                    <a href="https://dikidi.net/#widget=214330" class="dikidi-btn dikidi-btn-outline" style="width: 100%; padding: 12px 36px; font-size: 14px;">
-                        Выбрать
-                    </a>
+                    <a href="https://dikidi.net/#widget=214330" class="dikidi-btn dikidi-btn-outline" style="width: 100%; padding: 12px 36px; font-size: 14px;">Выбрать</a>
                 </div>
                 <div class="tariff-card best fade-in-up">
                     <div class="tariff-icon"><i data-lucide="flame" style="width: 100%; height: 100%;"></i></div>
@@ -1164,9 +1135,7 @@
                         <li><i data-lucide="check" class="check-icon" style="width: 18px; height: 18px;"></i> Контроль результатов каждые 3 сеанса</li>
                         <li><i data-lucide="check" class="check-icon" style="width: 18px; height: 18px;"></i> Гарантия −5 см</li>
                     </ul>
-                    <a href="https://dikidi.net/#widget=214330" class="dikidi-btn" style="width: 100%; padding: 14px 40px;">
-                        Выбрать
-                    </a>
+                    <a href="https://dikidi.net/#widget=214330" class="dikidi-btn" style="width: 100%; padding: 14px 40px;">Выбрать</a>
                 </div>
                 <div class="tariff-card fade-in-up">
                     <div class="tariff-icon"><i data-lucide="crown" style="width: 100%; height: 100%;"></i></div>
@@ -1179,15 +1148,15 @@
                         <li><i data-lucide="check" class="check-icon" style="width: 18px; height: 18px;"></i> Персональный протокол под ваш тип</li>
                         <li><i data-lucide="check" class="check-icon" style="width: 18px; height: 18px;"></i> Гарантия −7 см</li>
                     </ul>
-                    <a href="https://dikidi.net/#widget=214330" class="dikidi-btn dikidi-btn-outline" style="width: 100%; padding: 12px 36px; font-size: 14px;">
-                        Выбрать
-                    </a>
+                    <a href="https://dikidi.net/#widget=214330" class="dikidi-btn dikidi-btn-outline" style="width: 100%; padding: 12px 36px; font-size: 14px;">Выбрать</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== КАРТА ===== -->
+    <!-- ============================================================
+    КАРТА
+    ============================================================ -->
     <section class="map-section">
         <div class="container">
             <div class="section-header fade-in-up">
@@ -1216,7 +1185,9 @@
         </div>
     </section>
 
-    <!-- ===== FAQ ===== -->
+    <!-- ============================================================
+    FAQ
+    ============================================================ -->
     <section>
         <div class="container">
             <div class="section-header fade-in-up">
@@ -1280,7 +1251,9 @@
         </div>
     </section>
 
-    <!-- ===== ПРИЗЫВ (CTA) ===== -->
+    <!-- ============================================================
+    CTA (ПРИЗЫВ)
+    ============================================================ -->
     <section id="cta">
         <div class="container">
             <div class="cta-block fade-in-up">
@@ -1294,7 +1267,9 @@
         </div>
     </section>
 
-    <!-- ===== ФУТЕР ===== -->
+    <!-- ============================================================
+    ФУТЕР
+    ============================================================ -->
     <footer class="footer">
         <div class="container">
             <div>© 2026 МИНУСРАЗМЕР. Все права защищены.</div>
@@ -1306,6 +1281,9 @@
         </div>
     </footer>
 
+    <!-- ============================================================
+    СКРИПТЫ
+    ============================================================ -->
     <script>
         // Инициализация иконок Lucide
         lucide.createIcons();
@@ -1317,7 +1295,7 @@
             threshold: 0.1
         };
 
-        const observer = new IntersectionObserver((entries, observer) => {
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
