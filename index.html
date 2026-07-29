@@ -96,7 +96,7 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 14px;
             flex-wrap: wrap;
         }
 
@@ -109,17 +109,20 @@
             display: block;
         }
 
-        /* ===== ТЕКСТ ЛОГОТИПА (резервный) ===== */
-        .logo-text-fallback {
+        /* ===== ТЕКСТ ЛОГОТИПА ===== */
+        .logo-text {
             font-family: 'Manrope', sans-serif;
-            font-size: 24px;
+            font-size: 28px;
             font-weight: 900;
+            letter-spacing: -0.5px;
             color: var(--primary-dark);
-            display: none;
+            line-height: 1;
         }
-        .logo-text-fallback span { color: var(--primary); }
+        .logo-text span {
+            color: var(--primary);
+        }
 
-        /* ===== ПОДПИСЬ В ШАПКЕ ===== */
+        /* ===== ПОДПИСЬ ===== */
         .logo-sub {
             font-size: 13px;
             font-weight: 500;
@@ -934,6 +937,7 @@
             .hero h1 { font-size: 28px; }
             .dikidi-btn { padding: 14px 24px; font-size: 14px; }
             .logo-img { height: 36px; }
+            .logo-text { font-size: 20px; }
         }
     </style>
 </head>
@@ -947,6 +951,9 @@
             <div class="logo">
                 <!-- ===== ТВОЙ ЛОГОТИП (logo.png) ===== -->
                 <img src="logo.png" alt="МИНУСРАЗМЕР" class="logo-img" />
+                
+                <!-- ===== ТЕКСТ ЛОГОТИПА ===== -->
+                <div class="logo-text">МИНУС<span>РАЗМЕР</span></div>
                 
                 <!-- ===== ПОДПИСЬ ===== -->
                 <div class="logo-sub">Аппаратная коррекция + Формульная диетология</div>
