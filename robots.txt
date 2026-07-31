@@ -1,0 +1,8 @@
+User-agent: *
+Disallow:
+
+User-agent: Yandex
+Disallow:
+
+Host: https://минусразмер.рф
+Sitemap: https://минусразмер.рф/sitemap.xml
