@@ -1,0 +1,23 @@
+{
+  "@context": "https://schema.org",
+  "@type": "HealthAndBeautyBusiness",
+  "name": "МИНУСРАЗМЕР",
+  "image": "https://минусразмер.рф/logo.png",
+  "description": "Аппаратная коррекция фигуры и формульная диетология в Новосибирске. Гарантия −5 см за 10 сеансов.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ул. Бориса Богаткова, 248а, вход 1, 6 этаж, помещение 605",
+    "addressLocality": "Новосибирск",
+    "addressRegion": "Новосибирская область",
+    "postalCode": "630099",
+    "addressCountry": "Россия"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 55.037134,
+    "longitude": 82.978497
+  },
+  "telephone": "+7 (923) 742-15-57",
+  "openingHours": "Mo-Sa 10:00-20:00",
+  "url": "https://минусразмер.рф"
+}
