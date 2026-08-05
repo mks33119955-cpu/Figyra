@@ -938,7 +938,7 @@
             .tariff-card.best { transform: none; }
             .tariff-card.best:hover { transform: translateY(-8px); }
             
-            .btn-group { flex-direction: column; }
+            .btn-group { flex-direction: column; align-items: center; }
             .dikidi-btn { width: 100%; }
 
             .footer .container {
@@ -973,11 +973,17 @@
                     <i data-lucide="phone" style="width: 18px; height: 18px;"></i>
                     +7 (923) 742-15-57
                 </a>
-                <!-- ===== КНОПКА ЗАПИСИ (БОЕВОЙ DIKIDI) ===== -->
-                <a href="https://dikidi.ru/#widget=214517" class="dikidi-btn" style="padding: 10px 24px; font-size: 14px;">
-                    <i data-lucide="calendar" style="width: 16px; height: 16px;"></i>
-                    Записаться
-                </a>
+                
+                <!-- КНОПКА ЗАПИСИ + ПОЛИТИКА -->
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+                    <a href="https://dikidi.ru/#widget=214517" class="dikidi-btn" style="padding: 10px 24px; font-size: 14px;">
+                        <i data-lucide="calendar" style="width: 16px; height: 16px;"></i>
+                        Записаться
+                    </a>
+                    <div style="font-size: 11px; color: var(--text-gray); text-align: center; max-width: 200px;">
+                        Нажимая кнопку, вы соглашаетесь с <a href="/privacy.html" style="color: var(--primary); text-decoration: underline;">Политикой конфиденциальности</a>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
@@ -1003,12 +1009,18 @@
                     <div><strong>127+</strong> довольных клиентов</div>
                 </div>
                 <div class="btn-group">
-                    <!-- ===== КНОПКА ЗАПИСИ (БОЕВОЙ DIKIDI) ===== -->
-                    <a href="https://dikidi.ru/#widget=214517" class="dikidi-btn dikidi-btn-wa">
-                        <i data-lucide="message-circle" style="width: 20px; height: 20px;"></i>
-                        Записаться на консультацию
-                    </a>
-                    <a href="#tariffs" class="dikidi-btn dikidi-btn-outline">
+                    <!-- КНОПКА ЗАПИСИ + ПОЛИТИКА -->
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; width: 100%; max-width: 340px;">
+                        <a href="https://dikidi.ru/#widget=214517" class="dikidi-btn dikidi-btn-wa" style="width: 100%;">
+                            <i data-lucide="message-circle" style="width: 20px; height: 20px;"></i>
+                            Записаться на консультацию
+                        </a>
+                        <div style="font-size: 11px; color: var(--text-gray); text-align: center;">
+                            Нажимая кнопку, вы соглашаетесь с <a href="/privacy.html" style="color: var(--primary); text-decoration: underline;">Политикой конфиденциальности</a>
+                        </div>
+                    </div>
+                    
+                    <a href="#tariffs" class="dikidi-btn dikidi-btn-outline" style="width: 100%; max-width: 340px;">
                         <i data-lucide="arrow-down" style="width: 20px; height: 20px;"></i>
                         Выбрать курс
                     </a>
@@ -1133,6 +1145,7 @@
                 <p class="section-sub">Подберите программу, которая подходит именно вам</p>
             </div>
             <div class="tariffs">
+                <!-- ТАРИФ 1 -->
                 <div class="tariff-card fade-in-up">
                     <div class="tariff-icon"><i data-lucide="rocket" style="width: 100%; height: 100%;"></i></div>
                     <div class="tariff-name">Экспресс</div>
@@ -1142,8 +1155,15 @@
                         <li><i data-lucide="check" class="check-icon" style="width: 18px; height: 18px;"></i> Базовые рекомендации по питанию</li>
                         <li><i data-lucide="check" class="check-icon" style="width: 18px; height: 18px;"></i> Замеры до/после</li>
                     </ul>
-                    <a href="https://dikidi.ru/#widget=214517" class="dikidi-btn dikidi-btn-outline" style="width: 100%; padding: 12px 36px; font-size: 14px;">Выбрать</a>
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; width: 100%;">
+                        <a href="https://dikidi.ru/#widget=214517" class="dikidi-btn dikidi-btn-outline" style="width: 100%; padding: 12px 36px; font-size: 14px;">Выбрать</a>
+                        <div style="font-size: 11px; color: var(--text-gray); text-align: center;">
+                            Нажимая кнопку, вы соглашаетесь с <a href="/privacy.html" style="color: var(--primary); text-decoration: underline;">Политикой конфиденциальности</a>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- ТАРИФ 2 -->
                 <div class="tariff-card best fade-in-up">
                     <div class="tariff-icon"><i data-lucide="flame" style="width: 100%; height: 100%;"></i></div>
                     <div class="tariff-name">Трансформация</div>
@@ -1154,8 +1174,15 @@
                         <li><i data-lucide="check" class="check-icon" style="width: 18px; height: 18px;"></i> Контроль результатов каждые 3 сеанса</li>
                         <li><i data-lucide="check" class="check-icon" style="width: 18px; height: 18px;"></i> Гарантия −5 см</li>
                     </ul>
-                    <a href="https://dikidi.ru/#widget=214517" class="dikidi-btn" style="width: 100%; padding: 14px 40px;">Выбрать</a>
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; width: 100%;">
+                        <a href="https://dikidi.ru/#widget=214517" class="dikidi-btn" style="width: 100%; padding: 14px 40px;">Выбрать</a>
+                        <div style="font-size: 11px; color: var(--text-gray); text-align: center;">
+                            Нажимая кнопку, вы соглашаетесь с <a href="/privacy.html" style="color: var(--primary); text-decoration: underline;">Политикой конфиденциальности</a>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- ТАРИФ 3 -->
                 <div class="tariff-card fade-in-up">
                     <div class="tariff-icon"><i data-lucide="crown" style="width: 100%; height: 100%;"></i></div>
                     <div class="tariff-name">VIP-Перезагрузка</div>
@@ -1167,7 +1194,12 @@
                         <li><i data-lucide="check" class="check-icon" style="width: 18px; height: 18px;"></i> Персональный протокол под ваш тип</li>
                         <li><i data-lucide="check" class="check-icon" style="width: 18px; height: 18px;"></i> Гарантия −7 см</li>
                     </ul>
-                    <a href="https://dikidi.ru/#widget=214517" class="dikidi-btn dikidi-btn-outline" style="width: 100%; padding: 12px 36px; font-size: 14px;">Выбрать</a>
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; width: 100%;">
+                        <a href="https://dikidi.ru/#widget=214517" class="dikidi-btn dikidi-btn-outline" style="width: 100%; padding: 12px 36px; font-size: 14px;">Выбрать</a>
+                        <div style="font-size: 11px; color: var(--text-gray); text-align: center;">
+                            Нажимая кнопку, вы соглашаетесь с <a href="/privacy.html" style="color: var(--primary); text-decoration: underline;">Политикой конфиденциальности</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1278,11 +1310,17 @@
             <div class="cta-block fade-in-up">
                 <h2>Начните преображение уже сегодня</h2>
                 <p>Запишитесь на бесплатную консультацию. Осталось всего 4 места на эту неделю.</p>
-                <!-- ===== КНОПКА ЗАПИСИ (БОЕВОЙ DIKIDI) ===== -->
-                <a href="https://dikidi.ru/#widget=214517" class="dikidi-btn dikidi-btn-white">
-                    <i data-lucide="smartphone" style="width: 20px; height: 20px;"></i>
-                    Записаться на консультацию
-                </a>
+                
+                <!-- КНОПКА ЗАПИСИ + ПОЛИТИКА (БЕЛЫЙ ТЕКСТ) -->
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
+                    <a href="https://dikidi.ru/#widget=214517" class="dikidi-btn dikidi-btn-white">
+                        <i data-lucide="smartphone" style="width: 20px; height: 20px;"></i>
+                        Записаться на консультацию
+                    </a>
+                    <div style="font-size: 12px; color: rgba(255,255,255,0.85); text-align: center;">
+                        Нажимая кнопку, вы соглашаетесь с <a href="/privacy.html" style="color: #fff; text-decoration: underline;">Политикой конфиденциальности</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
