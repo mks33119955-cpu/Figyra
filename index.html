@@ -4,34 +4,62 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>МИНУСРАЗМЕР Новосибирск — Аппаратная коррекция + Формульная диетология</title>
-    
+
     <!-- ===== ОПИСАНИЕ ДЛЯ ПОИСКОВИКОВ (Description) ===== -->
     <meta name="description" content="Аппаратная коррекция фигуры в Новосибирске. Гарантия −5 см за 10 сеансов. Запишитесь на бесплатную консультацию. Без боли и диет." />
-    
+
     <!-- ===== МИКРОРАЗМЕТКА ДЛЯ ПОИСКОВИКОВ (Schema.org JSON-LD) ===== -->
-    <script type="application/ld+json" src="schema.json"></script>
-    
+    <script type="application/ld+json" src="schema.json">
+    </script>
+
     <!-- ===== ФАВИКОН ===== -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
-    
+
     <!-- ===== КАНОНИЧЕСКИЙ АДРЕС (ГЛАВНЫЙ URL) ===== -->
     <link rel="canonical" href="https://минусразмер.рф/" />
-    
+
     <!-- ===== ШРИФТЫ И ИКОНКИ ===== -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@600;700;800;900&display=swap" rel="stylesheet" />
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
+    <script src="https://unpkg.com/lucide@latest">
+    </script>
+
     <!-- ===== ВИДЖЕТ DIKIDI (БОЕВОЙ) ===== -->
-    <script type="text/javascript" src="https://dikidi.ru/assets/js/widget_record/widget2.min.js?v=1773811740"></script>
+    <script type="text/javascript" src="https://dikidi.ru/assets/js/widget_record/widget2.min.js?v=1773811740">
+    </script>
+
+    <!-- ===== ЯНДЕКС МЕТРИКА ===== -->
+    <script type="text/javascript">
+        (function(m, e, t, r, i, k, a) {
+            m[i] = m[i] || function() { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k,
+            a)
+        })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=111889785', 'ym');
+
+        ym(111889785, 'init', {
+            ssr: true,
+            webvisor: true,
+            clickmap: true,
+            ecommerce: "dataLayer",
+            referrer: document.referrer,
+            url: location.href,
+            accurateTrackBounce: true,
+            trackLinks: true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/111889785" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
 
     <style>
         /* ============================================================
-           БАЗОВЫЕ НАСТРОЙКИ
-           ============================================================ */
+                   БАЗОВЫЕ НАСТРОЙКИ
+                   ============================================================ */
         * {
             margin: 0;
             padding: 0;
@@ -56,7 +84,9 @@
             --radius-sm: 16px;
         }
 
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             font-family: 'Inter', sans-serif;
@@ -64,12 +94,17 @@
             color: var(--text-dark);
             line-height: 1.6;
             overflow-x: hidden;
-            background-image: 
+            background-image:
                 radial-gradient(circle at 10% 20%, rgba(0, 102, 255, 0.03) 0%, transparent 40%),
                 radial-gradient(circle at 90% 80%, rgba(0, 212, 255, 0.03) 0%, transparent 40%);
         }
 
-        h1, h2, h3, h4 { font-family: 'Manrope', sans-serif; }
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Manrope', sans-serif;
+        }
 
         .container {
             max-width: 1200px;
@@ -90,8 +125,8 @@
         }
 
         /* ============================================================
-           ШАПКА (GLASSMORPHISM)
-           ============================================================ */
+                   ШАПКА (GLASSMORPHISM)
+                   ============================================================ */
         .header {
             background: var(--glass);
             backdrop-filter: blur(16px) saturate(180%);
@@ -170,8 +205,8 @@
         }
 
         /* ============================================================
-           КНОПКИ
-           ============================================================ */
+                   КНОПКИ
+                   ============================================================ */
         .dikidi-btn {
             display: inline-flex;
             align-items: center;
@@ -231,8 +266,8 @@
         }
 
         /* ============================================================
-           ГЕРОЙ
-           ============================================================ */
+                   ГЕРОЙ
+                   ============================================================ */
         .hero {
             padding: 80px 0 100px;
             position: relative;
@@ -246,7 +281,9 @@
             gap: 60px;
         }
 
-        .hero-content { flex: 1 1 500px; }
+        .hero-content {
+            flex: 1 1 500px;
+        }
 
         .hero-tag {
             display: inline-flex;
@@ -330,8 +367,13 @@
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
         }
 
         .hero-image-visual {
@@ -382,13 +424,15 @@
             font-weight: 600;
             color: var(--text-dark);
             font-size: 15px;
-            border: 1px solid rgba(0,0,0,0.04);
+            border: 1px solid rgba(0, 0, 0, 0.04);
         }
 
         /* ============================================================
-           СЕКЦИИ
-           ============================================================ */
-        section { padding: 100px 0; }
+                   СЕКЦИИ
+                   ============================================================ */
+        section {
+            padding: 100px 0;
+        }
 
         .section-header {
             text-align: center;
@@ -453,7 +497,9 @@
             border-color: rgba(0, 102, 255, 0.2);
         }
 
-        .card:hover::before { opacity: 1; }
+        .card:hover::before {
+            opacity: 1;
+        }
 
         .card-icon-wrapper {
             width: 56px;
@@ -494,12 +540,12 @@
         }
 
         /* ============================================================
-           ШАГИ
-           ============================================================ */
+                   ШАГИ
+                   ============================================================ */
         .steps-section {
             background: var(--white);
-            border-top: 1px solid rgba(0,0,0,0.04);
-            border-bottom: 1px solid rgba(0,0,0,0.04);
+            border-top: 1px solid rgba(0, 0, 0, 0.04);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
         }
 
         .steps {
@@ -518,7 +564,9 @@
             transition: transform 0.3s ease;
         }
 
-        .step-item:hover { transform: translateY(-5px); }
+        .step-item:hover {
+            transform: translateY(-5px);
+        }
 
         .step-number {
             font-family: 'Manrope', sans-serif;
@@ -565,8 +613,8 @@
         }
 
         /* ============================================================
-           ТАРИФЫ
-           ============================================================ */
+                   ТАРИФЫ
+                   ============================================================ */
         .tariffs {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -579,7 +627,7 @@
             padding: 40px 32px;
             border-radius: var(--radius);
             box-shadow: var(--shadow);
-            border: 1px solid rgba(0,0,0,0.04);
+            border: 1px solid rgba(0, 0, 0, 0.04);
             text-align: center;
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
@@ -656,10 +704,12 @@
             display: flex;
             align-items: flex-start;
             gap: 12px;
-            border-bottom: 1px solid rgba(0,0,0,0.04);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
         }
 
-        .tariff-card ul li:last-child { border-bottom: none; }
+        .tariff-card ul li:last-child {
+            border-bottom: none;
+        }
 
         .tariff-card ul li .check-icon {
             color: var(--primary);
@@ -668,8 +718,8 @@
         }
 
         /* ============================================================
-           FAQ
-           ============================================================ */
+                   FAQ
+                   ============================================================ */
         .faq-list {
             display: flex;
             flex-direction: column;
@@ -682,12 +732,14 @@
             background: var(--white);
             border-radius: var(--radius-sm);
             box-shadow: var(--shadow);
-            border: 1px solid rgba(0,0,0,0.04);
+            border: 1px solid rgba(0, 0, 0, 0.04);
             overflow: hidden;
             transition: all 0.3s ease;
         }
 
-        .faq-item:hover { border-color: rgba(0, 102, 255, 0.2); }
+        .faq-item:hover {
+            border-color: rgba(0, 102, 255, 0.2);
+        }
 
         .faq-item summary {
             padding: 24px 28px;
@@ -702,7 +754,9 @@
             font-family: 'Manrope', sans-serif;
         }
 
-        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
 
         .faq-icon {
             width: 32px;
@@ -729,9 +783,13 @@
             transition: grid-template-rows 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .faq-item[open] .answer-wrapper { grid-template-rows: 1fr; }
+        .faq-item[open] .answer-wrapper {
+            grid-template-rows: 1fr;
+        }
 
-        .faq-item .answer { overflow: hidden; }
+        .faq-item .answer {
+            overflow: hidden;
+        }
 
         .faq-item .answer-inner {
             padding: 0 28px 24px;
@@ -741,11 +799,11 @@
         }
 
         /* ============================================================
-           КАРТА
-           ============================================================ */
+                   КАРТА
+                   ============================================================ */
         .map-section {
             background: var(--white);
-            border-top: 1px solid rgba(0,0,0,0.04);
+            border-top: 1px solid rgba(0, 0, 0, 0.04);
         }
 
         .map-block {
@@ -756,7 +814,7 @@
             flex-wrap: wrap;
             gap: 40px;
             align-items: center;
-            border: 1px solid rgba(0,0,0,0.04);
+            border: 1px solid rgba(0, 0, 0, 0.04);
         }
 
         .map-block .info {
@@ -810,13 +868,13 @@
             height: 320px;
             border: 0;
             border-radius: var(--radius-sm);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
             display: block;
         }
 
         /* ============================================================
-           CTA
-           ============================================================ */
+                   CTA
+                   ============================================================ */
         .cta-block {
             background: var(--gradient);
             border-radius: var(--radius);
@@ -828,7 +886,8 @@
             box-shadow: 0 20px 60px rgba(0, 102, 255, 0.3);
         }
 
-        .cta-block::before, .cta-block::after {
+        .cta-block::before,
+        .cta-block::after {
             content: '';
             position: absolute;
             border-radius: 50%;
@@ -867,11 +926,11 @@
         }
 
         /* ============================================================
-           ФУТЕР
-           ============================================================ */
+                   ФУТЕР
+                   ============================================================ */
         .footer {
             background: var(--white);
-            border-top: 1px solid rgba(0,0,0,0.06);
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
             padding: 40px 0;
         }
 
@@ -908,38 +967,63 @@
         }
 
         /* ============================================================
-           АДАПТИВ
-           ============================================================ */
+                   АДАПТИВ
+                   ============================================================ */
         @media (max-width: 768px) {
-            .hero { padding: 40px 0 60px; }
-            .hero-stats { gap: 24px; }
-            .section-title { font-size: 28px; }
-            
-            .header .container { 
-                flex-direction: column; 
-                align-items: stretch; 
-                text-align: center; 
+            .hero {
+                padding: 40px 0 60px;
             }
-            .logo { justify-content: center; }
-            .logo-sub { border-left: none; padding-left: 0; margin-top: 8px; }
-            .header-phone { justify-content: center; }
-            
-            .cta-block { padding: 40px 24px; }
-            
-            .map-block { 
-                padding: 24px; 
+            .hero-stats {
+                gap: 24px;
+            }
+            .section-title {
+                font-size: 28px;
+            }
+
+            .header .container {
+                flex-direction: column;
+                align-items: stretch;
+                text-align: center;
+            }
+            .logo {
+                justify-content: center;
+            }
+            .logo-sub {
+                border-left: none;
+                padding-left: 0;
+                margin-top: 8px;
+            }
+            .header-phone {
+                justify-content: center;
+            }
+
+            .cta-block {
+                padding: 40px 24px;
+            }
+
+            .map-block {
+                padding: 24px;
                 flex-direction: column;
             }
             .map-block iframe {
                 min-width: 100%;
                 height: 300px;
             }
-            
-            .tariff-card.best { transform: none; }
-            .tariff-card.best:hover { transform: translateY(-8px); }
-            
-            .btn-group { flex-direction: column; align-items: center; }
-            .dikidi-btn { width: 100%; }
+
+            .tariff-card.best {
+                transform: none;
+            }
+            .tariff-card.best:hover {
+                transform: translateY(-8px);
+            }
+
+            .btn-group {
+                flex-direction: column;
+                align-items: center;
+            }
+            .dikidi-btn {
+                width: 100%;
+            }
 
             .footer .container {
                 flex-direction: column;
@@ -949,18 +1033,27 @@
         }
 
         @media (max-width: 480px) {
-            .hero h1 { font-size: 28px; }
-            .dikidi-btn { padding: 14px 24px; font-size: 14px; }
-            .logo-img { height: 36px; }
-            .logo-text { font-size: 20px; }
+            .hero h1 {
+                font-size: 28px;
+            }
+            .dikidi-btn {
+                padding: 14px 24px;
+                font-size: 14px;
+            }
+            .logo-img {
+                height: 36px;
+            }
+            .logo-text {
+                font-size: 20px;
+            }
         }
     </style>
 </head>
 <body>
 
     <!-- ============================================================
-    ШАПКА
-    ============================================================ -->
+        ШАПКА
+        ============================================================ -->
     <header class="header">
         <div class="container">
             <div class="logo">
@@ -973,7 +1066,7 @@
                     <i data-lucide="phone" style="width: 18px; height: 18px;"></i>
                     +7 (923) 742-15-57
                 </a>
-                
+
                 <!-- КНОПКА ЗАПИСИ + ПОЛИТИКА -->
                 <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
                     <a href="https://dikidi.ru/#widget=214517" class="dikidi-btn" style="padding: 10px 24px; font-size: 14px;">
@@ -989,8 +1082,8 @@
     </header>
 
     <!-- ============================================================
-    ГЕРОЙ
-    ============================================================ -->
+        ГЕРОЙ
+        ============================================================ -->
     <section class="hero">
         <div class="container">
             <div class="hero-content fade-in-up">
@@ -1019,7 +1112,7 @@
                             Нажимая кнопку, вы соглашаетесь с <a href="/privacy.html" style="color: var(--primary); text-decoration: underline;">Политикой конфиденциальности</a>
                         </div>
                     </div>
-                    
+
                     <a href="#tariffs" class="dikidi-btn dikidi-btn-outline" style="width: 100%; max-width: 340px;">
                         <i data-lucide="arrow-down" style="width: 20px; height: 20px;"></i>
                         Выбрать курс
@@ -1044,8 +1137,8 @@
     </section>
 
     <!-- ============================================================
-    ПРЕИМУЩЕСТВА
-    ============================================================ -->
+        ПРЕИМУЩЕСТВА
+        ============================================================ -->
     <section>
         <div class="container">
             <div class="section-header fade-in-up">
@@ -1090,8 +1183,8 @@
     </section>
 
     <!-- ============================================================
-    КАК МЫ РАБОТАЕМ
-    ============================================================ -->
+        КАК МЫ РАБОТАЕМ
+        ============================================================ -->
     <section class="steps-section">
         <div class="container">
             <div class="section-header fade-in-up">
@@ -1136,8 +1229,8 @@
     </section>
 
     <!-- ============================================================
-    ТАРИФЫ
-    ============================================================ -->
+        ТАРИФЫ
+        ============================================================ -->
     <section id="tariffs">
         <div class="container">
             <div class="section-header fade-in-up">
@@ -1206,8 +1299,8 @@
     </section>
 
     <!-- ============================================================
-    КАРТА
-    ============================================================ -->
+        КАРТА
+        ============================================================ -->
     <section class="map-section">
         <div class="container">
             <div class="section-header fade-in-up">
@@ -1237,8 +1330,8 @@
     </section>
 
     <!-- ============================================================
-    FAQ
-    ============================================================ -->
+        FAQ
+        ============================================================ -->
     <section>
         <div class="container">
             <div class="section-header fade-in-up">
@@ -1303,14 +1396,14 @@
     </section>
 
     <!-- ============================================================
-    CTA (ПРИЗЫВ)
-    ============================================================ -->
+        CTA (ПРИЗЫВ)
+        ============================================================ -->
     <section id="cta">
         <div class="container">
             <div class="cta-block fade-in-up">
                 <h2>Начните преображение уже сегодня</h2>
                 <p>Запишитесь на бесплатную консультацию. Осталось всего 4 места на эту неделю.</p>
-                
+
                 <!-- КНОПКА ЗАПИСИ + ПОЛИТИКА (БЕЛЫЙ ТЕКСТ) -->
                 <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
                     <a href="https://dikidi.ru/#widget=214517" class="dikidi-btn dikidi-btn-white">
@@ -1326,8 +1419,8 @@
     </section>
 
     <!-- ============================================================
-    ФУТЕР
-    ============================================================ -->
+        ФУТЕР
+        ============================================================ -->
     <footer class="footer">
         <div class="container">
             <div>© 2026 МИНУСРАЗМЕР. Все права защищены.</div>
@@ -1340,8 +1433,8 @@
     </footer>
 
     <!-- ============================================================
-    СКРИПТЫ
-    ============================================================ -->
+        СКРИПТЫ
+        ============================================================ -->
     <script>
         lucide.createIcons();
 
