@@ -1,8 +1,8 @@
 User-agent: *
-Disallow:
+Allow: /
 
 User-agent: Yandex
-Disallow:
+Allow: /
 
-Host: https://минусразмер.рф
-Sitemap: https://минусразмер.рф/sitemap.xml
+Host: https://xn--80akfctdeyeev.xn--p1ai
+Sitemap: https://xn--80akfctdeyeev.xn--p1ai/sitemap.xml
