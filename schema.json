@@ -2,7 +2,7 @@
   "@context": "https://schema.org",
   "@type": "BeautySalon",
   "name": "МИНУСРАЗМЕР",
-  "image": "https://минусразмер.рф/logo.png",
+  "image": "https://xn--80akfctdeyeev.xn--p1ai/logo.png",
   "description": "Аппаратная коррекция фигуры и аппаратный массаж в Новосибирске. Практические рекомендации по питанию.",
   "address": {
     "@type": "PostalAddress",
@@ -18,6 +18,6 @@
     "longitude": 82.978497
   },
   "telephone": "+7 (923) 742-15-57",
-  "openingHours": "Mo-Sa 10:00-20:00",
-  "url": "https://минусразмер.рф"
+  "openingHoursSpecification": {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"10:00","closes":"20:00"},
+  "url": "https://xn--80akfctdeyeev.xn--p1ai"
 }
