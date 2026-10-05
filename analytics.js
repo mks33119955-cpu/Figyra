@@ -38,7 +38,7 @@
   function banner(){
     if(localStorage.getItem(KEY)==="1"){loadMetrika(); bind(); return;}
     const box=document.createElement("div");
-    box.id="cookie";
+    box.id="cookie"; box.className="cookie";
     box.style.cssText="position:fixed;z-index:9999;left:16px;right:16px;bottom:16px;max-width:940px;margin:auto;background:rgba(255,255,255,.97);border:1px solid rgba(16,24,39,.09);border-radius:20px;box-shadow:0 20px 70px rgba(0,0,0,.18);padding:17px 18px;display:flex;gap:18px;align-items:center;justify-content:space-between;font:12px/1.5 Manrope,Arial,sans-serif;color:#5f6d82";
     box.innerHTML='<span>Сайт использует технические cookies. Аналитика включается после вашего согласия. Подробнее — в <a href="/privacy.html" style="color:#4f7fd8">Политике конфиденциальности</a>.</span><button style="border:0;background:#4f7fd8;color:#fff;border-radius:12px;padding:11px 17px;font-weight:800;cursor:pointer;white-space:nowrap">Понятно</button>';
     document.body.appendChild(box);
