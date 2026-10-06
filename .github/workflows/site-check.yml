@@ -1,0 +1,65 @@
+name: Site quality gate
+
+on:
+  push:
+    branches: ["main", "audit/**"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  static-site-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check JavaScript syntax
+        run: node --check analytics.js
+
+      - name: Check required SEO/legal invariants
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re, sys
+
+          root = Path(".")
+          index = (root / "index.html").read_text(encoding="utf-8")
+          offer = (root / "offer.html").read_text(encoding="utf-8")
+          robots = (root / "robots.txt").read_text(encoding="utf-8")
+          sitemap = (root / "sitemap.xml").read_text(encoding="utf-8")
+
+          required = [
+              "6", "12", "17",
+              "https://xn--80akfctdeyeev.xn--p1ai/",
+              'name="description"',
+              'rel="canonical"',
+              'application/ld+json'
+          ]
+          for item in required:
+              if item not in index:
+                  print(f"Missing required homepage invariant: {item}")
+                  sys.exit(1)
+
+          if not all(x in offer for x in ("6", "12", "17")):
+              print("Offer does not contain current 6/12/17 program counts")
+              sys.exit(1)
+
+          if re.search(r"\b(?:5|10|15)\s*(?:процедур|сеансов)\b", index + offer):
+              print("Legacy 5/10/15 program counts detected")
+              sys.exit(1)
+
+          if "Sitemap: https://xn--80akfctdeyeev.xn--p1ai/sitemap.xml" not in robots:
+              print("robots.txt does not point to the canonical sitemap")
+              sys.exit(1)
+
+          urls = re.findall(r"<loc>(.*?)</loc>", sitemap)
+          for url in urls:
+              if not url.startswith("https://xn--80akfctdeyeev.xn--p1ai/"):
+                  print(f"Non-canonical sitemap URL: {url}")
+                  sys.exit(1)
+              rel = url.split("/", 3)[-1] or "index.html"
+              if rel != "index.html" and not (root / rel).exists():
+                  print(f"Sitemap points to missing file: {rel}")
+                  sys.exit(1)
+
+          print("Static site invariants: OK")
+          PY
