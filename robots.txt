@@ -4,5 +4,7 @@ Allow: /
 User-agent: Yandex
 Allow: /
 
-Host: https://xn--80akfctdeyeev.xn--p1ai
+User-agent: OAI-SearchBot
+Allow: /
+
 Sitemap: https://xn--80akfctdeyeev.xn--p1ai/sitemap.xml
