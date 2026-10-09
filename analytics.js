@@ -7,7 +7,7 @@
     window.ym.l=+new Date;
     const s=document.createElement("script"); s.async=true; s.src="https://mc.yandex.ru/metrika/tag.js";
     document.head.appendChild(s);
-    ym(COUNTER,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true});
+    ym(COUNTER,"init",{webvisor:true,clickmap:true,trackLinks:true,accurateTrackBounce:true,trackHash:true});
     setTimeout(trackPageGoal,300);
   }
   function goal(id){ if(typeof ym==="function") ym(COUNTER,"reachGoal",id); }
