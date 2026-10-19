@@ -32,12 +32,41 @@ jobs:
               "https://xn--80akfctdeyeev.xn--p1ai/",
               'name="description"',
               'rel="canonical"',
-              'application/ld+json'
+              'application/ld+json',
+              'rel="preload" as="image" href="/assets/hero-visual.png" fetchpriority="high"',
+              'analytics_consent_v2'
           ]
           for item in required:
               if item not in index:
                   print(f"Missing required homepage invariant: {item}")
                   sys.exit(1)
+
+          analytics = (root / "analytics.js").read_text(encoding="utf-8")
+          if 'data-consent="accept"' not in analytics or 'data-consent="reject"' not in analytics:
+              print("Analytics consent must offer explicit accept and reject choices")
+              sys.exit(1)
+          if 'localStorage.setItem(KEY,"accepted")' not in analytics or 'localStorage.setItem(KEY,"rejected")' not in analytics:
+              print("Analytics consent choices are not persisted separately")
+              sys.exit(1)
+
+          for page in ("ceny.html", "programmy.html", "apparatnyy-massazh.html",
+                       "apparatnaya-korrekciya-figury.html", "pervyy-vizit.html", "faq.html"):
+              html = (root / page).read_text(encoding="utf-8")
+              for marker in ('href="/assets/page-shell.css"', 'class="site-header"', 'class="site-footer"'):
+                  if marker not in html:
+                      print(f"{page} is missing shared page template marker: {marker}")
+                      sys.exit(1)
+
+          prices = (root / "ceny.html").read_text(encoding="utf-8")
+          programs = (root / "programmy.html").read_text(encoding="utf-8")
+          if "Программа Старт" in prices + programs or "<h3>Старт</h3>" in prices or "<h2>Старт</h2>" in programs:
+              print("Inconsistent legacy name for the 6-session program")
+              sys.exit(1)
+
+          schema = __import__("json").loads((root / "schema.json").read_text(encoding="utf-8"))
+          if schema.get("address", {}).get("addressCountry") != "RU" or "postalCode" in schema.get("address", {}):
+              print("Schema address must use ISO country code and omit unverified postal code")
+              sys.exit(1)
 
           if not all(x in offer for x in ("6", "12", "17")):
               print("Offer does not contain current 6/12/17 program counts")
