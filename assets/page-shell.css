@@ -1,0 +1,19 @@
+/* Shared shell for public inner pages. Keep pricing/content in page files. */
+:root{--page-ink:#101827;--page-muted:#68758a;--page-blue:#4f7fd8;--page-line:#e1e7f0}
+body{font-family:Manrope,Arial,sans-serif;color:var(--page-ink);background:#f5f8fd}
+.site-header{box-sizing:border-box;max-width:1180px;margin:0 auto;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.site-brand{display:flex;align-items:center;gap:11px;min-width:210px;color:var(--page-ink);text-decoration:none;font-weight:800;line-height:1.2}
+.site-brand img{width:44px;height:44px;object-fit:contain;border-radius:12px}
+.site-brand small{display:block;margin-top:4px;color:var(--page-muted);font-size:11px;font-weight:600}
+.site-nav{display:flex;align-items:center;justify-content:center;gap:clamp(8px,1.3vw,18px);flex-wrap:wrap}
+.site-nav a{color:#35445d;text-decoration:none;font-size:13px;font-weight:700}
+.site-nav a:hover,.site-nav a:focus-visible{color:var(--page-blue)}
+.site-book{flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 16px;border-radius:12px;background:var(--page-blue);color:#fff;text-decoration:none;font-size:13px;font-weight:800}
+.site-book:hover,.site-book:focus-visible{background:#386bc9}
+.site-footer{box-sizing:border-box;max-width:1180px;margin:52px auto 0;padding:24px 20px 34px;border-top:1px solid var(--page-line);display:flex;align-items:flex-start;justify-content:space-between;gap:20px;color:var(--page-muted);font-size:12px}
+.site-footer p{margin:0;max-width:560px}
+.site-footer nav{display:flex;flex-wrap:wrap;gap:10px 16px}
+.site-footer a{color:#4f7fd8;text-decoration:none;font-weight:700}
+.site-footer a:hover,.site-footer a:focus-visible{text-decoration:underline}
+@media(max-width:900px){.site-header{flex-wrap:wrap}.site-nav{order:3;width:100%;justify-content:flex-start;gap:10px 16px}.site-book{margin-left:auto}}
+@media(max-width:600px){.site-header{padding:14px;gap:12px}.site-brand{min-width:0;flex:1}.site-brand small{font-size:10px}.site-nav{display:flex;flex-wrap:nowrap;overflow-x:auto;padding:2px 0 7px;white-space:nowrap;scrollbar-width:thin}.site-nav a{flex-shrink:0}.site-book{min-height:40px;padding:0 12px}.site-footer{padding:20px 14px 32px;flex-direction:column;gap:14px}.site-footer nav{gap:10px 14px}}
