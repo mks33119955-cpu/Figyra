@@ -1,6 +1,8 @@
 {
   "@context": "https://schema.org",
   "@type": "BeautySalon",
+  "@id": "https://xn--80akfctdeyeev.xn--p1ai/#business",
+  "logo": "https://xn--80akfctdeyeev.xn--p1ai/logo.png",
   "name": "МИНУСРАЗМЕР",
   "image": "https://xn--80akfctdeyeev.xn--p1ai/logo.png",
   "description": "Аппаратная коррекция фигуры и аппаратный массаж в Новосибирске. Практические рекомендации по питанию.",
