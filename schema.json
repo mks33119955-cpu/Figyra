@@ -9,8 +9,7 @@
     "streetAddress": "ул. Бориса Богаткова, 248а, вход 1, 6 этаж, помещение 605",
     "addressLocality": "Новосибирск",
     "addressRegion": "Новосибирская область",
-    "postalCode": "630099",
-    "addressCountry": "Россия"
+    "addressCountry": "RU"
   },
   "geo": {
     "@type": "GeoCoordinates",
