@@ -96,7 +96,7 @@ jobs:
                           "apparatnaya-korrekciya-figury.html", "pervyy-vizit.html", "faq.html"]
           for page in public_pages:
               html = (root / page).read_text(encoding="utf-8")
-              if re.search(r'<meta\\s+name\\s*=\\s*(?:>|$)', html) or '\"><title>' in html:
+              if re.search(r'<meta\s+name\s*=\s*(?:>|$)', html) or '\"><title>' in html:
                   print(f"{page} contains malformed meta/title markup")
                   sys.exit(1)
           if "Старт" in index:
