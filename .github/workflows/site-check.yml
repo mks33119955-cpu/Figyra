@@ -33,8 +33,7 @@ jobs:
               'name="description"',
               'rel="canonical"',
               'application/ld+json',
-              'rel="preload" as="image" href="/assets/hero-visual.png" fetchpriority="high"',
-              'analytics_consent_v2'
+              'rel="preload" as="image" href="/assets/hero-visual.png" fetchpriority="high"'
           ]
           for item in required:
               if item not in index:
@@ -42,6 +41,9 @@ jobs:
                   sys.exit(1)
 
           analytics = (root / "analytics.js").read_text(encoding="utf-8")
+          if "analytics_consent_v2" not in analytics:
+              print("Analytics consent must use the explicit versioned consent key")
+              sys.exit(1)
           if 'data-consent="accept"' not in analytics or 'data-consent="reject"' not in analytics:
               print("Analytics consent must offer explicit accept and reject choices")
               sys.exit(1)
