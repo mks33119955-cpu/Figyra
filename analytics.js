@@ -1,6 +1,6 @@
 (function(){
   const COUNTER=111889785;
-  const KEY="cookie_ok";
+  const KEY="analytics_consent_v2";
   function loadMetrika(){
     if(window.__ymLoaded)return; window.__ymLoaded=true;
     window.ym=window.ym||function(){(window.ym.a=window.ym.a||[]).push(arguments)};
@@ -36,12 +36,16 @@
     });
   }
   function banner(){
-    if(localStorage.getItem(KEY)==="1"){loadMetrika(); bind(); return;}
+    const choice=localStorage.getItem(KEY);
+    if(choice==="accepted"){loadMetrika(); bind(); return;}
+    if(choice==="rejected") return;
     const box=document.createElement("div");
     box.id="cookie"; box.className="cookie";
-    box.innerHTML='<span>Сайт использует технические cookies. Аналитика включается после вашего согласия. Подробнее — в <a href="/privacy.html" style="color:#4f7fd8">Политике конфиденциальности</a>.</span><button style="border:0;background:#4f7fd8;color:#fff;border-radius:12px;padding:11px 17px;font-weight:800;cursor:pointer;white-space:nowrap">Понятно</button>';
+    box.setAttribute("role","region"); box.setAttribute("aria-label","Настройки аналитики");
+    box.innerHTML='<span>Яндекс Метрика помогает оценивать работу сайта. Она включается только после вашего согласия. Вы можете отказаться. Подробнее — в <a href="/privacy.html" style="color:#4f7fd8">Политике конфиденциальности</a>.</span><div class="cookie-actions" style="display:flex;gap:8px;flex-shrink:0"><button type="button" data-consent="reject" style="border:1px solid #cbd5e1;background:#fff;color:#25324a;border-radius:12px;padding:11px 13px;font-weight:800;cursor:pointer;white-space:nowrap">Не согласен</button><button type="button" data-consent="accept" style="border:0;background:#4f7fd8;color:#fff;border-radius:12px;padding:11px 15px;font-weight:800;cursor:pointer;white-space:nowrap">Согласен</button></div>';
     document.body.appendChild(box);
-    box.querySelector("button").addEventListener("click",()=>{localStorage.setItem(KEY,"1");box.remove();loadMetrika();bind();});
+    box.querySelector('[data-consent="accept"]').addEventListener("click",()=>{localStorage.setItem(KEY,"accepted");box.remove();loadMetrika();bind();});
+    box.querySelector('[data-consent="reject"]').addEventListener("click",()=>{localStorage.setItem(KEY,"rejected");box.remove();});
   }
   document.addEventListener("DOMContentLoaded",()=>{banner();});
 })();
