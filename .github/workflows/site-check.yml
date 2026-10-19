@@ -61,7 +61,7 @@ jobs:
 
           prices = (root / "ceny.html").read_text(encoding="utf-8")
           programs = (root / "programmy.html").read_text(encoding="utf-8")
-          if "Программа Старт" in prices + programs or "<h3>Старт</h3>" in prices or "<h2>Старт</h2>" in programs:
+          if "Программа Старт" in prices + programs or "<h3>Старт</h3>" in prices or "<h2>Старт</h2>" in programs or 'class="program-label">Старт' in index or '<h3>Старт</h3>' in index:
               print("Inconsistent legacy name for the 6-session program")
               sys.exit(1)
 
@@ -104,6 +104,15 @@ jobs:
                       sys.exit(1)
               if html.count('rel="canonical"') != 1:
                   print(f"{page} must have exactly one canonical URL")
+                  sys.exit(1)
+              if not re.search(r'<link rel="canonical" href="[^"]+">', html):
+                  print(f"{page} has a malformed canonical tag")
+                  sys.exit(1)
+              if re.search(r'<meta\s+name\s*=\s*(?:>|$)', html) or '\"><title>' in html:
+                  print(f"{page} contains malformed meta/title markup")
+                  sys.exit(1)
+              if page != "index.html" and re.search(r'← (?:МИНУСРАЗМЕР|Вернуться на сайт)', html):
+                  print(f"{page} still contains a duplicate legacy back link")
                   sys.exit(1)
 
           manifest = __import__("json").loads((root / "site.webmanifest").read_text(encoding="utf-8"))
