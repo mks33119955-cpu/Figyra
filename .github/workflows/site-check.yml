@@ -108,7 +108,7 @@ jobs:
               if not re.search(r'<link rel="canonical" href="[^"]+">', html):
                   print(f"{page} has a malformed canonical tag")
                   sys.exit(1)
-              if re.search(r'<meta\\s+name\\s*=\\s*(?:>|$)', html) or '\"><title>' in html:
+              if re.search(r'<meta\s+name\s*=\s*(?:>|$)', html) or '\"><title>' in html:
                   print(f"{page} contains malformed meta/title markup")
                   sys.exit(1)
               if page != "index.html" and re.search(r'← (?:МИНУСРАЗМЕР|Вернуться на сайт)', html):
