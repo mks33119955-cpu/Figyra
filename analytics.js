@@ -34,6 +34,9 @@
     document.querySelectorAll('a[href*="wa.me/"]').forEach(a=>{
       if(!a.dataset.track) a.addEventListener("click",()=>goal("booking_whatsapp"),{passive:true});
     });
+    document.querySelectorAll('a[href*="yandex.ru/maps"],a[href*="2gis.ru"]').forEach(a=>{
+      if(!a.dataset.track) a.addEventListener("click",()=>goal("route_click"),{passive:true});
+    });
   }
   function banner(){
     const choice=localStorage.getItem(KEY);
