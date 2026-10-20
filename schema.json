@@ -44,16 +44,32 @@
     "itemListElement": [
       {
         "@type": "Offer",
+        "price": "1300",
+        "priceCurrency": "RUB",
         "itemOffered": {
           "@type": "Service",
-          "name": "Аппаратный массаж"
+          "name": "Аппаратный массаж LPG",
+          "description": "30 минут"
         }
       },
       {
         "@type": "Offer",
+        "price": "1300",
+        "priceCurrency": "RUB",
         "itemOffered": {
           "@type": "Service",
-          "name": "Аппаратная коррекция фигуры"
+          "name": "Аппаратный массаж Турбо",
+          "description": "30 минут"
+        }
+      },
+      {
+        "@type": "Offer",
+        "price": "2200",
+        "priceCurrency": "RUB",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Комбинированный сеанс LPG + Турбо",
+          "description": "60 минут: 30 минут LPG и 30 минут Турбо"
         }
       }
     ]

@@ -61,9 +61,10 @@ jobs:
 
           prices = (root / "ceny.html").read_text(encoding="utf-8")
           programs = (root / "programmy.html").read_text(encoding="utf-8")
-          if "Программа Старт" in prices + programs or "<h3>Старт</h3>" in prices or "<h2>Старт</h2>" in programs or 'class="program-label">Старт' in index or '<h3>Старт</h3>' in index:
-              print("Inconsistent legacy name for the 6-session program")
-              sys.exit(1)
+          for name in ("Старт", "Форма", "Перезагрузка"):
+              if name not in prices + programs + index:
+                  print(f"Missing approved program name: {name}")
+                  sys.exit(1)
 
           schema = __import__("json").loads((root / "schema.json").read_text(encoding="utf-8"))
           if schema.get("address", {}).get("addressCountry") != "RU" or "postalCode" in schema.get("address", {}):
@@ -99,16 +100,20 @@ jobs:
               if re.search(r'<meta\s+name\s*=\s*(?:>|$)', html) or '\"><title>' in html:
                   print(f"{page} contains malformed meta/title markup")
                   sys.exit(1)
-          if "Старт" in index:
-              print("Homepage still uses the legacy program name Старт")
-              sys.exit(1)
           prices_html = (root / "ceny.html").read_text(encoding="utf-8")
-          for price in ("8 900 ₽", "16 900 ₽", "25 900 ₽"):
-              start = prices_html.find(price)
-              end = prices_html.find("</div>", start)
-              if start < 0 or 'href="https://dikidi.ru/#widget=214517"' not in prices_html[start:end]:
-                  print(f"Pricing card for {price} is missing its booking button")
+          expected_prices = ("1 300 ₽", "2 200 ₽", "7 200 ₽", "13 200 ₽", "18 700 ₽",
+                             "12 600 ₽", "24 000 ₽", "32 300 ₽")
+          for price in expected_prices:
+              if price not in prices_html:
+                  print(f"Missing approved price in pricing page: {price}")
                   sys.exit(1)
+          for price in ("8 900 ₽", "16 900 ₽", "25 900 ₽"):
+              if price in index + prices_html + programs + (root / "apparatnyy-massazh.html").read_text(encoding="utf-8"):
+                  print(f"Legacy price remains on a public service page: {price}")
+                  sys.exit(1)
+          if 'href="https://dikidi.ru/#widget=214517"' not in prices_html:
+              print("Pricing page is missing the DIKIDI booking link")
+              sys.exit(1)
           for page in public_pages:
               html = (root / page).read_text(encoding="utf-8")
               for marker in ('property="og:title"', 'property="og:description"', 'property="og:url"',
