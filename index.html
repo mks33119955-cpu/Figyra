@@ -110,6 +110,22 @@ button:focus-visible{outline:3px solid #78a6ff;outline-offset:3px}
 .cookie{position:fixed;z-index:1300;left:16px;right:16px;bottom:16px;max-width:940px;margin:auto;background:rgba(255,255,255,.97);border:1px solid var(--line);border-radius:20px;box-shadow:0 20px 70px rgba(0,0,0,.18);padding:17px 18px;display:flex;gap:18px;align-items:center;justify-content:space-between}.cookie p{margin:0;color:#5f6d82;font-size:12px}.cookie button{border:0;background:var(--blue);color:#fff;border-radius:12px;padding:11px 17px;font-weight:800;cursor:pointer;white-space:nowrap}
 .reveal{opacity:1;transform:none}
 
+
+/* Компактный блок целей перед стоимостью */
+.comfort-goals{padding-top:54px;padding-bottom:62px}
+.comfort-goals .section-head{max-width:780px;margin-bottom:26px}
+.comfort-goals .section-head p{max-width:680px}
+.comfort-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid #dfe7f3;border-bottom:1px solid #dfe7f3}
+.comfort-item{padding:25px 26px 26px 0;position:relative}
+.comfort-item+.comfort-item{border-left:1px solid #dfe7f3;padding-left:26px}
+.comfort-index{font-size:11px;font-weight:800;letter-spacing:.1em;color:var(--blue)}
+.comfort-item h3{font-size:18px;line-height:1.3;letter-spacing:-.4px;margin:15px 0 8px}
+.comfort-item p{font-size:13px;line-height:1.7;color:var(--muted);margin:0;max-width:330px}
+.comfort-action{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:25px}
+.comfort-action p{font-size:13px;color:var(--muted);margin:0}
+@media(max-width:980px){.comfort-grid{grid-template-columns:1fr}.comfort-item{padding:20px 0}.comfort-item+.comfort-item{border-left:0;border-top:1px solid #dfe7f3;padding-left:0}.comfort-item h3{margin-top:10px}}
+@media(max-width:680px){.comfort-goals{padding-top:38px;padding-bottom:42px}.comfort-action{align-items:stretch;flex-direction:column;gap:14px}.comfort-action .btn{width:100%}}
+
 .goal-grid{grid-template-columns:repeat(4,1fr)}
 .goal-card{text-decoration:none;color:inherit;position:relative;transition:transform .2s,box-shadow .2s,border-color .2s}
 .goal-card:hover{transform:translateY(-4px);box-shadow:0 20px 48px rgba(20,50,100,.09);border-color:#cbdcff}
@@ -215,6 +231,37 @@ button:focus-visible{outline:3px solid #78a6ff;outline-offset:3px}
   </div>
 </section>
 
+
+<section class="section alt comfort-goals" id="comfort-goals">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker">Ваш формат заботы о себе</span>
+      <h2>Тело, в котором вам комфортно</h2>
+      <p>Подберём формат аппаратного ухода с учётом ваших пожеланий, привычного ритма жизни и предпочтений.</p>
+    </div>
+    <div class="comfort-grid">
+      <article class="comfort-item reveal">
+        <span class="comfort-index">01 / УВЕРЕННОСТЬ</span>
+        <h3>Больше уверенности в себе</h3>
+        <p>Время для себя, забота о теле и внимание к собственному комфорту.</p>
+      </article>
+      <article class="comfort-item reveal">
+        <span class="comfort-index">02 / КОНТУРЫ</span>
+        <h3>Подчеркнуть контуры тела</h3>
+        <p>Выберите подходящий формат аппаратного массажа и обсудите интересующие зоны перед процедурой.</p>
+      </article>
+      <article class="comfort-item reveal">
+        <span class="comfort-index">03 / ВАШ РИТМ</span>
+        <h3>Добавить заботу о себе в расписание</h3>
+        <p>Разовая процедура или курс — выбирайте удобный для себя формат посещений.</p>
+      </article>
+    </div>
+    <div class="comfort-action reveal">
+      <p>Начать можно с одной процедуры — без покупки курса.</p>
+      <a class="btn btn-primary" href="#program"><span>Выбрать процедуру →</span></a>
+    </div>
+  </div>
+</section>
 
 <section class="section" id="program">
   <div class="container">
