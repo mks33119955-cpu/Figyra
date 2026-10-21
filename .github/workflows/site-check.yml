@@ -71,7 +71,7 @@ jobs:
               print("Schema address must use ISO country code and omit unverified postal code")
               sys.exit(1)
 
-          if not all(x in offer for x in ("6", "12", "17")):
+          if not all(x in offer for x in ("6", "12", "15")):
               print("Offer does not contain current 6/12/15 program counts")
               sys.exit(1)
 
