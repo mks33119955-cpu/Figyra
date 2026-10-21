@@ -28,7 +28,7 @@ jobs:
           sitemap = (root / "sitemap.xml").read_text(encoding="utf-8")
 
           required = [
-              "6", "12", "17",
+              "6", "12", "15",
               "https://xn--80akfctdeyeev.xn--p1ai/",
               'name="description"',
               'rel="canonical"',
@@ -71,12 +71,12 @@ jobs:
               print("Schema address must use ISO country code and omit unverified postal code")
               sys.exit(1)
 
-          if not all(x in offer for x in ("6", "12", "17")):
-              print("Offer does not contain current 6/12/17 program counts")
+          if not all(x in offer for x in ("6", "12", "15")):
+              print("Offer does not contain current 6/12/15 program counts")
               sys.exit(1)
 
-          if re.search(r"\b(?:5|10|15)\s*(?:процедур|сеансов)\b", index + offer):
-              print("Legacy 5/10/15 program counts detected")
+          if re.search(r"\b(?:5|10|17)\s*(?:процедур|сеансов)\b", index + offer):
+              print("Legacy 5/10/17 program counts detected")
               sys.exit(1)
 
           if "Sitemap: https://xn--80akfctdeyeev.xn--p1ai/sitemap.xml" not in robots:
@@ -101,8 +101,8 @@ jobs:
                   print(f"{page} contains malformed meta/title markup")
                   sys.exit(1)
           prices_html = (root / "ceny.html").read_text(encoding="utf-8")
-          expected_prices = ("1 300 ₽", "2 200 ₽", "7 200 ₽", "13 200 ₽", "18 700 ₽",
-                             "12 600 ₽", "24 000 ₽", "32 300 ₽")
+          expected_prices = ("1 300 ₽", "2 200 ₽", "7 200 ₽", "13 200 ₽", "16 500 ₽",
+                             "12 600 ₽", "24 000 ₽", "28 500 ₽")
           for price in expected_prices:
               if price not in prices_html:
                   print(f"Missing approved price in pricing page: {price}")
